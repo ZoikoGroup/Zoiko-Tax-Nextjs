@@ -8,148 +8,173 @@ export type FooterColumn = {
   links: NavLink[];
 };
 
-export const primaryNav: NavLink[] = [
-  { label: "Platform", href: "#platform" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Coverage", href: "#coverage" },
-  { label: "Developers", href: "#developers" },
-  { label: "Trust", href: "#trust" },
-  { label: "Resources", href: "#resources" },
-];
+export type SocialLink = {
+  label: string;
+  href: string;
+  icon: string;
+};
+
+export type Office = {
+  title: string;
+  lines: string[];
+  phone: string;
+};
+
+const links = (...labels: string[]): NavLink[] =>
+  labels.map((label) => ({ label, href: "#" }));
 
 export const footerColumns: FooterColumn[] = [
   {
     title: "Platform",
-    links: [
-      { label: "Platform Overview", href: "#" },
-      { label: "Tax Determination", href: "#" },
-      { label: "Exemptions & Certificates", href: "#" },
-      { label: "Regulatory Obligations", href: "#" },
-      { label: "Compliance & Filing", href: "#" },
-      { label: "Real-time Orchestration", href: "#" },
-      { label: "E-Invoicing & CTC", href: "#" },
-      { label: "Reconciliation", href: "#" },
-    ],
+    links: links(
+      "Platform Overview",
+      "Tax Determination",
+      "Exemptions & Certificates",
+      "Regulatory Obligations",
+      "Compliance & Filing",
+      "Remittance Orchestration",
+      "E-Invoicing & CTC",
+      "Reconciliation",
+    ),
   },
   {
     title: "Assurance & Intelligence",
-    links: [
-      { label: "Insight & Reply", href: "#" },
-      { label: "Deviation Auditor", href: "#" },
-      { label: "Migration & Onboarding", href: "#" },
-      { label: "Intelligence Fabric", href: "#" },
-      { label: "Dashboard & Analytics", href: "#" },
-    ],
+    links: links(
+      "Evidence & Replay",
+      "Shadow Assurance",
+      "Migration & Onboarding",
+      "Intelligence Fabric",
+      "Dashboard & Analytics",
+    ),
   },
   {
     title: "Telecom Solutions",
-    links: [
-      { label: "MVNOs", href: "#" },
-      { label: "MVNEs", href: "#" },
-      { label: "MVNEs & VNOs", href: "#" },
-      { label: "Voice, VoIP & VNOs", href: "#" },
-      { label: "UCaaS & CPaaS", href: "#" },
-      { label: "IoT & Satellite", href: "#" },
-    ],
+    links: links(
+      "MNOs",
+      "MVNOs",
+      "MVNEs & MVNAs",
+      "Voice, VoIP & SIP",
+      "UCaaS & CPaaS",
+      "Broadband & Fixed Wireless",
+      "IoT & Satellite",
+    ),
   },
   {
     title: "Teams",
-    links: [
-      { label: "Tax & Regulatory", href: "#" },
-      { label: "CFO & Finance", href: "#" },
-      { label: "Product & Commercial", href: "#" },
-      { label: "Technology Leaders", href: "#" },
-    ],
+    links: links(
+      "Tax & Regulatory",
+      "CFO & Finance",
+      "Billing & BSS",
+      "Revenue Assurance",
+      "Product & Commercial",
+      "Technology Leaders",
+    ),
   },
   {
     title: "Coverage",
-    links: [
-      { label: "Coverage Overview", href: "#" },
-      { label: "Country & Regulatory Packs", href: "#" },
-      { label: "United States", href: "#" },
-      { label: "European Union", href: "#" },
-      { label: "United Kingdom", href: "#" },
-    ],
+    links: links(
+      "Coverage Overview",
+      "Country & Regulatory Packs",
+      "Status & Releases",
+      "United States",
+      "European Union",
+      "United Kingdom",
+    ),
   },
   {
     title: "Developers",
-    links: [
-      { label: "Developer Portal", href: "#" },
-      { label: "API Reference", href: "#" },
-      { label: "SDKs & Libraries", href: "#" },
-      { label: "Integration Guides", href: "#" },
-      { label: "Sandbox", href: "#" },
-      { label: "API Changelog", href: "#" },
-    ],
+    links: links(
+      "Developer Portal",
+      "API Reference",
+      "SDKs & Libraries",
+      "Integration Guides",
+      "Sandbox",
+      "API Changelog",
+    ),
   },
   {
     title: "Integrations",
-    links: [
-      { label: "Billing & BSS", href: "#" },
-      { label: "ERP & General Ledger", href: "#" },
-      { label: "Tax Engines", href: "#" },
-      { label: "E-Invoicing & Telecoms", href: "#" },
-      { label: "Data & Enterprise", href: "#" },
-      { label: "OSS & Network", href: "#" },
-    ],
+    links: links(
+      "Billing & BSS",
+      "ERP & General Ledger",
+      "Tax Engines",
+      "E-Invoicing Networks",
+      "Data & Enterprise",
+      "OEM & Partners",
+    ),
   },
   {
     title: "Trust & Governance",
-    links: [
-      { label: "Trust Center", href: "#" },
-      { label: "Security", href: "#" },
-      { label: "Privacy & Data Protection", href: "#" },
-      { label: "Bug Bounty & Reports", href: "#" },
-      { label: "AI Governance", href: "#" },
-      { label: "Certifications", href: "#" },
-    ],
+    links: links(
+      "Trust Center",
+      "Security",
+      "Privacy & Data Protection",
+      "AI Governance",
+      "Evidence & Auditability",
+      "Certifications",
+    ),
   },
   {
     title: "Resources",
-    links: [
-      { label: "Insights & Blog", href: "#" },
-      { label: "Regulatory Change", href: "#" },
-      { label: "Events & Reports", href: "#" },
-      { label: "Glossary", href: "#" },
-      { label: "FAQ", href: "#" },
-    ],
+    links: links("Insights & Blog", "Regulatory Change", "Guides & Reports", "Glossary", "FAQ"),
   },
   {
     title: "Company",
     links: [
       { label: "About ZoikoTax", href: "/about-us" },
-      { label: "Zoiko Group", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Newsroom", href: "#" },
-      { label: "Press & Media", href: "#" },
+      ...links("Zoiko Group", "Careers", "Newsroom", "Press & Media"),
     ],
   },
   {
     title: "Support & Status",
-    links: [
-      { label: "Customer Support", href: "#" },
-      { label: "System Status", href: "#" },
-      { label: "Documentation", href: "#" },
-      { label: "Community Forum", href: "#" },
-    ],
+    links: links("Customer Support", "Documentation", "System Status", "Community Forum"),
   },
   {
     title: "Offices & Connect",
-    links: [
-      { label: "Sales Inquiry", href: "#" },
-      { label: "General Support", href: "#" },
-      { label: "Technical Support", href: "#" },
-      { label: "Partnerships", href: "#" },
-      { label: "General Contact", href: "#" },
-    ],
+    links: links("Sales Inquiry", "Technical Support", "Partnerships", "General Contact"),
   },
 ];
 
-export const legalLinks: NavLink[] = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Security", href: "#" },
-  { label: "Accessibility", href: "#" },
-  { label: "Cookie Policy", href: "#" },
-  { label: "Sitemap", href: "#" },
+export const offices: Office[] = [
+  {
+    title: "Global Headquarters",
+    lines: ["Sacramento, California", "United States"],
+    phone: "1-800-484-5574",
+  },
+  {
+    title: "European Headquarters",
+    lines: ["London W1W 5PF", "United Kingdom"],
+    phone: "+44 20 7164 6399",
+  },
 ];
+
+export const socialLinks: SocialLink[] = [
+  { label: "LinkedIn", href: "#", icon: "/layout/linkedin.svg" },
+  { label: "YouTube", href: "#", icon: "/layout/youtube.svg" },
+  { label: "X", href: "#", icon: "/layout/x.svg" },
+  { label: "GitHub", href: "#", icon: "/layout/github.svg" },
+];
+
+export const trustNotes = [
+  {
+    title: "Coverage Truth",
+    body: "ZoikoTax is architected globally but capability is activated through governed country and regulatory packs. Not all services are available everywhere. Current availability is shown in the Coverage portal.",
+  },
+  {
+    title: "Professional Advice",
+    body: "ZoikoTax is not a substitute for legal, tax, accounting or regulatory advice. Consult qualified professionals for your specific situation. All determinations are subject to your review and approval.",
+  },
+  {
+    title: "AI Authority",
+    body: "AI assists with research, extraction, and explanation. Authoritative fiscal outcomes are determined by governed rules, not autonomous AI. Approval and responsibility remain with you.",
+  },
+];
+
+export const legalLinks: NavLink[] = links(
+  "Privacy Policy",
+  "Terms of Service",
+  "Security",
+  "Accessibility",
+  "Cookie Policy",
+  "Sitemap",
+);
