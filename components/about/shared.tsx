@@ -1,125 +1,125 @@
-import type { ReactNode } from "react";
 import clsx from "clsx";
+import type { LucideIcon } from "lucide-react";
 
-export { default as Reveal } from "@/components/shared/Reveal";
-export { StaggerGroup, StaggerItem } from "@/components/shared/Stagger";
+export {
+  Container,
+  NumberedCard,
+  Reveal,
+  Section,
+  SectionIntro,
+  StaggerGroup,
+  StaggerItem,
+  bgImage,
+  buttonClasses,
+} from "@/components/home/shared";
 
-type SectionShellProps = {
-  id?: string;
+/** Description style shared by About section intros. */
+export const introDescription = "max-w-180 text-base leading-7 sm:text-lg";
+
+export const panelShadow = "shadow-[0_4px_16px_0_rgba(0,0,0,0.05)]";
+
+type Column = {
+  label: string;
+  /** Header label color. */
+  headClassName?: string;
+  /** Body cell text style. */
+  cellClassName: string;
+};
+
+type DataTableProps = {
+  columns: Column[];
+  rows: string[][];
+  /** Tailwind grid template used from `md` up, e.g. "md:grid-cols-[1fr_1.4fr_1.4fr]". */
+  gridClassName: string;
   className?: string;
-  tone?: "light" | "dark" | "muted";
-  children: ReactNode;
 };
 
-const toneClasses: Record<NonNullable<SectionShellProps["tone"]>, string> = {
-  light: "bg-white text-brand-navy",
-  muted: "bg-slate-50 text-brand-navy",
-  dark: "bg-brand-navy text-white",
-};
+/**
+ * Real table semantics on desktop; on small screens each row becomes a stacked
+ * card where every cell is prefixed with its column label.
+ */
+export function DataTable({ columns, rows, gridClassName, className }: DataTableProps) {
+  const grid = clsx("grid grid-cols-1 gap-x-8 md:items-center", gridClassName);
 
-export function SectionShell({
-  id,
-  className,
-  tone = "light",
-  children,
-}: SectionShellProps) {
-  return (
-    <section id={id} className={clsx(toneClasses[tone], className)}>
-      <div className="section-container py-16 sm:py-20">{children}</div>
-    </section>
-  );
-}
-
-type EyebrowProps = {
-  children: ReactNode;
-  tone?: "orange" | "navy";
-};
-
-export function Eyebrow({ children, tone = "orange" }: EyebrowProps) {
-  return (
-    <p
-      className={clsx(
-        "text-xs font-semibold uppercase tracking-[0.2em]",
-        tone === "orange" ? "text-brand-orange" : "text-brand-navy/60"
-      )}
-    >
-      {children}
-    </p>
-  );
-}
-
-type SectionHeadingProps = {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  align?: "left" | "center";
-  tone?: "light" | "dark";
-};
-
-export function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  align = "left",
-  tone = "light",
-}: SectionHeadingProps) {
   return (
     <div
+      role="table"
       className={clsx(
-        "max-w-2xl",
-        align === "center" && "mx-auto text-center"
+        "overflow-hidden rounded-[20px] bg-white outline outline-1 -outline-offset-1 outline-zinc-200",
+        panelShadow,
+        className,
       )}
     >
-      {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2
-        className={clsx(
-          "mt-3 text-2xl font-bold leading-tight sm:text-3xl",
-          tone === "dark" ? "text-white" : "text-brand-navy"
-        )}
+      <div
+        role="row"
+        className={clsx(grid, "hidden border-b border-zinc-200 bg-table-head px-7 py-4 md:grid")}
       >
-        {title}
-      </h2>
-      {description && (
-        <p
+        {columns.map((column) => (
+          <span
+            key={column.label}
+            role="columnheader"
+            className={clsx(
+              "text-xs font-bold uppercase",
+              column.headClassName ?? "text-plum-700",
+            )}
+          >
+            {column.label}
+          </span>
+        ))}
+      </div>
+
+      {rows.map((row, r) => (
+        <div
+          key={row[0]}
+          role="row"
           className={clsx(
-            "mt-4 text-base leading-relaxed",
-            tone === "dark" ? "text-white/70" : "text-brand-navy/70"
+            grid,
+            "gap-y-2 px-5 py-4 sm:px-7 md:min-h-14",
+            r < rows.length - 1 && "border-b border-gray-100",
           )}
         >
-          {description}
-        </p>
-      )}
+          {row.map((cell, c) => (
+            <div key={columns[c].label} role="cell">
+              <span className="mb-0.5 block text-[10px] font-bold uppercase text-plum-700 md:hidden">
+                {columns[c].label}
+              </span>
+              <span className={columns[c].cellClassName}>{cell}</span>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
 
-type CardProps = {
+type IconCardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
   className?: string;
-  children: ReactNode;
+  iconBoxClassName?: string;
+  iconClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 };
 
-export function Card({ className, children }: CardProps) {
+export function IconCard({
+  icon: Icon,
+  title,
+  description,
+  className,
+  iconBoxClassName = "size-10 rounded-[10px] bg-violet-50",
+  iconClassName = "size-5 text-plum-700",
+  titleClassName = "mt-3.5 text-base font-bold text-ink",
+  descriptionClassName = "mt-2 text-xs leading-5 text-ink-muted",
+}: IconCardProps) {
   return (
-    <div
-      className={clsx(
-        "rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-export function DarkCard({ className, children }: CardProps) {
-  return (
-    <div
-      className={clsx(
-        "rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-orange/40 hover:bg-white/10",
-        className
-      )}
-    >
-      {children}
+    <div className={clsx("flex h-full flex-col", className)}>
+      <span className={clsx("flex shrink-0 items-center justify-center", iconBoxClassName)}>
+        <Icon aria-hidden className={iconClassName} strokeWidth={2} />
+      </span>
+      <h3 className={titleClassName}>{title}</h3>
+      <p className={descriptionClassName}>{description}</p>
     </div>
   );
 }

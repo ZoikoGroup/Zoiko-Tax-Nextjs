@@ -1,50 +1,48 @@
-import { SectionShell, SectionHeading, Reveal } from "./shared";
+import clsx from "clsx";
+import { Check, X } from "lucide-react";
+import { Reveal, Section, SectionIntro } from "./shared";
+import { scope } from "./about-data";
 
-const regions = ["United States", "European Union", "United Kingdom", "Canada", "Australia"];
-const segments = ["MVNOs", "MVNEs", "MVNEs & VNOs", "Voice, VoIP & UCaaS", "IoT & Satellite"];
+const lists = [
+  { title: "ZoikoTax Is", items: scope.is, icon: Check, color: "text-success" },
+  { title: "ZoikoTax Is Not", items: scope.isNot, icon: X, color: "text-danger" },
+];
 
 export default function ScopeSection() {
   return (
-    <SectionShell id="scope" tone="light">
-      <SectionHeading
-        eyebrow="Scope"
-        title="One platform, scoped to how telecom actually runs."
-        description="From regulatory packs to billing integrations, ZoikoTax scopes coverage around real operator segments and jurisdictions."
-      />
-
-      <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+    <Section className="bg-mauve">
+      <div className="flex flex-col gap-12">
         <Reveal>
-          <div className="rounded-2xl border border-black/5 bg-slate-50 p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-navy/60">
-              Regulatory coverage
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {regions.map((region) => (
-                <li key={region} className="flex items-center gap-3 text-sm text-brand-navy">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
-                  {region}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SectionIntro eyebrow="Scope & positioning" title="What ZoikoTax is - and is not." />
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div className="rounded-2xl border border-black/5 bg-slate-50 p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-navy/60">
-              Telecom segments
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {segments.map((segment) => (
-                <li key={segment} className="flex items-center gap-3 text-sm text-brand-navy">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
-                  {segment}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {lists.map(({ title, items, icon: Icon, color }, i) => (
+            <Reveal key={title} delay={i * 0.1} className="h-full">
+              <div className="h-full rounded-[20px] bg-white p-6 shadow-[0_8px_24px_0_rgba(0,0,0,0.08)] outline outline-1 -outline-offset-1 outline-zinc-200 sm:p-10">
+                <h3 className={clsx("flex items-center gap-1.5 text-xl font-bold", color)}>
+                  <Icon aria-hidden className="size-5" strokeWidth={3} />
+                  {title}
+                </h3>
+                <ul className="pt-7">
+                  {items.map((entry, j) => (
+                    <li
+                      key={entry}
+                      className={clsx(
+                        "flex items-start gap-3 py-3.5 text-base text-ink",
+                        j < items.length - 1 && "border-b border-gray-100",
+                      )}
+                    >
+                      <Icon aria-hidden className={clsx("mt-1.5 size-3 shrink-0", color)} strokeWidth={2.5} />
+                      {entry}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
-    </SectionShell>
+    </Section>
   );
 }

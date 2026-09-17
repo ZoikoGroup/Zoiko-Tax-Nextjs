@@ -1,46 +1,51 @@
 import type { Metadata } from "next";
+import FaqSection from "@/components/home/FaqSection";
 import {
+  BrokenTodaySection,
+  BuildingSection,
+  CompanySection,
+  CoverageSection,
+  DecisionChainSection,
+  DirectAnswerSection,
+  FinalCtaSection,
+  GovernedAiSection,
   HeroSection,
-  ProblemSection,
-  MissionSection,
+  IntendedDifferenceSection,
+  MarketSection,
+  MissionVisionSection,
+  OperatingModelsSection,
+  PrinciplesSection,
   ScopeSection,
-  BusinessModelSection,
-  WhoWeServeSection,
-  GeographicSection,
-  InfrastructureSection,
-  GovernanceSection,
-  TrustStandardSection,
-  TrustAssetSection,
-  FeatureGridSection,
-  CorporateInfoSection,
-  AboutFaqSection,
-  AboutFinalCtaSection,
+  TrustSection,
 } from "@/components/about";
+import { aboutFaqs } from "@/components/about/about-data";
 
 export const metadata: Metadata = {
   title: "About Us | ZoikoTax",
   description:
-    "ZoikoTax is a governed tax determination and compliance platform built for telecom operators, MVNOs and MVNEs worldwide.",
+    "ZoikoTax is building connected fiscal infrastructure for global telecommunications - determination, obligations, compliance, reconciliation and evidence within one governed platform.",
 };
 
 export default function AboutUsPage() {
   return (
-    <>
+    <div className="bg-mauve">
       <HeroSection />
-      <ProblemSection />
-      <MissionSection />
+      <DirectAnswerSection />
+      <BuildingSection />
       <ScopeSection />
-      <BusinessModelSection />
-      <WhoWeServeSection />
-      <GeographicSection />
-      <InfrastructureSection />
-      <GovernanceSection />
-      <TrustStandardSection />
-      <TrustAssetSection />
-      <FeatureGridSection />
-      <CorporateInfoSection />
-      <AboutFaqSection />
-      <AboutFinalCtaSection />
-    </>
+      <MarketSection />
+      <BrokenTodaySection />
+      <DecisionChainSection />
+      <IntendedDifferenceSection />
+      <MissionVisionSection />
+      <PrinciplesSection />
+      <OperatingModelsSection />
+      <CoverageSection />
+      <GovernedAiSection />
+      <CompanySection />
+      <TrustSection />
+      <FaqSection items={aboutFaqs} background="/about-us/pattern-faq.webp" />
+      <FinalCtaSection />
+    </div>
   );
 }

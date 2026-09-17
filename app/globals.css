@@ -56,6 +56,12 @@
   /* Home page final CTA */
   --color-night: #1c023a;
   --color-snow: #fbfbfb;
+
+  /* About page */
+  --color-mauve: #faf3ff;
+  --color-table-head: #f6f3fb;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
 }
 
 @theme inline {
@@ -101,6 +107,10 @@
   --color-lilac-400: var(--color-lilac-400);
   --color-night: var(--color-night);
   --color-snow: var(--color-snow);
+  --color-mauve: var(--color-mauve);
+  --color-table-head: var(--color-table-head);
+  --color-success: var(--color-success);
+  --color-danger: var(--color-danger);
   --font-sans: var(--font-sans);
   --font-sora: var(--font-sora-next);
   --font-dm-sans: var(--font-dm-sans-next);
