@@ -44,7 +44,7 @@ export function Section({ id, children, className, background }: SectionProps) {
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={clsx("text-sm font-bold uppercase text-menu-accent", className)}>{children}</p>
+    <p className={clsx("text-sm font-bold uppercase", className ?? "text-menu-accent")}>{children}</p>
   );
 }
 
@@ -54,6 +54,8 @@ type SectionIntroProps = {
   description?: string;
   tone?: "light" | "dark";
   className?: string;
+  /** Replaces the default description size and width. */
+  descriptionClassName?: string;
 };
 
 export function SectionIntro({
@@ -62,6 +64,7 @@ export function SectionIntro({
   description,
   tone = "light",
   className,
+  descriptionClassName = "text-lg leading-8 sm:text-xl",
 }: SectionIntroProps) {
   const dark = tone === "dark";
   return (
@@ -78,7 +81,7 @@ export function SectionIntro({
       {description && (
         <p
           className={clsx(
-            "text-lg leading-8 sm:text-xl",
+            descriptionClassName,
             dark ? "text-white/80" : "text-ink-muted",
           )}
         >

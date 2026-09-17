@@ -1,45 +1,50 @@
-import { Reveal, Eyebrow } from "./shared";
-
-const stats = [
-  { value: "40+", label: "Regulatory jurisdictions covered" },
-  { value: "99.98%", label: "Filing accuracy across live tenants" },
-  { value: "24/7", label: "Governed monitoring & orchestration" },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { Container, Reveal, buttonClasses } from "./shared";
+import { heroContent } from "./about-data";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy text-white">
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-stone-100 to-gray-200">
+      <Image
+        src="/about-us/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover object-right"
+      />
+      {/* Keeps copy readable where it overlaps the image on narrow screens. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/3 rounded-full bg-gradient-to-br from-sky-500/30 via-brand-purple/40 to-transparent blur-3xl"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-rose-100 via-stone-100/70 via-55% to-stone-100/0 lg:via-stone-100/30"
       />
-      <div className="section-container relative py-20 sm:py-28">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <Eyebrow>About ZoikoTax</Eyebrow>
-          <h1 className="mt-4 text-3xl font-bold leading-tight sm:text-5xl">
-            Fiscal compliance, built for the telecom operating model.
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
-            ZoikoTax is a governed tax determination and compliance platform
-            purpose-built for MVNOs, MVNEs and telecom operators navigating
-            fast-changing regulatory obligations across every market they serve.
-          </p>
-        </Reveal>
 
-        <Reveal delay={0.15} className="mt-14">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-orange/40"
-              >
-                <p className="text-3xl font-bold text-brand-orange">{stat.value}</p>
-                <p className="mt-2 text-sm text-white/70">{stat.label}</p>
-              </div>
-            ))}
+      <Container className="flex min-h-[640px] items-center py-16 lg:min-h-[770px] lg:py-20">
+        <Reveal className="flex max-w-190 flex-col gap-7">
+          <p className="text-xs font-bold uppercase text-menu-accent">{heroContent.eyebrow}</p>
+          <h1 className="text-[2rem] font-bold leading-[1.1] text-ink min-[400px]:text-4xl sm:text-5xl lg:text-6xl lg:leading-[60.32px]">
+            {heroContent.title}
+          </h1>
+          <p className="max-w-170 text-base leading-7 text-stone-900 sm:text-lg">
+            {heroContent.body}
+          </p>
+          <div className="flex flex-wrap items-center gap-3 py-2">
+            <Link href="/#platform" className={`${buttonClasses.primary} px-6 text-base font-semibold`}>
+              Explore the Platform
+            </Link>
+            <Link href="/#coverage" className={`${buttonClasses.secondary} text-base font-medium`}>
+              View Current Coverage
+            </Link>
+            <Link
+              href="#book-a-demo"
+              className="inline-flex h-12 items-center px-4 text-base font-semibold text-yellow-950 transition-colors hover:text-copper"
+            >
+              Book a Demo →
+            </Link>
           </div>
         </Reveal>
-      </div>
+      </Container>
     </section>
   );
 }

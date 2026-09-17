@@ -5,9 +5,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, Section, SectionIntro } from "./shared";
 import { faqs } from "./home-data";
 
-export default function FaqSection() {
+type Faq = { question: string; answer: string };
+
+type FaqSectionProps = {
+  items?: Faq[];
+  background?: string;
+};
+
+export default function FaqSection({
+  items = faqs,
+  background = "/home/pattern-faq.webp",
+}: FaqSectionProps) {
   // The design shows every answer expanded, so all start open.
-  const [openItems, setOpenItems] = useState(() => new Set(faqs.map((faq) => faq.question)));
+  const [openItems, setOpenItems] = useState(() => new Set(items.map((faq) => faq.question)));
 
   const toggle = (question: string) =>
     setOpenItems((current) => {
@@ -18,7 +28,7 @@ export default function FaqSection() {
     });
 
   return (
-    <Section background="/home/pattern-faq.webp" className="bg-white">
+    <Section background={background} className="bg-white">
       <div className="flex flex-col gap-10">
         <Reveal>
           <SectionIntro eyebrow="FAQ" title="Direct answers. No inflated claims." />
@@ -26,7 +36,7 @@ export default function FaqSection() {
 
         <Reveal>
           <ul>
-            {faqs.map(({ question, answer }, i) => {
+            {items.map(({ question, answer }, i) => {
               const isOpen = openItems.has(question);
               const panelId = `faq-panel-${i}`;
               return (
