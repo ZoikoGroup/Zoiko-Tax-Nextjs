@@ -21,7 +21,15 @@ export type Office = {
 };
 
 const links = (...labels: string[]): NavLink[] =>
-  labels.map((label) => ({ label, href: "#" }));
+  labels.map((label) => ({
+    label,
+    href:
+      label === "Tax Determination"
+        ? "/determination"
+        : label === "Exemptions & Certificates"
+          ? "/exemptions-certificates"
+          : "#",
+  }));
 
 export const footerColumns: FooterColumn[] = [
   {
