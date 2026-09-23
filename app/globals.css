@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi:ital@0;1&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -115,6 +116,7 @@
   --font-sora: var(--font-sora-next);
   --font-dm-sans: var(--font-dm-sans-next);
   --font-mono: var(--font-roboto-mono-next);
+  --font-tiro: "Tiro Gurmukhi", Georgia, serif;
 }
 
 body {

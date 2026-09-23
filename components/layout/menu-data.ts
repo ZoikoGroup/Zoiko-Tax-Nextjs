@@ -100,8 +100,8 @@ export const megaMenus: MegaMenu[] = [
         icon: Database,
         items: [
           item("Platform Overview", "How the full platform works", Compass),
-          item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator),
-          item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck),
+          item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator, "/determination"),
+          item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck, "/exemptions-certificates"),
           item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck),
           item("Compliance & Filing", "Prepare, review and track filings", ClipboardCheck),
         ],
@@ -192,7 +192,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Capabilities",
         icon: Settings,
         items: [
-          item("Tax Determination", "Availability by exact capability", Calculator),
+          item("Tax Determination", "Availability by exact capability", Calculator, "/determination"),
           item("Regulatory Obligations", "Availability by exact capability", ShieldCheck),
           item("Compliance & Filing", "Availability by exact capability", ClipboardCheck),
           item("Remittance", "Supported orchestration, not fund custody", CreditCard),
