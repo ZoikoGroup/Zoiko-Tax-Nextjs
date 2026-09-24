@@ -114,6 +114,8 @@
   --color-danger: var(--color-danger);
   --font-sans: var(--font-sans);
   --font-sora: var(--font-sora-next);
+  --font-manrope: var(--font-manrope-next);
+  --font-jetbrains: var(--font-jetbrains-mono-next);
   --font-dm-sans: var(--font-dm-sans-next);
   --font-mono: var(--font-roboto-mono-next);
   --font-tiro: "Tiro Gurmukhi", Georgia, serif;

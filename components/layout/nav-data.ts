@@ -28,7 +28,9 @@ const links = (...labels: string[]): NavLink[] =>
         ? "/determination"
         : label === "Exemptions & Certificates"
           ? "/exemptions-certificates"
-          : "#",
+          : label === "Compliance & Filing"
+            ? "/compliance-filing"
+            : "#",
   }));
 
 export const footerColumns: FooterColumn[] = [

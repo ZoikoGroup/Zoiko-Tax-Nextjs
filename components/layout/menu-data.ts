@@ -103,7 +103,12 @@ export const megaMenus: MegaMenu[] = [
           item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator, "/determination"),
           item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck, "/exemptions-certificates"),
           item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck),
-          item("Compliance & Filing", "Prepare, review and track filings", ClipboardCheck),
+          item(
+            "Compliance & Filing",
+            "Prepare, review and track filings",
+            ClipboardCheck,
+            "/compliance-filing"
+          ),
         ],
       },
       {
@@ -194,7 +199,12 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Tax Determination", "Availability by exact capability", Calculator, "/determination"),
           item("Regulatory Obligations", "Availability by exact capability", ShieldCheck),
-          item("Compliance & Filing", "Availability by exact capability", ClipboardCheck),
+          item(
+            "Compliance & Filing",
+            "Availability by exact capability",
+            ClipboardCheck,
+            "/compliance-filing"
+          ),
           item("Remittance", "Supported orchestration, not fund custody", CreditCard),
           item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText),
           item("Managed Compliance", "Requires production and operational readiness", UserCheck),
