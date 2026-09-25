@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { Info, Search, Filter } from "lucide-react";
+import { Info } from "lucide-react";
 
 export default function WorkbenchSection() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,10 +13,10 @@ export default function WorkbenchSection() {
       period: "Q4 2025",
       amount: "$412,850.00",
       readiness: "Passed",
-      readinessType: "success",
+      readinessClass: "bg-teal-800/10 text-teal-800",
       approval: "Approved (2/2)",
       handoff: "Handed Off",
-      handoffType: "success",
+      handoffClass: "bg-teal-800/10 text-teal-800",
     },
     {
       id: "RO-2026-TX-9382",
@@ -25,138 +24,138 @@ export default function WorkbenchSection() {
       period: "Jan 2026",
       amount: "$84,120.00",
       readiness: "Blocked (Variance)",
-      readinessType: "danger",
+      readinessClass: "bg-red-500/10 text-red-500",
       approval: "Pending Review",
       handoff: "Not Started",
-      handoffType: "neutral",
+      handoffClass: "bg-stone-100 text-neutral-600",
     },
   ];
 
+  const filteredRows = rows.filter(
+    (r) =>
+      r.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      r.payee.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/remittance-orchestration/Operational Challenges Section.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 bg-purple-50 flex flex-col justify-start items-start gap-10">
+      <div className="self-stretch flex flex-col justify-start items-start gap-4">
+        <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
+          SYSTEM PROOF
+        </div>
+        <h2 className="justify-start text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+          The Remittance Workbench &amp; Registry
+        </h2>
+        <p className="self-stretch justify-start text-neutral-600 text-lg sm:text-xl font-medium  leading-8">
+          View instructions prepared for external payment networks. Strictly read-only registry tracking readiness, approval statuses, and bank confirmations.
+        </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 sm:gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#D65A2C]">
-              SYSTEM PROOF
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#18141B]">
-              The Remittance Workbench &amp; Registry
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-[#535055]">
-              View instructions prepared for external payment networks. Strictly read-only registry tracking readiness, approval statuses, and bank confirmations.
-            </p>
+      {/* Notice Banner */}
+      <div className="self-stretch p-4 bg-purple-50 rounded-xl inline-flex justify-start items-center gap-3 border border-purple-200/60">
+        <Info className="size-4 shrink-0 text-amber-700" />
+        <div className="flex-1 justify-start">
+          <span className="text-zinc-900 text-xs font-bold">
+            Notice:{" "}
+          </span>
+          <span className="text-zinc-900 text-xs font-normal">
+            ZoikoTax does not accept, hold, or transfer funds. The data displayed below represents validated instruction packages exported or ready for handoff to your selected corporate banking portals.
+          </span>
+        </div>
+      </div>
+
+      {/* Table Card */}
+      <div className="self-stretch p-5 bg-neutral-50 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4">
+        <div className="self-stretch flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div className="flex justify-start items-center gap-3 w-full sm:w-auto">
+            <div className="px-3.5 py-2 bg-stone-100 rounded-lg flex justify-start items-center">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search instructions..."
+                className="bg-transparent text-neutral-600 text-xs font-normal outline-none placeholder:text-neutral-400 w-40 sm:w-48"
+              />
+            </div>
+            <div className="px-3 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-300 flex justify-start items-start text-zinc-900 text-xs font-normal cursor-pointer">
+              Ready for Handoff
+            </div>
+          </div>
+          <div className="justify-start text-orange-600 text-xs font-semibold">
+            4 Active Validation Blocks Require Attention
+          </div>
+        </div>
+
+        {/* Scrollable Table Area */}
+        <div className="w-full overflow-x-auto">
+          {/* Header Row */}
+          <div className="p-3 bg-purple-50 rounded-lg inline-flex justify-start items-start min-w-[850px] w-full">
+            <div className="w-48 justify-start text-zinc-900 text-xs font-bold">
+              Instruction / ID
+            </div>
+            <div className="w-36 justify-start text-zinc-900 text-xs font-bold">
+              Authority / Payee
+            </div>
+            <div className="w-24 justify-start text-zinc-900 text-xs font-bold">
+              Period
+            </div>
+            <div className="w-28 justify-start text-zinc-900 text-xs font-bold">
+              Amount (USD)
+            </div>
+            <div className="w-36 justify-start text-zinc-900 text-xs font-bold">
+              Readiness Gate
+            </div>
+            <div className="w-36 justify-start text-zinc-900 text-xs font-bold">
+              Approval Policy
+            </div>
+            <div className="w-36 justify-start text-zinc-900 text-xs font-bold">
+              Handoff Status
+            </div>
           </div>
 
-          {/* Notice Callout */}
-          <div className="flex items-start sm:items-center gap-3 rounded-xl border border-[#D8CEDD] bg-[#FAF8FC] p-4 text-xs sm:text-sm text-[#18141B]">
-            <Info className="h-5 w-5 shrink-0 text-[#D65A2C] mt-0.5 sm:mt-0" />
-            <p className="leading-relaxed">
-              <strong className="font-semibold text-[#18141B]">Notice:</strong> ZoikoTax does not accept, hold, or transfer funds. The data displayed below represents validated instruction packages exported or ready for handoff to your selected corporate banking portals.
-            </p>
-          </div>
-
-          {/* Registry Table Container */}
-          <div className="overflow-hidden rounded-2xl border border-[#D8CEDD] bg-white/95 shadow-sm">
-            {/* Table Top Controls */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 sm:p-5 border-b border-[#EBE5EE]">
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <div className="relative flex-1 sm:w-64">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
-                  <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search instructions..."
-                    className="h-10 w-full rounded-lg border border-[#D8CEDD] bg-white pl-9 pr-3 text-xs sm:text-sm text-[#18141B] placeholder:text-neutral-400 focus:border-[#D65A2C] focus:outline-none focus:ring-1 focus:ring-[#D65A2C]"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="inline-flex h-10 items-center gap-2 rounded-lg border border-[#D8CEDD] bg-white px-3 text-xs font-semibold text-[#18141B] hover:bg-slate-50"
-                >
-                  <Filter className="h-3.5 w-3.5" />
-                  <span>Ready for Handoff</span>
-                </button>
+          {/* Rows */}
+          {filteredRows.map((row) => (
+            <div
+              key={row.id}
+              className="p-3 border-b border-zinc-300 inline-flex justify-start items-center min-w-[850px] w-full"
+            >
+              <div className="w-48 justify-start text-zinc-900 text-xs font-semibold">
+                {row.id}
               </div>
-
-              <span className="text-xs font-semibold text-[#D65A2C]">
-                4 Active Validation Blocks Require Attention
-              </span>
+              <div className="w-36 justify-start text-neutral-600 text-xs font-normal">
+                {row.payee}
+              </div>
+              <div className="w-24 justify-start text-neutral-600 text-xs font-normal">
+                {row.period}
+              </div>
+              <div className="w-28 justify-start text-zinc-900 text-xs font-semibold">
+                {row.amount}
+              </div>
+              <div className="w-36 flex justify-start items-start">
+                <div
+                  className={`px-2 py-1 rounded-sm flex justify-start items-start ${row.readinessClass}`}
+                >
+                  <div className="justify-start text-xs font-semibold">
+                    {row.readiness}
+                  </div>
+                </div>
+              </div>
+              <div className="w-36 flex justify-start items-start">
+                <div className="justify-start text-zinc-900 text-xs font-normal">
+                  {row.approval}
+                </div>
+              </div>
+              <div className="w-36 flex justify-start items-start">
+                <div
+                  className={`px-2 py-1 rounded-sm flex justify-start items-start ${row.handoffClass}`}
+                >
+                  <div className="justify-start text-xs font-semibold">
+                    {row.handoff}
+                  </div>
+                </div>
+              </div>
             </div>
-
-            {/* Responsive Table */}
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-[#FAF8FC] border-b border-[#EBE5EE]">
-                    <th className="py-3.5 px-4 sm:px-6 text-xs font-bold text-[#18141B]">Instruction / ID</th>
-                    <th className="py-3.5 px-4 text-xs font-bold text-[#18141B]">Authority / Payee</th>
-                    <th className="py-3.5 px-4 text-xs font-bold text-[#18141B]">Period</th>
-                    <th className="py-3.5 px-4 text-xs font-bold text-[#18141B]">Amount (USD)</th>
-                    <th className="py-3.5 px-4 text-xs font-bold text-[#18141B]">Readiness Gate</th>
-                    <th className="py-3.5 px-4 text-xs font-bold text-[#18141B]">Approval Policy</th>
-                    <th className="py-3.5 px-4 sm:px-6 text-xs font-bold text-[#18141B]">Handoff Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#EBE5EE]">
-                  {rows.map((row) => (
-                    <tr key={row.id} className="hover:bg-slate-50/70 transition-colors">
-                      <td className="py-4 px-4 sm:px-6 text-xs sm:text-sm font-semibold text-[#18141B]">
-                        {row.id}
-                      </td>
-                      <td className="py-4 px-4 text-xs sm:text-sm text-[#535055]">
-                        {row.payee}
-                      </td>
-                      <td className="py-4 px-4 text-xs sm:text-sm text-[#535055]">
-                        {row.period}
-                      </td>
-                      <td className="py-4 px-4 text-xs sm:text-sm font-semibold text-[#18141B]">
-                        {row.amount}
-                      </td>
-                      <td className="py-4 px-4">
-                        {row.readinessType === "success" ? (
-                          <span className="inline-flex rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">
-                            {row.readiness}
-                          </span>
-                        ) : (
-                          <span className="inline-flex rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-semibold text-rose-700">
-                            {row.readiness}
-                          </span>
-                        )}
-                      </td>
-                      <td className="py-4 px-4 text-xs sm:text-sm text-[#18141B]">
-                        {row.approval}
-                      </td>
-                      <td className="py-4 px-4 sm:px-6">
-                        {row.handoffType === "success" ? (
-                          <span className="inline-flex rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">
-                            {row.handoff}
-                          </span>
-                        ) : (
-                          <span className="inline-flex rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
-                            {row.handoff}
-                          </span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

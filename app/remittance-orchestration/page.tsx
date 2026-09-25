@@ -34,78 +34,78 @@ export const metadata: Metadata = {
 
 export default function RemittanceOrchestrationPage() {
   return (
-    <div className="bg-[#FAF8FA] w-full overflow-x-clip">
+    <div className="w-full bg-purple-50 flex flex-col justify-start items-start overflow-x-clip">
       {/* 01. Hero */}
       <HeroSection />
 
-      {/* 02. Direct Answer */}
-      <DirectAnswerSection />
+        {/* 02. Direct Answer */}
+        <DirectAnswerSection />
 
-      {/* 03. The Telecom Bottleneck */}
-      <BottleneckSection />
+        {/* 03. The Telecom Bottleneck */}
+        <BottleneckSection />
 
-      {/* 04. The Remittance Lifecycle */}
-      <LifecycleSection />
+        {/* 04. The Remittance Lifecycle */}
+        <LifecycleSection />
 
-      {/* 05. System Proof: Workbench & Registry */}
-      <WorkbenchSection />
+        {/* 05. System Proof: Workbench & Registry */}
+        <WorkbenchSection />
 
-      {/* 06. In-Depth Inspection: Drawer */}
-      <InspectionSection />
+        {/* 06. In-Depth Inspection: Drawer */}
+        <InspectionSection />
 
-      {/* 07. Liability / Amount / Source Context */}
-      <LiabilityContextSection />
+        {/* 07. Liability / Amount / Source Context */}
+        <LiabilityContextSection />
 
-      {/* 08. Payee, Channel & Treasury Boundary */}
-      <TreasuryBoundarySection />
+        {/* 08. Payee, Channel & Treasury Boundary */}
+        <TreasuryBoundarySection />
 
-      {/* 09. Validation & Readiness Gates */}
-      <ValidationGatesSection />
+        {/* 09. Validation & Readiness Gates */}
+        <ValidationGatesSection />
 
-      {/* 10. Review, Approval & Segregation of Duties */}
-      <ReviewApprovalSection />
+        {/* 10. Review, Approval & Segregation of Duties */}
+        <ReviewApprovalSection />
 
-      {/* 11. Execution / Handoff Boundary */}
-      <HandoffSection />
+        {/* 11. Execution / Handoff Boundary */}
+        <HandoffSection />
 
-      {/* 12. Acknowledgement & Settlement-Confirmation Tracking */}
-      <TrackingSection />
+        {/* 12. Acknowledgement & Settlement-Confirmation Tracking */}
+        <TrackingSection />
 
-      {/* 13. Exceptions, Rejections, Cancellations & Supersession */}
-      <ExceptionsSection />
+        {/* 13. Exceptions, Rejections, Cancellations & Supersession */}
+        <ExceptionsSection />
 
-      {/* 14. Compliance & Filing Interlock */}
-      <ComplianceInterlockSection />
+        {/* 14. Compliance & Filing Interlock */}
+        <ComplianceInterlockSection />
 
-      {/* 15. Reconciliation Interlock */}
-      <ReconciliationSection />
+        {/* 15. Reconciliation Interlock */}
+        <ReconciliationSection />
 
-      {/* 16. Evidence, Auditability & Historical Replay */}
-      <HistoricalReplaySection />
+        {/* 16. Evidence, Auditability & Historical Replay */}
+        <HistoricalReplaySection />
 
-      {/* 17. Operating Models */}
-      <OperatingModelsSection />
+        {/* 17. Operating Models */}
+        <OperatingModelsSection />
 
-      {/* 18. Integrations & Coexistence */}
-      <IntegrationsSection />
+        {/* 18. Integrations & Coexistence */}
+        <IntegrationsSection />
 
-      {/* 19. Coverage & Availability Truth */}
-      <CoverageSection />
+        {/* 19. Coverage & Availability Truth */}
+        <CoverageSection />
 
-      {/* 20. Governed Cognition Boundary (AI) */}
-      <AIBoundarySection />
+        {/* 20. Governed Cognition Boundary (AI) */}
+        <AIBoundarySection />
 
-      {/* 21. Trust, Security, Privacy & Sensitive Payment Data */}
-      <TrustSection />
+        {/* 21. Trust, Security, Privacy & Sensitive Payment Data */}
+        <TrustSection />
 
-      {/* 22. Sales / Buyer Outcomes / Retention Logic */}
-      <BuyerOutcomesSection />
+        {/* 22. Sales / Buyer Outcomes / Retention Logic */}
+        <BuyerOutcomesSection />
 
-      {/* 23. FAQ */}
-      <FAQSection />
+        {/* 23. FAQ */}
+        <FAQSection />
 
-      {/* 24. Control The Handoff Conversion CTA */}
-      <ConversionSection />
+        {/* 24. Control The Handoff Conversion CTA */}
+        <ConversionSection />
     </div>
   );
 }

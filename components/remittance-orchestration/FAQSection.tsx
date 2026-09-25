@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 export default function FAQSection() {
@@ -33,60 +32,46 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/remittance-orchestration/Operational Challenges Section.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-20 sm:py-24 bg-purple-50 flex flex-col justify-start items-start gap-10">
+      <div className="self-stretch flex flex-col justify-start items-start gap-4">
+        <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
+          FAQ
+        </div>
+        <h2 className="justify-start text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+          Direct answers. No inflated claims.
+        </h2>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#D65A2C]">
-              FAQ
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#18141B]">
-              Direct answers. No inflated claims.
-            </h2>
-          </div>
-
-          {/* FAQ List */}
-          <div className="flex flex-col divide-y divide-[#D8CEDD] border-y border-[#D8CEDD] bg-white/70 backdrop-blur-sm rounded-2xl px-6 sm:px-8 py-2">
-            {faqs.map((faq, idx) => {
-              const isOpen = openIndices.includes(idx);
-              return (
-                <div key={idx} className="py-5 sm:py-6 flex flex-col gap-2.5">
-                  <button
-                    type="button"
-                    onClick={() => toggle(idx)}
-                    className="flex w-full items-center justify-between gap-4 text-left transition-colors"
-                  >
-                    <span className="text-base sm:text-lg font-semibold text-[#18141B]">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`h-5 w-5 shrink-0 text-[#535055] transition-transform duration-200 ${
-                        isOpen ? "rotate-180 text-[#D65A2C]" : ""
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <p className="text-sm sm:text-base font-normal text-[#535055] leading-relaxed pr-6">
-                      {faq.a}
-                    </p>
-                  )}
+      <div className="self-stretch flex flex-col justify-start items-start overflow-hidden">
+        {faqs.map((faq, idx) => {
+          const isOpen = openIndices.includes(idx);
+          return (
+            <div
+              key={idx}
+              className="self-stretch py-5 border-b border-zinc-300 flex flex-col justify-start items-start gap-2.5"
+            >
+              <button
+                type="button"
+                onClick={() => toggle(idx)}
+                className="self-stretch flex justify-between items-center text-left"
+              >
+                <span className="justify-start text-zinc-900 text-lg font-semibold">
+                  {faq.q}
+                </span>
+                <ChevronDown
+                  className={`size-4 text-zinc-600 transition-transform duration-200 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isOpen && (
+                <div className="self-stretch justify-start text-neutral-600 text-sm font-normal leading-relaxed pr-6">
+                  {faq.a}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Check } from "lucide-react";
 
 export default function CoverageSection() {
   const cards = [
@@ -33,58 +32,52 @@ export default function CoverageSection() {
   ];
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 relative bg-indigo-950 flex flex-col justify-start items-start gap-10 overflow-hidden">
+      {/* Background Image */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/remittance-orchestration/Coverage Background Image.png"
           alt=""
           fill
-          sizes="100vw"
+          sizes="(max-width: 1440px) 100vw, 1440px"
           className="object-cover object-center"
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#F4A261]">
-              COVERAGE &amp; AVAILABILITY TRUTH
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-              Capability is activated through governed packs.
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-zinc-300">
-              Coverage is not universal. Each market pack is onboarded individually with jurisdiction-specific configuration, compliance validation, and readiness states.
-            </p>
+      <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-10">
+        <div className="self-stretch flex flex-col justify-start items-start gap-4">
+          <div className="justify-start text-orange-300 text-sm font-bold font-['Sora']">
+            COVERAGE &amp; AVAILABILITY TRUTH
           </div>
+          <h2 className="self-stretch justify-start text-neutral-50 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+            Capability is activated through governed packs.
+          </h2>
+          <p className="self-stretch justify-start text-zinc-300 text-lg sm:text-xl font-medium  leading-8">
+            Coverage is not universal. Each market pack is onboarded individually with jurisdiction-specific configuration, compliance validation, and readiness states.
+          </p>
+        </div>
 
-          {/* 3 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cards.map((card, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col justify-start items-start gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-7 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20"
-              >
-                <h3 className="text-xl font-semibold text-white">
-                  {card.title}
-                </h3>
-                <div className="flex flex-col gap-3">
-                  {card.items.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5">
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 mt-0.5">
-                        <Check className="h-3.5 w-3.5 stroke-[3]" />
-                      </div>
-                      <span className="text-sm font-normal text-zinc-300 leading-snug">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+        <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cards.map((card, idx) => (
+            <div
+              key={idx}
+              className="p-7 bg-white/5 rounded-2xl outline outline-1 outline-offset-[-1px] outline-white/10 flex flex-col justify-start items-start gap-4"
+            >
+              <h3 className="justify-start text-neutral-50 text-xl font-semibold font-['Sora'] leading-6">
+                {card.title}
+              </h3>
+              <div className="self-stretch flex flex-col justify-start items-start gap-3">
+                {card.items.map((item, i) => (
+                  <div
+                    key={i}
+                    className="self-stretch justify-start text-zinc-300 text-sm font-normal"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

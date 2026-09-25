@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Check } from "lucide-react";
 
 export default function TrustSection() {
   const cards = [
@@ -33,59 +31,40 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/remittance-orchestration/Operational Challenges Section.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 flex flex-col justify-start items-start gap-10">
+      <div className="self-stretch flex flex-col justify-start items-start gap-4">
+        <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
+          TRUST, SECURITY, PRIVACY &amp; SENSITIVE PAYMENT DATA
+        </div>
+        <h2 className="self-stretch justify-start text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+          Sensitive payment data is handled with care.
+        </h2>
+        <p className="self-stretch justify-start text-neutral-600 text-lg sm:text-xl font-medium  leading-8">
+          The platform is designed to protect sensitive payment data, preserve privacy, and maintain security controls without turning the system into a money transmitter or payment processor.
+        </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#D65A2C]">
-              TRUST, SECURITY, PRIVACY &amp; SENSITIVE PAYMENT DATA
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#18141B]">
-              Sensitive payment data is handled with care.
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-[#535055]">
-              The platform is designed to protect sensitive payment data, preserve privacy, and maintain security controls without turning the system into a money transmitter or payment processor.
-            </p>
-          </div>
-
-          {/* 3 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cards.map((card, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col justify-start items-start gap-5 rounded-2xl border border-[#D8CEDD] bg-[#FAF8FC]/90 p-6 sm:p-7 shadow-sm transition-all hover:shadow-md"
-              >
-                <h3 className="text-xl font-semibold text-[#18141B]">
-                  {card.title}
-                </h3>
-                <div className="flex flex-col gap-3">
-                  {card.items.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5">
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mt-0.5">
-                        <Check className="h-3.5 w-3.5 stroke-[3]" />
-                      </div>
-                      <span className="text-sm font-normal text-[#18141B] leading-snug">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+      <div className="self-stretch grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cards.map((card, idx) => (
+          <div
+            key={idx}
+            className="p-7 bg-purple-50 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4"
+          >
+            <h3 className="justify-start text-zinc-900 text-xl font-semibold font-['Sora'] leading-6">
+              {card.title}
+            </h3>
+            <div className="self-stretch flex flex-col justify-start items-start gap-3">
+              {card.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="self-stretch justify-start text-zinc-900 text-sm font-normal"
+                >
+                  ✓ {item}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

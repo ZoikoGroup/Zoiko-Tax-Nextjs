@@ -17,67 +17,61 @@ export default function AIBoundarySection() {
   ];
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 relative bg-indigo-950 flex flex-col justify-start items-start gap-10 overflow-hidden">
+      {/* Background Image */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/remittance-orchestration/AI Boundary Background Image.png"
           alt=""
           fill
-          sizes="100vw"
+          sizes="(max-width: 1440px) 100vw, 1440px"
           className="object-cover object-center"
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#F4A261]">
-              GOVERNED COGNITION BOUNDARY
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-              AI assists. Approved rules decide. Evidence proves.
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-zinc-300">
-              To maintain strict corporate governance, autonomous models cannot execute payments or overwrite compliance configurations.
-            </p>
+      <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-10">
+        <div className="self-stretch flex flex-col justify-start items-start gap-4">
+          <div className="justify-start text-orange-300 text-sm font-bold font-['Sora']">
+            GOVERNED COGNITION BOUNDARY
+          </div>
+          <h2 className="self-stretch justify-start text-neutral-50 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+            AI assists. Approved rules decide. Evidence proves.
+          </h2>
+          <p className="self-stretch justify-start text-zinc-300 text-lg sm:text-xl font-medium  leading-8">
+            To maintain strict corporate governance, autonomous models cannot execute payments or overwrite compliance configurations.
+          </p>
+        </div>
+
+        <div className="self-stretch grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          <div className="p-7 bg-white/5 rounded-2xl outline outline-1 outline-offset-[-1px] outline-white/10 flex flex-col justify-start items-start gap-4">
+            <h3 className="justify-start text-orange-300 text-xl font-semibold font-['Sora'] leading-6">
+              How AI Assists Your Teams
+            </h3>
+            <div className="self-stretch flex flex-col justify-start items-start gap-3">
+              {assists.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="self-stretch justify-start text-zinc-300 text-sm font-normal leading-relaxed"
+                >
+                  • {item}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* 2 Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            {/* Left Card: How AI Assists */}
-            <div className="flex flex-col justify-start gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
-              <h3 className="text-xl font-semibold text-[#F4A261]">
-                How AI Assists Your Teams
-              </h3>
-              <div className="flex flex-col gap-3.5">
-                {assists.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <span className="text-sm text-[#F4A261] font-bold mt-0.5">•</span>
-                    <span className="text-sm font-normal text-zinc-300 leading-relaxed">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Card: What AI Cannot Do */}
-            <div className="flex flex-col justify-start gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
-              <h3 className="text-xl font-semibold text-white">
-                What AI Cannot &amp; Will Not Do
-              </h3>
-              <div className="flex flex-col gap-3.5">
-                {cannotDo.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <span className="text-sm text-rose-400 font-bold mt-0.5">•</span>
-                    <span className="text-sm font-normal text-zinc-300 leading-relaxed">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          <div className="p-7 bg-white/5 rounded-2xl outline outline-1 outline-offset-[-1px] outline-white/10 flex flex-col justify-start items-start gap-4">
+            <h3 className="justify-start text-neutral-50 text-xl font-semibold font-['Sora'] leading-6">
+              What AI Cannot &amp; Will Not Do
+            </h3>
+            <div className="self-stretch flex flex-col justify-start items-start gap-3">
+              {cannotDo.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="self-stretch justify-start text-zinc-300 text-sm font-normal leading-relaxed"
+                >
+                  • {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>

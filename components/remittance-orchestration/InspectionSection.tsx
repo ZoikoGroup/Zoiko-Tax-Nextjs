@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { Check } from "lucide-react";
 
 export default function InspectionSection() {
   const metadata = [
@@ -10,7 +8,7 @@ export default function InspectionSection() {
     { label: "Liability Source", value: "ZoikoTax Filing Pack #842", isOrange: true },
     { label: "Assigned Payer", value: "Telecom Americas Inc.", isOrange: false },
     { label: "Target Payee", value: "FCC Universal Service Fund", isOrange: false },
-    { label: "Handoff Standard", value: "ISO 20022 XML Package", isOrange: false },
+    { label: "Handoff Standard", value: "ISO 20022 XML Package", isOrange: false, isMedium: true },
   ];
 
   const gates = [
@@ -23,79 +21,64 @@ export default function InspectionSection() {
   ];
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <Image
-          src="/remittance-orchestration/Operational Challenges Section.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 flex flex-col justify-start items-start gap-10">
+      <div className="self-stretch flex flex-col justify-start items-start gap-4">
+        <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
+          IN-DEPTH INSPECTION
+        </div>
+        <h2 className="justify-start text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+          Instruction Detail &amp; Evidence Drawer
+        </h2>
+        <p className="self-stretch justify-start text-neutral-600 text-lg sm:text-xl font-medium  leading-8">
+          Durable data tracking proves the &quot;Why&quot; and &quot;Under whose authority&quot; behind every external treasury transmission packet.
+        </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#D65A2C]">
-              IN-DEPTH INSPECTION
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#18141B]">
-              Instruction Detail &amp; Evidence Drawer
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-[#535055]">
-              Durable data tracking proves the &quot;Why&quot; and &quot;Under whose authority&quot; behind every external treasury transmission packet.
-            </p>
+      <div className="self-stretch grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        {/* Left Card: Remittance Identity */}
+        <div className="p-7 bg-neutral-50 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-between gap-5">
+          <h3 className="justify-start text-zinc-900 text-xl font-semibold font-['Sora'] leading-6">
+            Remittance Identity
+          </h3>
+          <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
+            {metadata.map((item, idx) => (
+              <div
+                key={idx}
+                className="self-stretch inline-flex justify-between items-start w-full border-b border-zinc-200/50 pb-2 last:border-b-0 last:pb-0"
+              >
+                <div className="justify-start text-neutral-600 text-xs font-normal">
+                  {item.label}
+                </div>
+                <div
+                  className={`justify-start text-xs ${
+                    item.isOrange
+                      ? "text-orange-600 font-semibold"
+                      : item.isMedium
+                      ? "text-zinc-900 font-medium"
+                      : "text-zinc-900 font-semibold"
+                  }`}
+                >
+                  {item.value}
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* 2 Column Detail Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            {/* Left Card: Remittance Identity */}
-            <div className="flex flex-col justify-between gap-6 rounded-2xl border border-[#D8CEDD] bg-white/95 p-6 sm:p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-[#18141B]">
-                Remittance Identity
-              </h3>
-              <div className="flex flex-col gap-4">
-                {metadata.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between gap-4 border-b border-[#F0EBF2] pb-3 last:border-0 last:pb-0"
-                  >
-                    <span className="text-xs sm:text-sm text-[#535055]">
-                      {item.label}
-                    </span>
-                    <span
-                      className={`text-xs sm:text-sm font-semibold text-right ${
-                        item.isOrange ? "text-[#D65A2C]" : "text-[#18141B]"
-                      }`}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
+        {/* Right Card: System Readiness Gates */}
+        <div className="p-7 bg-indigo-950 rounded-[20px] outline outline-1 outline-offset-[-1px] outline-white/10 flex flex-col justify-start items-start gap-5">
+          <h3 className="justify-start text-neutral-50 text-xl font-semibold font-['Sora'] leading-6">
+            System Readiness Gates
+          </h3>
+          <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+            {gates.map((gate, idx) => (
+              <div
+                key={idx}
+                className="justify-start text-zinc-300 text-xs sm:text-sm font-normal leading-relaxed"
+              >
+                ✓ {gate}
               </div>
-            </div>
-
-            {/* Right Card: System Readiness Gates */}
-            <div className="flex flex-col justify-start gap-5 rounded-2xl border border-white/10 bg-[#1E112A] p-6 sm:p-8 shadow-xl">
-              <h3 className="text-xl font-semibold text-white">
-                System Readiness Gates
-              </h3>
-              <div className="flex flex-col gap-3.5">
-                {gates.map((gate, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 mt-0.5">
-                      <Check className="h-3.5 w-3.5 stroke-[3]" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-normal text-zinc-300 leading-snug">
-                      {gate}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

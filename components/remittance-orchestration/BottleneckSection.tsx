@@ -38,9 +38,9 @@ export default function BottleneckSection() {
   ];
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-16 sm:py-20 lg:py-24">
-      {/* Background Image - Full Opacity */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+    <section className="w-full px-4 sm:px-8 lg:px-20 py-16 sm:py-20 relative flex flex-col justify-start items-start gap-10 overflow-hidden">
+      {/* Background Image */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/remittance-orchestration/Operational Challenges Section.png"
           alt=""
@@ -50,42 +50,38 @@ export default function BottleneckSection() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-[#D65A2C]">
-              THE TELECOM BOTTLENECK
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#18141B]">
-              Why Telecom Remittance is Complex
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-[#535055]">
-              In telecoms, transaction high-volume and jurisdictional fragmentation make tracking liability remittance incredibly error-prone. One missing validation link can lead to catastrophic tax penalties.
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col justify-start items-start gap-10">
+        <div className="self-stretch flex flex-col justify-start items-start gap-4">
+        <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
+          THE TELECOM BOTTLENECK
+        </div>
+        <h2 className="justify-start text-zinc-900 text-3xl sm:text-4xl lg:text-5xl font-bold font-['Sora'] leading-tight lg:leading-[48.40px]">
+          Why Telecom Remittance is Complex
+        </h2>
+        <p className="self-stretch justify-start text-neutral-600 text-lg sm:text-xl font-medium  leading-8">
+          In telecoms, transaction high-volume and jurisdictional fragmentation make tracking liability remittance incredibly error-prone. One missing validation link can lead to catastrophic tax penalties.
+        </p>
+      </div>
+
+      <div className="self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {challenges.map((c, idx) => (
+          <div
+            key={idx}
+            className="p-6 bg-neutral-50 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-3"
+          >
+            <div className="justify-start text-orange-600 text-xs font-bold uppercase">
+              {c.num}
+            </div>
+            <h3 className="justify-start text-zinc-900 text-xl font-semibold font-['Sora'] leading-6">
+              {c.title}
+            </h3>
+            <p className="self-stretch justify-start text-neutral-600 text-xs font-normal  leading-5">
+              {c.desc}
             </p>
           </div>
-
-          {/* 6 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {challenges.map((c, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col justify-start items-start gap-3 rounded-2xl border border-[#D8CEDD] bg-white/90 p-6 sm:p-7 shadow-sm transition-all hover:shadow-md hover:border-[#D65A2C]/40"
-              >
-                <span className="text-xs font-bold uppercase tracking-wider text-[#D65A2C]">
-                  {c.num}
-                </span>
-                <h3 className="text-xl font-semibold text-[#18141B]">
-                  {c.title}
-                </h3>
-                <p className="text-sm font-normal text-[#535055] leading-relaxed">
-                  {c.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
     </section>
   );
 }
