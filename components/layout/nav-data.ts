@@ -24,6 +24,11 @@ const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({
     label,
     href:
+    label === "Platform Overview"
+      ? "/platform-overview"
+      :label  === "Remittance Orchestration"
+        ? "/remittance-orchestration"
+        : 
       label === "Tax Determination"
         ? "/determination"
         : label === "Exemptions & Certificates"
