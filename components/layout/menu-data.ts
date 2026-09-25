@@ -99,7 +99,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Core Capabilities",
         icon: Database,
         items: [
-          item("Platform Overview", "How the full platform works", Compass),
+          item("Platform Overview", "How the full platform works", Compass, "/platform-overview"),
           item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator, "/determination"),
           item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck, "/exemptions-certificates"),
           item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck),
@@ -110,7 +110,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Control & Operations",
         icon: Settings,
         items: [
-          item("Remittance Orchestration", "Governed remittance instructions", CreditCard),
+          item("Remittance Orchestration", "Governed remittance instructions", CreditCard, "/remittance-orchestration"),
           item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText),
           item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity),
           item("Evidence & Replay", "Trace historical authoritative outcomes", Clock),

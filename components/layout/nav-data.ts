@@ -24,11 +24,15 @@ const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({
     label,
     href:
-      label === "Tax Determination"
-        ? "/determination"
-        : label === "Exemptions & Certificates"
-          ? "/exemptions-certificates"
-          : "#",
+      label === "Platform Overview"
+        ? "/platform-overview"
+        : label === "Tax Determination"
+          ? "/determination"
+          : label === "Exemptions & Certificates"
+            ? "/exemptions-certificates"
+            : label === "Remittance Orchestration"
+              ? "/remittance-orchestration"
+              : "#",
   }));
 
 export const footerColumns: FooterColumn[] = [
