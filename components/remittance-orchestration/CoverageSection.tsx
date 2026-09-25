@@ -32,19 +32,19 @@ export default function CoverageSection() {
   ];
 
   return (
-    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 relative bg-indigo-950 flex flex-col justify-start items-start gap-10 overflow-hidden">
+    <section className="w-full px-4 sm:px-8 lg:px-20 py-16 sm:py-20 relative bg-indigo-950 flex flex-col justify-start items-start gap-10 overflow-hidden">
       {/* Background Image */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/remittance-orchestration/Coverage Background Image.png"
           alt=""
           fill
-          sizes="(max-width: 1440px) 100vw, 1440px"
+          sizes="100vw"
           className="object-cover object-center"
         />
       </div>
 
-      <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-10">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col justify-start items-start gap-10">
         <div className="self-stretch flex flex-col justify-start items-start gap-4">
           <div className="justify-start text-orange-300 text-sm font-bold font-['Sora']">
             COVERAGE &amp; AVAILABILITY TRUTH
