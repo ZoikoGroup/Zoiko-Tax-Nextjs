@@ -28,11 +28,19 @@ const links = (...labels: string[]): NavLink[] =>
         ? "/determination"
         : label === "Exemptions & Certificates"
           ? "/exemptions-certificates"
-          : label === "E-Invoicing & CTC"
-            ? "/e-invoicing-ctc"
-            : label === "Reconciliation"
-              ? "/reconciliation"
-              : "#",
+          : label === "Compliance & Filing"
+            ? "/compliance-filing"
+            : label === "Regulatory Obligations"
+              ? "/regulatory-obligations"
+              : label === "E-Invoicing & CTC"
+                ? "/e-invoicing-ctc"
+                : label === "Reconciliation"
+                  ? "/reconciliation"
+                  : label === "Intelligence Fabric"
+                    ? "/intelligence-fabric"
+                    : label === "Evidence & Auditability"
+                      ? "/evidence-auditability"
+                      : "#",
   }));
 
 export const footerColumns: FooterColumn[] = [

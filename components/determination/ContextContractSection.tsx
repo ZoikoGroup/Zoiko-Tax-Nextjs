@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { SectionContainer, SectionHeader, StatusBadge, Reveal } from "./shared";
+import { SectionHeader, StatusBadge, Reveal } from "./shared";
 import { contractRows } from "./determination-data";
 
 export default function ContextContractSection() {
