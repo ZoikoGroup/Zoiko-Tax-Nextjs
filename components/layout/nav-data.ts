@@ -24,15 +24,28 @@ const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({
     label,
     href:
-      label === "Platform Overview"
-        ? "/platform-overview"
-        : label === "Tax Determination"
-          ? "/determination"
-          : label === "Exemptions & Certificates"
-            ? "/exemptions-certificates"
-            : label === "Remittance Orchestration"
-              ? "/remittance-orchestration"
-              : "#",
+    label === "Platform Overview"
+      ? "/platform-overview"
+      :label  === "Remittance Orchestration"
+        ? "/remittance-orchestration"
+        : 
+      label === "Tax Determination"
+        ? "/determination"
+        : label === "Exemptions & Certificates"
+          ? "/exemptions-certificates"
+          : label === "Compliance & Filing"
+            ? "/compliance-filing"
+            : label === "Regulatory Obligations"
+              ? "/regulatory-obligations"
+              : label === "E-Invoicing & CTC"
+                ? "/e-invoicing-ctc"
+                : label === "Reconciliation"
+                  ? "/reconciliation"
+                  : label === "Intelligence Fabric"
+                    ? "/intelligence-fabric"
+                    : label === "Evidence & Auditability"
+                      ? "/evidence-auditability"
+                      : "#",
   }));
 
 export const footerColumns: FooterColumn[] = [
