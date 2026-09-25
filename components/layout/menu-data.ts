@@ -164,8 +164,8 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall),
           item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare),
-          item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio),
-          item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu),
+          item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio, "/broadband-fixed-wireless"),
+          item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu, "/iot-m2m-satellite"),
         ],
       },
       {
