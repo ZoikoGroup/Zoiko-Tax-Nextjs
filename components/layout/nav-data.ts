@@ -30,7 +30,13 @@ const links = (...labels: string[]): NavLink[] =>
           ? "/exemptions-certificates"
           : label === "Compliance & Filing"
             ? "/compliance-filing"
-            : "#",
+            : label === "Regulatory Obligations"
+              ? "/regulatory-obligations"
+              : label === "E-Invoicing & CTC"
+                ? "/e-invoicing-ctc"
+                : label === "Reconciliation"
+                  ? "/reconciliation"
+                  : "#",
   }));
 
 export const footerColumns: FooterColumn[] = [

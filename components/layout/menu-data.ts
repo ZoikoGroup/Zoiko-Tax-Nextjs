@@ -102,7 +102,7 @@ export const megaMenus: MegaMenu[] = [
           item("Platform Overview", "How the full platform works", Compass),
           item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator, "/determination"),
           item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck, "/exemptions-certificates"),
-          item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck),
+          item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck, "/regulatory-obligations"),
           item(
             "Compliance & Filing",
             "Prepare, review and track filings",
@@ -116,8 +116,8 @@ export const megaMenus: MegaMenu[] = [
         icon: Settings,
         items: [
           item("Remittance Orchestration", "Governed remittance instructions", CreditCard),
-          item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText),
-          item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity),
+          item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText, "/e-invoicing-ctc"),
+          item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity, "/reconciliation"),
           item("Evidence & Replay", "Trace historical authoritative outcomes", Clock),
           item("Shadow Assurance", "Compare governed outcomes safely", Eye),
         ],
@@ -198,7 +198,7 @@ export const megaMenus: MegaMenu[] = [
         icon: Settings,
         items: [
           item("Tax Determination", "Availability by exact capability", Calculator, "/determination"),
-          item("Regulatory Obligations", "Availability by exact capability", ShieldCheck),
+          item("Regulatory Obligations", "Availability by exact capability", ShieldCheck, "/regulatory-obligations"),
           item(
             "Compliance & Filing",
             "Availability by exact capability",
@@ -206,7 +206,7 @@ export const megaMenus: MegaMenu[] = [
             "/compliance-filing"
           ),
           item("Remittance", "Supported orchestration, not fund custody", CreditCard),
-          item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText),
+          item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText, "/e-invoicing-ctc"),
           item("Managed Compliance", "Requires production and operational readiness", UserCheck),
         ],
       },
