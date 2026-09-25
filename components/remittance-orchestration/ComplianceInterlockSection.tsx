@@ -31,8 +31,9 @@ export default function ComplianceInterlockSection() {
   ];
 
   return (
-    <section className="self-stretch px-4 sm:px-8 lg:px-20 py-16 sm:py-20 bg-purple-50 flex flex-col justify-start items-start gap-10">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4">
+    <section className="w-full px-4 sm:px-8 lg:px-20 py-16 sm:py-20 bg-purple-50 flex flex-col justify-start items-start">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col justify-start items-start gap-10">
+        <div className="self-stretch flex flex-col justify-start items-start gap-4">
         <div className="justify-start text-orange-600 text-sm font-bold font-['Sora']">
           COMPLIANCE &amp; FILING INTERLOCK
         </div>
@@ -66,6 +67,7 @@ export default function ComplianceInterlockSection() {
           </div>
         ))}
       </div>
+    </div>
     </section>
   );
 }
