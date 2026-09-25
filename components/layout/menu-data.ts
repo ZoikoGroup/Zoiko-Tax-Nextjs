@@ -196,7 +196,7 @@ export const megaMenus: MegaMenu[] = [
           item("Regulatory Obligations", "Availability by exact capability", ShieldCheck),
           item("Compliance & Filing", "Availability by exact capability", ClipboardCheck),
           item("Remittance", "Supported orchestration, not fund custody", CreditCard),
-          item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText),
+          item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText, "/e-invoicing-ctc"),
           item("Managed Compliance", "Requires production and operational readiness", UserCheck),
         ],
       },
