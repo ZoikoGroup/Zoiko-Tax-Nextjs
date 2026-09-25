@@ -119,14 +119,19 @@ export const megaMenus: MegaMenu[] = [
           item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText),
           item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity),
           item("Evidence & Replay", "Trace historical authoritative outcomes", Clock),
-          item("Shadow Assurance", "Compare governed outcomes safely", Eye),
+          item("Shadow Assurance", "Compare governed outcomes safely", Eye, "/shadow-assurance"),
         ],
       },
       {
         title: "Continuity & Intelligence",
         icon: Activity,
         items: [
-          item("Migration & Onboarding", "Profile, map, reconcile and cut over", GitBranch),
+          item(
+            "Migration & Onboarding",
+            "Profile, map, reconcile and cut over",
+            GitBranch,
+            "/migration-onboarding"
+          ),
           item(
             "ZoikoTax Intelligence Fabric™",
             "Governed AI for monitoring and assistance",
