@@ -127,7 +127,12 @@ export const megaMenus: MegaMenu[] = [
         icon: Activity,
         items: [
           item("Migration & Onboarding", "Profile, map, reconcile and cut over", GitBranch),
-          item("ZoikoTax Intelligence Fabric™", "Governed AI for monitoring and assistance", Cpu),
+          item(
+            "ZoikoTax Intelligence Fabric™",
+            "Governed AI for monitoring and assistance",
+            Cpu,
+            "/intelligence-fabric"
+          ),
         ],
       },
     ],
@@ -292,7 +297,12 @@ export const megaMenus: MegaMenu[] = [
         icon: ShieldCheck,
         items: [
           item("AI Governance", "Bounded intelligence with human authority", Shield),
-          item("Evidence & Auditability", "Decision lineage and historical replay", ClipboardCheck),
+          item(
+            "Evidence & Auditability",
+            "Decision lineage and historical replay",
+            ClipboardCheck,
+            "/evidence-auditability"
+          ),
           item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility),
           item("Responsible Disclosure", "Security vulnerability reporting program", Bug),
         ],

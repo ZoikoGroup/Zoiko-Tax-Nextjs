@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { WHY_HARD_DATA } from "./e-invoicing-data";
-import { SectionContainer, SectionHeader, Reveal } from "./shared";
+import { SectionHeader, Reveal } from "./shared";
 
 export default function WhyHardSection() {
   return (
