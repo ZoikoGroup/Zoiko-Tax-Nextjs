@@ -32,8 +32,13 @@ const links = (...labels: string[]): NavLink[] =>
             ? "/e-invoicing-ctc"
             : label === "Reconciliation"
               ? "/reconciliation"
-              : "#",
+              : label === "Coverage Overview"
+                ? "/coverage-overview"
+                : label === "Status & Releases"
+                  ? "/status-and-releases"
+                  : "#",
   }));
+
 
 export const footerColumns: FooterColumn[] = [
   {
