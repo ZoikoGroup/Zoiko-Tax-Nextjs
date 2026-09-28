@@ -158,8 +158,8 @@ export const megaMenus: MegaMenu[] = [
         icon: Building,
         items: [
           item("Mobile Network Operators", "Large-scale portfolios and multi-jurisdiction operations.", Wifi),
-          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2),
-          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers),
+          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2, "/mvno"),
+          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers, "/mvne-mvna"),
           item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
         ],
       },
@@ -167,8 +167,8 @@ export const megaMenus: MegaMenu[] = [
         title: "Service Types",
         icon: Phone,
         items: [
-          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall),
-          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare),
+          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall, "/voice-voip-sip"),
+          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare, "/ucaas-ccaas-cpaas"),
           item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio, "/broadband-fixed-wireless"),
           item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu, "/iot-m2m-satellite"),
         ],

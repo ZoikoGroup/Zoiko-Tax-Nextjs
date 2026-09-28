@@ -20,33 +20,30 @@ export type Office = {
   phone: string;
 };
 
+/** Footer labels that have a built page; anything not listed links to "#". */
+const PAGE_HREFS: Record<string, string> = {
+  "Platform Overview": "/platform-overview",
+  "Tax Determination": "/determination",
+  "Exemptions & Certificates": "/exemptions-certificates",
+  "Regulatory Obligations": "/regulatory-obligations",
+  "Compliance & Filing": "/compliance-filing",
+  "Remittance Orchestration": "/remittance-orchestration",
+  "E-Invoicing & CTC": "/e-invoicing-ctc",
+  Reconciliation: "/reconciliation",
+  "Shadow Assurance": "/shadow-assurance",
+  "Migration & Onboarding": "/migration-onboarding",
+  "Intelligence Fabric": "/intelligence-fabric",
+  "Evidence & Auditability": "/evidence-auditability",
+  MVNOs: "/mvno",
+  "MVNEs & MVNAs": "/mvne-mvna",
+  "Voice, VoIP & SIP": "/voice-voip-sip",
+  "UCaaS & CPaaS": "/ucaas-ccaas-cpaas",
+  "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
+  "IoT & Satellite": "/iot-m2m-satellite",
+};
+
 const links = (...labels: string[]): NavLink[] =>
-  labels.map((label) => ({
-    label,
-    href:
-    label === "Platform Overview"
-      ? "/platform-overview"
-      :label  === "Remittance Orchestration"
-        ? "/remittance-orchestration"
-        : 
-      label === "Tax Determination"
-        ? "/determination"
-        : label === "Exemptions & Certificates"
-          ? "/exemptions-certificates"
-          : label === "Compliance & Filing"
-            ? "/compliance-filing"
-            : label === "Regulatory Obligations"
-              ? "/regulatory-obligations"
-              : label === "E-Invoicing & CTC"
-                ? "/e-invoicing-ctc"
-                : label === "Reconciliation"
-                  ? "/reconciliation"
-                  : label === "Intelligence Fabric"
-                    ? "/intelligence-fabric"
-                    : label === "Evidence & Auditability"
-                      ? "/evidence-auditability"
-                      : "#",
-  }));
+  labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
 
 export const footerColumns: FooterColumn[] = [
   {
