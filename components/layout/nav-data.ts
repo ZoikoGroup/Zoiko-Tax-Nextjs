@@ -20,24 +20,32 @@ export type Office = {
   phone: string;
 };
 
+/** Footer labels that have a built page; anything not listed links to "#". */
+const PAGE_HREFS: Record<string, string> = {
+  "Platform Overview": "/platform-overview",
+  "Tax Determination": "/determination",
+  "Exemptions & Certificates": "/exemptions-certificates",
+  "Regulatory Obligations": "/regulatory-obligations",
+  "Compliance & Filing": "/compliance-filing",
+  "Remittance Orchestration": "/remittance-orchestration",
+  "E-Invoicing & CTC": "/e-invoicing-ctc",
+  Reconciliation: "/reconciliation",
+  "Shadow Assurance": "/shadow-assurance",
+  "Migration & Onboarding": "/migration-onboarding",
+  "Intelligence Fabric": "/intelligence-fabric",
+  "Evidence & Auditability": "/evidence-auditability",
+  "Coverage Overview": "/coverage-overview",
+  "Status & Releases": "/status-and-releases",
+  MVNOs: "/mvno",
+  "MVNEs & MVNAs": "/mvne-mvna",
+  "Voice, VoIP & SIP": "/voice-voip-sip",
+  "UCaaS & CPaaS": "/ucaas-ccaas-cpaas",
+  "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
+  "IoT & Satellite": "/iot-m2m-satellite",
+};
+
 const links = (...labels: string[]): NavLink[] =>
-  labels.map((label) => ({
-    label,
-    href:
-      label === "Tax Determination"
-        ? "/determination"
-        : label === "Exemptions & Certificates"
-          ? "/exemptions-certificates"
-          : label === "E-Invoicing & CTC"
-            ? "/e-invoicing-ctc"
-            : label === "Reconciliation"
-              ? "/reconciliation"
-              : label === "Coverage Overview"
-                ? "/coverage-overview"
-                : label === "Status & Releases"
-                  ? "/status-and-releases"
-                  : "#",
-  }));
+  labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
 
 
 export const footerColumns: FooterColumn[] = [

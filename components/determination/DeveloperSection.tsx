@@ -56,7 +56,7 @@ export default function DeveloperSection() {
             <div className="lg:col-span-6">
               <div className="overflow-hidden rounded-xl bg-[#14091F] p-5 sm:p-6 font-mono text-xs sm:text-[13px] leading-relaxed border border-white/5 shadow-inner">
                 <div className="text-[#D65A2C] font-semibold">
-                  // CALCULATE COMPLIANCE TRANSACTION
+                  {"// CALCULATE COMPLIANCE TRANSACTION"}
                 </div>
                 <pre className="mt-3 text-[#E9DDF1] overflow-x-auto">
 {`POST /v2/determine

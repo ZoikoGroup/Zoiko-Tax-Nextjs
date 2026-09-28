@@ -99,30 +99,45 @@ export const megaMenus: MegaMenu[] = [
         title: "Core Capabilities",
         icon: Database,
         items: [
-          item("Platform Overview", "How the full platform works", Compass),
+          item("Platform Overview", "How the full platform works", Compass, "/platform-overview"),
           item("Tax Determination", "Supported telecom taxes, fees and levies", Calculator, "/determination"),
           item("Exemptions & Certificates", "Evidence and applicability controls", FileCheck, "/exemptions-certificates"),
-          item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck),
-          item("Compliance & Filing", "Prepare, review and track filings", ClipboardCheck),
+          item("Regulatory Obligations", "Registrations, duties and obligations", ShieldCheck, "/regulatory-obligations"),
+          item(
+            "Compliance & Filing",
+            "Prepare, review and track filings",
+            ClipboardCheck,
+            "/compliance-filing"
+          ),
         ],
       },
       {
         title: "Control & Operations",
         icon: Settings,
         items: [
-          item("Remittance Orchestration", "Governed remittance instructions", CreditCard),
-          item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText, "/e-invoicing-ctc"),
-          item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity, "/reconciliation"),
+          item("Remittance Orchestration", "Governed remittance instructions", CreditCard, "/remittance-orchestration"),
+          item("E-Invoicing & CTC", "Fiscal invoice lifecycle integration", ReceiptText),
+          item("Reconciliation", "Connect tax, invoice and accounting outcomes", Activity),
           item("Evidence & Replay", "Trace historical authoritative outcomes", Clock),
-          item("Shadow Assurance", "Compare governed outcomes safely", Eye),
+          item("Shadow Assurance", "Compare governed outcomes safely", Eye, "/shadow-assurance"),
         ],
       },
       {
         title: "Continuity & Intelligence",
         icon: Activity,
         items: [
-          item("Migration & Onboarding", "Profile, map, reconcile and cut over", GitBranch),
-          item("ZoikoTax Intelligence Fabric™", "Governed AI for monitoring and assistance", Cpu),
+          item(
+            "Migration & Onboarding",
+            "Profile, map, reconcile and cut over",
+            GitBranch,
+            "/migration-onboarding"
+          ),
+          item(
+            "ZoikoTax Intelligence Fabric™",
+            "Governed AI for monitoring and assistance",
+            Cpu,
+            "/intelligence-fabric"
+          ),
         ],
       },
     ],
@@ -143,8 +158,8 @@ export const megaMenus: MegaMenu[] = [
         icon: Building,
         items: [
           item("Mobile Network Operators", "Large-scale portfolios and multi-jurisdiction operations.", Wifi),
-          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2),
-          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers),
+          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2, "/mvno"),
+          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers, "/mvne-mvna"),
           item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
         ],
       },
@@ -152,10 +167,10 @@ export const megaMenus: MegaMenu[] = [
         title: "Service Types",
         icon: Phone,
         items: [
-          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall),
-          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare),
-          item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio),
-          item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu),
+          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall, "/voice-voip-sip"),
+          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare, "/ucaas-ccaas-cpaas"),
+          item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio, "/broadband-fixed-wireless"),
+          item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu, "/iot-m2m-satellite"),
         ],
       },
       {
@@ -194,8 +209,13 @@ export const megaMenus: MegaMenu[] = [
         icon: Settings,
         items: [
           item("Tax Determination", "Availability by exact capability", Calculator, "/determination"),
-          item("Regulatory Obligations", "Availability by exact capability", ShieldCheck),
-          item("Compliance & Filing", "Availability by exact capability", ClipboardCheck),
+          item("Regulatory Obligations", "Availability by exact capability", ShieldCheck, "/regulatory-obligations"),
+          item(
+            "Compliance & Filing",
+            "Availability by exact capability",
+            ClipboardCheck,
+            "/compliance-filing"
+          ),
           item("Remittance", "Supported orchestration, not fund custody", CreditCard),
           item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText, "/e-invoicing-ctc"),
           item("Managed Compliance", "Requires production and operational readiness", UserCheck),
@@ -283,7 +303,12 @@ export const megaMenus: MegaMenu[] = [
         icon: ShieldCheck,
         items: [
           item("AI Governance", "Bounded intelligence with human authority", Shield),
-          item("Evidence & Auditability", "Decision lineage and historical replay", ClipboardCheck),
+          item(
+            "Evidence & Auditability",
+            "Decision lineage and historical replay",
+            ClipboardCheck,
+            "/evidence-auditability"
+          ),
           item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility),
           item("Responsible Disclosure", "Security vulnerability reporting program", Bug),
         ],
