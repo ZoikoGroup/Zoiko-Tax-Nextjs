@@ -34,6 +34,8 @@ const PAGE_HREFS: Record<string, string> = {
   "Migration & Onboarding": "/migration-onboarding",
   "Intelligence Fabric": "/intelligence-fabric",
   "Evidence & Auditability": "/evidence-auditability",
+  "Coverage Overview": "/coverage-overview",
+  "Status & Releases": "/status-and-releases",
   MVNOs: "/mvno",
   "MVNEs & MVNAs": "/mvne-mvna",
   "Voice, VoIP & SIP": "/voice-voip-sip",
@@ -44,6 +46,7 @@ const PAGE_HREFS: Record<string, string> = {
 
 const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
+
 
 export const footerColumns: FooterColumn[] = [
   {

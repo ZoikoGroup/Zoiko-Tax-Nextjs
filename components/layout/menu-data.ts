@@ -198,10 +198,11 @@ export const megaMenus: MegaMenu[] = [
         title: "Explore Coverage",
         icon: MapPin,
         items: [
-          item("Coverage Overview", "Current public capability availability by market", Globe),
+          item("Coverage Overview", "Current public capability availability by market", Globe, "/coverage-overview"),
           item("Country & Regulatory Packs", "Governed jurisdiction packs and activation", Flag),
-          item("Status & Releases", "Current status from authoritative coverage data", Activity),
+          item("Status & Releases", "Current status from authoritative coverage data", Activity, "/status-and-releases"),
         ],
+
       },
       {
         title: "Capabilities",
