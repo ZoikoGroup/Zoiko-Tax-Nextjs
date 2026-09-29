@@ -173,7 +173,7 @@ export const megaMenus: MegaMenu[] = [
             "MVNEs & MVNAs",
             "Multi-tenant enablement platforms with attribution",
             Layers,
-            "/mvnes-mvnas"
+            "/mvnes-mvna"
           ),
           item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
         ],
@@ -182,8 +182,8 @@ export const megaMenus: MegaMenu[] = [
         title: "Service Types",
         icon: Phone,
         items: [
-          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall),
-          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare),
+          item("Voice, VoIP & SIP", "Traditional and IP-based voice communications", PhoneCall, "/voice-voip-sip"),
+          item("UCaaS, CCaaS & CPaaS", "Unified and bundled communications services", MessageSquare, "/ucaas-ccaas-cpaas"),
           item("Broadband & Fixed Wireless", "Recurring billing and connectivity services", Radio, "/broadband-fixed-wireless"),
           item("IoT, M2M & Satellite", "Emerging services and connectivity models", Cpu, "/iot-m2m-satellite"),
         ],
@@ -196,6 +196,7 @@ export const megaMenus: MegaMenu[] = [
           item("CFO & Finance", "Control liability, recovery and accrual", DollarSign),
           item("Billing & BSS Engineering", "Integrate fiscal decisions into transaction flows", Cog),
           item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn),
+          item("Technology Leaders", "Governed architecture, integration and residency", Cpu, "/technology-leaders"),
         ],
       },
     ],
@@ -213,10 +214,11 @@ export const megaMenus: MegaMenu[] = [
         title: "Explore Coverage",
         icon: MapPin,
         items: [
-          item("Coverage Overview", "Current public capability availability by market", Globe),
+          item("Coverage Overview", "Current public capability availability by market", Globe, "/coverage-overview"),
           item("Country & Regulatory Packs", "Governed jurisdiction packs and activation", Flag),
-          item("Status & Releases", "Current status from authoritative coverage data", Activity),
+          item("Status & Releases", "Current status from authoritative coverage data", Activity, "/status-and-releases"),
         ],
+
       },
       {
         title: "Capabilities",
