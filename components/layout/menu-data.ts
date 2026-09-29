@@ -181,6 +181,7 @@ export const megaMenus: MegaMenu[] = [
           item("CFO & Finance", "Control liability, recovery and accrual", DollarSign),
           item("Billing & BSS Engineering", "Integrate fiscal decisions into transaction flows", Cog),
           item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn),
+          item("Technology Leaders", "Governed architecture, integration and residency", Cpu, "/technology-leaders"),
         ],
       },
     ],

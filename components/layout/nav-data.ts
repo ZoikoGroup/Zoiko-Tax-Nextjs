@@ -42,6 +42,7 @@ const PAGE_HREFS: Record<string, string> = {
   "UCaaS & CPaaS": "/ucaas-ccaas-cpaas",
   "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
   "IoT & Satellite": "/iot-m2m-satellite",
+  "Technology Leaders": "/technology-leaders",
 };
 
 const links = (...labels: string[]): NavLink[] =>
