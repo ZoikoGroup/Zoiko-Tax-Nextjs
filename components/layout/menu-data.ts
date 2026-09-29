@@ -163,8 +163,18 @@ export const megaMenus: MegaMenu[] = [
             Wifi,
             "/mobile-network-operators"
           ),
-          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2),
-          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers),
+          item(
+            "MVNOs",
+            "Clear separation of commercial models and tax treatment",
+            Share2,
+            "/mvno"
+          ),
+          item(
+            "MVNEs & MVNAs",
+            "Multi-tenant enablement platforms with attribution",
+            Layers,
+            "/mvnes-mvnas"
+          ),
           item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
         ],
       },
