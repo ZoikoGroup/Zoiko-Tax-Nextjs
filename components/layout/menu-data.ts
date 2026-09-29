@@ -157,7 +157,12 @@ export const megaMenus: MegaMenu[] = [
         title: "Operator Models",
         icon: Building,
         items: [
-          item("Mobile Network Operators", "Large-scale portfolios and multi-jurisdiction operations.", Wifi),
+          item(
+            "Mobile Network Operators",
+            "Large-scale portfolios and multi-jurisdiction operations.",
+            Wifi,
+            "/mobile-network-operators"
+          ),
           item("MVNOs", "Clear separation of commercial models and tax treatment", Share2),
           item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers),
           item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
