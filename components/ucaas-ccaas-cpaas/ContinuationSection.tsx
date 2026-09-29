@@ -1,23 +1,22 @@
 import React from "react";
-import { ArrowLink, SectionContainer, Reveal, StaggerGrid, StaggerItem } from "./shared";
-import { DETERMINATION_CARDS, DETERMINATION_DATA } from "./ucaas-data";
+import { ArrowLink, Guardrail, SectionContainer, Reveal, StaggerGrid, StaggerItem } from "./shared";
+import { CONTINUATION_DATA } from "./ucaas-data";
 
-export default function DeterminationSection() {
+export default function ContinuationSection() {
   return (
     <SectionContainer className="bg-white lg:py-24">
       <div className="flex flex-col gap-10">
         <Reveal>
           <div className="flex max-w-[980px] flex-col gap-4">
-            <span className="text-sm font-bold uppercase text-[#D65A2C]">{DETERMINATION_DATA.eyebrow}</span>
+            <span className="text-sm font-bold uppercase text-[#D65A2C]">{CONTINUATION_DATA.eyebrow}</span>
             <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#18141B] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.2]">
-              {DETERMINATION_DATA.title}
+              {CONTINUATION_DATA.title}
             </h2>
-            <p className="text-lg leading-7 text-[#78716C] sm:text-xl sm:leading-8">{DETERMINATION_DATA.description}</p>
           </div>
         </Reveal>
 
-        <StaggerGrid className="sm:grid-cols-2">
-          {DETERMINATION_CARDS.map((card) => (
+        <StaggerGrid className="sm:grid-cols-2 lg:grid-cols-3">
+          {CONTINUATION_DATA.cards.map((card) => (
             <StaggerItem key={card.num}>
               <div className="flex h-full min-h-48 flex-col gap-3.5 rounded-2xl bg-white p-6 outline outline-1 -outline-offset-1 outline-zinc-300 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_24px_0_rgba(29,3,59,0.06)]">
                 <div className="flex items-start justify-between">
@@ -32,9 +31,13 @@ export default function DeterminationSection() {
         </StaggerGrid>
 
         <Reveal delay={0.08}>
+          <Guardrail>{CONTINUATION_DATA.guardrail}</Guardrail>
+        </Reveal>
+
+        <Reveal delay={0.1}>
           <div className="flex flex-wrap items-center gap-7">
-            <ArrowLink label="Tax Determination →" href="/determination" />
-            <ArrowLink label="Exemptions & Certificates →" href="/exemptions-certificates" />
+            <ArrowLink label="Explore Platform →" href="/platform-overview" />
+            <ArrowLink label="View Current Coverage →" href="#coverage" />
           </div>
         </Reveal>
       </div>
