@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
-import { TriangleAlert } from "lucide-react";
+import { Shield } from "lucide-react";
 import { StaggerGroup, StaggerItem } from "@/components/shared/Stagger";
 import type { Action } from "./ucaas-data";
 
@@ -23,7 +23,7 @@ export function SectionContainer({
 }) {
   return (
     <section id={id} className={clsx("relative w-full overflow-hidden", className)}>
-      <div className="relative mx-auto w-full max-w-[1440px] px-4 py-16 sm:px-8 sm:py-20 lg:px-20 lg:py-24">
+      <div className="relative mx-auto w-full max-w-[1440px] px-4 py-[45px] sm:px-8 lg:px-20">
         {children}
       </div>
     </section>
@@ -79,10 +79,10 @@ export function Guardrail({ children, dark = false }: { children: React.ReactNod
     <div
       className={clsx(
         "flex items-center gap-3 rounded-[10px] px-4 py-3.5 outline outline-1 -outline-offset-1",
-        dark ? "bg-white/5 outline-white/10" : "bg-[#FEF2F2] outline-[#FECACA]"
+        dark ? "bg-white/5 outline-white/10" : "bg-[#F7E9DF] outline-[#E9CABB]"
       )}
     >
-      <TriangleAlert className="size-4 shrink-0 text-[#D65A2C]" strokeWidth={1.8} aria-hidden="true" />
+      <Shield className="size-4 shrink-0 text-[#D65A2C]" strokeWidth={1.8} aria-hidden="true" />
       <p className={clsx("text-xs font-semibold leading-5", dark ? "text-white" : "text-[#18141B]")}>{children}</p>
     </div>
   );
@@ -120,7 +120,7 @@ export function ArrowLink({ label, href }: { label: string; href: string }) {
 
 const BUTTON_VARIANTS: Record<Action["variant"], string> = {
   primary:
-    "bg-[#8A4B1F] text-white outline outline-1 -outline-offset-1 outline-[#8A4B1F] shadow-[inset_0_3px_4px_0_rgba(255,223,211,1),inset_0_-2px_4px_0_rgba(253,207,190,1)] hover:bg-[#9c5622] hover:shadow-md",
+    "bg-[#BF6735] text-white outline outline-1 -outline-offset-1 outline-[#BF6735] shadow-[inset_0_3px_4px_0_rgba(255,223,211,0.5),inset_0_-2px_4px_0_rgba(253,207,190,0.5)] hover:bg-[#a95729] hover:shadow-md",
   secondary:
     "border border-zinc-300 bg-white font-semibold text-[#18141B] shadow-[0_2px_4px_0_rgba(0,0,0,0.05)] hover:bg-zinc-50",
   light: "border border-zinc-300 bg-white text-[#18141B] hover:bg-zinc-50",

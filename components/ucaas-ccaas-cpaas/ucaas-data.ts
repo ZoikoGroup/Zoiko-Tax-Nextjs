@@ -7,15 +7,23 @@ import {
   BookOpen,
   Box,
   Calculator,
+  CircleHelp,
   ClipboardCheck,
+  Cpu,
   Database,
   FileCheck,
+  FileText,
+  GitBranch,
   GitMerge,
+  Globe,
   Landmark,
   Layers,
+  Library,
   ReceiptText,
   RefreshCw,
   Route,
+  ShieldCheck,
+  SlidersHorizontal,
 } from "lucide-react";
 
 export interface TitledCard {
@@ -49,7 +57,7 @@ export interface ChainStep {
 const img = (name: string) => `/UCaaS, CCaaS & CPaaS/${name}`;
 
 export const IMAGES = {
-  hero: img("hero-bg.jpg"),
+  hero: img("a67b485fd994857ebb1e8ad0102e4ef3f6fdc96a.jpg"),
   evidence: img("evidence-bg.jpg"),
   trust: img("trust-bg.jpg"),
   conversion: img("conversion-bg.jpg"),
@@ -68,12 +76,12 @@ export const ICONS = {
   ] satisfies NumberedCard[],
 
   integrationCards: [
-    { icon: Box as LucideIcon, label: "Billing & BSS" },
-    { icon: Database as LucideIcon, label: "ERP & General Ledger" },
+    { icon: ReceiptText as LucideIcon, label: "Billing & BSS" },
+    { icon: BookOpen as LucideIcon, label: "ERP & General Ledger" },
     { icon: Layers as LucideIcon, label: "Existing Tax Engines" },
-    { icon: ReceiptText as LucideIcon, label: "E-Invoicing Networks" },
+    { icon: GitBranch as LucideIcon, label: "E-Invoicing Networks" },
     { icon: Database as LucideIcon, label: "Data & Batch" },
-    { icon: GitMerge as LucideIcon, label: "OEM / Embedded" },
+    { icon: Box as LucideIcon, label: "OEM / Embedded" },
   ],
 };
 
@@ -228,14 +236,14 @@ export const CONTINUATION_DATA = {
     },
     {
       num: "02",
-      icon: RefreshCw,
+      icon: GitMerge,
       title: "Remittance Orchestration",
       description:
         "Coordinate supported approvals, instructions and evidence. Remittance does not imply fund custody.",
     },
     {
       num: "03",
-      icon: Route,
+      icon: RefreshCw,
       title: "Reconciliation",
       description:
         "Link transaction, tax, invoice, filing, remittance and accounting outcomes. A match does not prove legal correctness.",
@@ -365,15 +373,15 @@ export const TRUST_DATA = {
   title: "Built for consequential fiscal work.",
   description: "A disciplined control foundation for sensitive cloud communications fiscal operations.",
   cards: [
-    "Deterministic monetary execution",
-    "Explicit uncertainty",
-    "Tenant / entity isolation",
-    "Evidence by design",
-    "Governed content",
-    "Residency-aware architecture",
-    "Operational resilience",
-  ] satisfies string[],
-  banner: "AI assists. Approved rules decide. Evidence proves.",
+    { title: "Deterministic monetary execution", icon: Cpu as LucideIcon },
+    { title: "Explicit uncertainty", icon: CircleHelp as LucideIcon },
+    { title: "Tenant / entity isolation", icon: GitBranch as LucideIcon },
+    { title: "Evidence by design", icon: FileCheck as LucideIcon },
+    { title: "Governed content", icon: Library as LucideIcon },
+    { title: "Residency-aware architecture", icon: Globe as LucideIcon },
+    { title: "Operational resilience", icon: ShieldCheck as LucideIcon },
+  ],
+  banner: "AI assists. Approved rules decide.\nEvidence proves.",
   authorityLabel: "Authority boundary",
   authority:
     "AI may assist research, comparison and review; it cannot be fiscal authority, a source of law, legal or tax advice, an evidence replacement or a guaranteed outcome.",

@@ -4,17 +4,17 @@ import {
   DirectAnswerSection,
   ComplexitySection,
   DeterminationSection,
-  CommercialChainSection,
+  ComplianceSection,
   ObligationsSection,
-  FinancialControlSection,
+  ReconciliationSection,
   EvidenceSection,
-  ModernizationPathsSection,
-  IntegrationsSection,
+  LifecycleSection,
+  ArchitectureSection,
   CoverageSection,
-  TrustSection,
+  WorkspaceSection,
   FAQSection,
   ConversionSection,
-} from "@/components/mvnos";
+} from "@/components/mvno";
 
 export const metadata: Metadata = {
   title: "MVNOs | ZoikoTax",
@@ -37,29 +37,29 @@ export default function MVNOsPage() {
       {/* 04. Tax Determination */}
       <DeterminationSection />
 
-      {/* 05. Commercial Chain & Responsibility */}
-      <CommercialChainSection />
+      {/* 05. Compliance & Responsibility */}
+      <ComplianceSection />
 
-      {/* 06. Obligations + Compliance */}
+      {/* 06. Obligations */}
       <ObligationsSection />
 
-      {/* 07. Financial Control */}
-      <FinancialControlSection />
+      {/* 07. Reconciliation */}
+      <ReconciliationSection />
 
       {/* 08. Evidence + Replay */}
       <EvidenceSection />
 
-      {/* 09. Modernization Paths */}
-      <ModernizationPathsSection />
+      {/* 09. Lifecycle */}
+      <LifecycleSection />
 
-      {/* 10. Integrations + Developer Fit */}
-      <IntegrationsSection />
+      {/* 10. Architecture */}
+      <ArchitectureSection />
 
       {/* 11. Coverage */}
       <CoverageSection />
 
-      {/* 12. Trust + Procurement */}
-      <TrustSection />
+      {/* 12. Workspace / Trust */}
+      <WorkspaceSection />
 
       {/* 13. FAQ */}
       <FAQSection />
