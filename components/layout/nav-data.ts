@@ -77,8 +77,8 @@ export const footerColumns: FooterColumn[] = [
     title: "Telecom Solutions",
     links: links(
       "MNOs",
-      "MVNOs",
-      "MVNEs & MVNAs",
+      "MVNO",
+      "MVNE & MVNAs",
       "Voice, VoIP & SIP",
       "UCaaS & CPaaS",
       "Broadband & Fixed Wireless",
