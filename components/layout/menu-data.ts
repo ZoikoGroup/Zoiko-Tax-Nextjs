@@ -173,9 +173,14 @@ export const megaMenus: MegaMenu[] = [
             "MVNEs & MVNAs",
             "Multi-tenant enablement platforms with attribution",
             Layers,
-            "/mvnes-mvna"
+            "/mvne-mvna"
           ),
-          item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
+          item(
+            "Wholesale Carriers",
+            "Support for complex wholesale relationships",
+            Globe,
+            "/wholesale-carriers-and-aggregators"
+          ),
         ],
       },
       {
