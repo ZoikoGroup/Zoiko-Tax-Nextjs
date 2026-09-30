@@ -197,7 +197,7 @@ export const megaMenus: MegaMenu[] = [
         title: "By Buyer Role",
         icon: Users,
         items: [
-          item("Tax & Regulatory", "Determine what applies and manage obligations", Shield),
+          item("Tax & Regulatory", "Determine what applies and manage obligations", Shield, "/tax-regulatory-compliance"),
           item("CFO & Finance", "Control liability, recovery and accrual", DollarSign),
           item("Billing & BSS Engineering", "Integrate fiscal decisions into transaction flows", Cog),
           item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn),
