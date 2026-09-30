@@ -216,9 +216,14 @@ export const megaMenus: MegaMenu[] = [
             ClipboardCheck,
             "/compliance-filing"
           ),
-          item("Remittance", "Supported orchestration, not fund custody", CreditCard),
+          item("Remittance", "Supported orchestration, not fund custody", CreditCard, "/remittance-coverage"),
           item("E-Invoicing & CTC", "Country and network adapter capability", ReceiptText, "/e-invoicing-ctc"),
-          item("Managed Compliance", "Requires production and operational readiness", UserCheck),
+          item(
+            "Managed Compliance",
+            "Requires production and operational readiness",
+            UserCheck,
+            "/managed-compliance-coverage"
+          ),
         ],
       },
       {
