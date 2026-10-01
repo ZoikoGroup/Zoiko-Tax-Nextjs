@@ -43,6 +43,7 @@ const PAGE_HREFS: Record<string, string> = {
   "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
   "IoT & Satellite": "/iot-m2m-satellite",
   "Technology Leaders": "/technology-leaders",
+  "Integration Guides": "/integration-guides",
 };
 
 const links = (...labels: string[]): NavLink[] =>

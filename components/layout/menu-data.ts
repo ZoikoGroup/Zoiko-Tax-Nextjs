@@ -298,7 +298,7 @@ export const megaMenus: MegaMenu[] = [
           item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database),
           item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu),
           item("Bulk & Batch", "High-volume asynchronous processing", List),
-          item("Integration Guides", "Implementation patterns and architecture guidance", Book),
+          item("Integration Guides", "Implementation patterns and architecture guidance", Book, "/integration-guides"),
         ],
       },
     ],
