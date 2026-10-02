@@ -34,6 +34,8 @@ const PAGE_HREFS: Record<string, string> = {
   "Migration & Onboarding": "/migration-onboarding",
   "Intelligence Fabric": "/intelligence-fabric",
   "Evidence & Auditability": "/evidence-auditability",
+  "Billing & BSS": "/billing-bss",
+  "API Changelog": "/api-changelog",
   "Coverage Overview": "/coverage-overview",
   "Status & Releases": "/status-and-releases",
   MVNOs: "/mvno",
