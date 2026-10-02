@@ -118,8 +118,9 @@ export default function Header() {
           >
             Sign In
           </Link>
-          <Link href="#book-a-demo" className={demoButtonClass}>
-            Book a Demo
+          <Link href="#book-a-demo" className={demoButtonClass} suppressHydrationWarning>
+            <span>Book a Demo</span>
+            <span className="ml-1 text-lg font-normal font-['Inter'] leading-none">↗</span>
           </Link>
         </div>
 
@@ -230,8 +231,9 @@ export default function Header() {
                 <Link href="/sign-in" onClick={closeAll} className="px-2 font-dm-sans text-sm font-semibold text-ink">
                   Sign In
                 </Link>
-                <Link href="#book-a-demo" onClick={closeAll} className={demoButtonClass}>
-                  Book a Demo
+                <Link href="#book-a-demo" onClick={closeAll} className={demoButtonClass} suppressHydrationWarning>
+                  <span>Book a Demo</span>
+                  <span className="ml-1 text-lg font-normal font-['Inter'] leading-none">↗</span>
                 </Link>
               </div>
             </nav>
