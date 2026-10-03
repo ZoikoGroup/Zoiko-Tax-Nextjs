@@ -31,6 +31,7 @@ import {
   Flag,
   GitBranch,
   Globe,
+  History,
   Info,
   Layers,
   Link as LinkIcon,
@@ -277,15 +278,16 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Developer Overview", "Architecture, environments and getting started", Compass),
           item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText),
-          item("SDKs", "Supported client libraries and versions", Code),
-          item("Webhooks & Events", "Event contracts and delivery semantics", Activity),
+          item("SDKs", "Supported client libraries and versions", Code, "/sdks"),
+          item("Webhooks & Events", "Event contracts and delivery semantics", Activity, "/webhooks-events"),
+          item("API Changelog", "Version and compatibility change history", History, "/api-changelog"),
         ],
       },
       {
         title: "Integration Paths",
         icon: GitBranch,
         items: [
-          item("Billing & BSS", "Quote, invoice and transaction integration", CreditCard),
+          item("Billing & BSS", "Quote, invoice and transaction integration", CreditCard, "/billing-bss"),
           item("ERP & General Ledger", "Controlled journals and reconciliation", BookOpen),
           item("Existing Tax Engines", "Federated, shadow and migration adapters", Calculator, "/existing-tax-engines"),
           item("E-Invoicing Networks", "Authority and network adapter patterns", Share2),
