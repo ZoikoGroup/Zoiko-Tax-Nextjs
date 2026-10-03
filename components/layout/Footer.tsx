@@ -138,6 +138,7 @@ export default function Footer() {
             </p>
             <button
               type="button"
+              suppressHydrationWarning
               className="self-start whitespace-nowrap py-2 text-sm text-white/70 transition-colors hover:text-white sm:self-auto"
             >
               Manage Cookie Settings
