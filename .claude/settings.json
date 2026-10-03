@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file public/sdks/*.png)",
+      "Bash(rm public/sdks/hero-bg.png public/sdks/compatibility-bg.png public/sdks/next-steps-bg.png public/sdks/pattern-bg.png public/sdks/trust-bg.png)",
+      "Bash(git check-ignore *)"
+    ]
+  }
+}

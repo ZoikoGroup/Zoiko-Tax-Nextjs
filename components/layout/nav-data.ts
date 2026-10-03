@@ -36,6 +36,7 @@ const PAGE_HREFS: Record<string, string> = {
   "Evidence & Auditability": "/evidence-auditability",
   "Billing & BSS": "/billing-bss",
   "API Changelog": "/api-changelog",
+  "SDKs & Libraries": "/sdks",
   "Coverage Overview": "/coverage-overview",
   "Status & Releases": "/status-and-releases",
   MVNOs: "/mvno",

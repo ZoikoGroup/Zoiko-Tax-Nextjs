@@ -278,8 +278,8 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Developer Overview", "Architecture, environments and getting started", Compass),
           item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText),
-          item("SDKs", "Supported client libraries and versions", Code),
-          item("Webhooks & Events", "Event contracts and delivery semantics", Activity),
+          item("SDKs", "Supported client libraries and versions", Code, "/sdks"),
+          item("Webhooks & Events", "Event contracts and delivery semantics", Activity, "/webhooks-events"),
           item("API Changelog", "Version and compatibility change history", History, "/api-changelog"),
         ],
       },
