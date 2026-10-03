@@ -2,32 +2,32 @@ import { CheckIcon, DownloadIcon, FileIcon, InfoIcon, LinkSvgIcon, RotateIcon } 
 
 const controls = [
   {
-    icon: <FileIcon className="size-4 text-orange-600" />,
+    icon: <FileIcon className="size-5 text-[#D65A2C] shrink-0 mt-0.5" />,
     title: "Source provenance",
     desc: "Preserve originating record lineage and source history for investigation.",
   },
   {
-    icon: <RotateIcon className="size-4 text-orange-600" />,
+    icon: <RotateIcon className="size-4 text-[#D65A2C] shrink-0 mt-1" />,
     title: "Relevant versions",
     desc: "Retain relevant rule, content and interface versions; pin context where the approved workflow defines it.",
   },
   {
-    icon: <CheckIcon className="size-4 text-orange-600" />,
+    icon: <CheckIcon className="size-5 text-[#D65A2C] shrink-0 mt-0.5" />,
     title: "Approval / control concepts",
     desc: "Use approved control requirements without inventing roles, permissions or an approval hierarchy.",
   },
   {
-    icon: <LinkSvgIcon className="size-4 text-orange-600" />,
+    icon: <LinkSvgIcon className="size-5 text-[#D65A2C] shrink-0 mt-0.5" />,
     title: "Correlation links",
     desc: "Connect defined references across source, fiscal outcome, finance transfer and reconciliation.",
   },
   {
-    icon: <RotateIcon className="size-4 text-orange-600" />,
+    icon: <RotateIcon className="size-4 text-[#D65A2C] shrink-0 mt-1" />,
     title: "Historical replay route",
     desc: "Use Evidence & Replay where supported to revisit historical context through an authoritative route.",
   },
   {
-    icon: <DownloadIcon className="size-4 text-orange-600" />,
+    icon: <DownloadIcon className="size-5 text-[#D65A2C] shrink-0 mt-0.5" />,
     title: "Audit export",
     desc: "Use an export only if a real, approved audit artifact exists. Do not infer an export format or certification.",
   },
@@ -44,50 +44,87 @@ const footnotes = [
 
 export default function EvidenceControlsSection() {
   return (
-    <div className="self-stretch px-20 py-24 flex flex-col justify-start items-start gap-10 overflow-hidden">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
-        <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] leading-5">09 · EVIDENCE &amp; APPROVAL CONTROLS</div>
-        <h2 className="w-full max-w-[1050px] justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">Keep the context that makes review possible.</h2>
-        <p className="w-full max-w-[1060px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">Evidence is a core finance-control capability, not a decorative trust statement. Lineage and pinned context support investigation without implying a compliance certification.</p>
-      </div>
-      <div className="self-stretch grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_480px] justify-start items-start gap-10 overflow-hidden">
-        <div className="inline-flex flex-col justify-start items-start overflow-hidden">
-          {controls.map((control) => (
-            <div key={control.title} className="self-stretch py-4 border-b border-zinc-300 flex justify-start items-start gap-4 overflow-hidden">
-              {control.icon}
-              <div className="flex-1 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
-                <div className="self-stretch justify-start text-zinc-900 text-lg font-bold font-['Inter']">{control.title}</div>
-                <div className="self-stretch justify-start text-stone-500 text-base font-normal font-['Inter'] leading-6">{control.desc}</div>
+    <section className="relative w-full flex justify-center items-start bg-[#FAF3FF] py-20 lg:py-24 overflow-hidden">
+      <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-12 lg:px-20 flex flex-col justify-start items-start gap-10">
+        <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-3.5">
+          <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+            09 · EVIDENCE &amp; APPROVAL CONTROLS
+          </div>
+          <h2 className="w-full max-w-[1050px] text-[#18141B] text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+            Keep the context that makes review possible.
+          </h2>
+          <p className="w-full max-w-[1060px] text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
+            Evidence is a core finance-control capability, not a decorative trust statement. Lineage and pinned context support investigation without implying a compliance certification.
+          </p>
+        </div>
+
+        <div className="self-stretch grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_480px] justify-start items-start gap-10">
+          <div className="flex flex-col justify-start items-start w-full">
+            {controls.map((control) => (
+              <div
+                key={control.title}
+                className="self-stretch py-4 border-b border-[#D8CEDD] flex justify-start items-start gap-4"
+              >
+                {control.icon}
+                <div className="flex-1 flex flex-col justify-start items-start gap-1">
+                  <div className="self-stretch text-[#18141B] text-base sm:text-lg font-bold font-['Inter',sans-serif]">
+                    {control.title}
+                  </div>
+                  <div className="self-stretch text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
+                    {control.desc}
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div className="w-full p-6 sm:p-8 bg-[#181424] rounded-3xl border border-[#2D243F] flex flex-col justify-start items-start gap-6 shadow-sm">
+            <div className="text-[#FFA776] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+              ILLUSTRATIVE EVIDENCE · NO CUSTOMER DATA
             </div>
-          ))}
-        </div>
-        <div className="p-8 bg-violet-950 rounded-3xl inline-flex flex-col justify-start items-start gap-6 overflow-hidden">
-          <div className="justify-start text-orange-300 text-xs font-bold font-['Inter'] leading-5">ILLUSTRATIVE EVIDENCE · NO CUSTOMER DATA</div>
-          <div className="self-stretch justify-start text-white text-3xl font-bold font-['Inter'] leading-9">A trace you can investigate.</div>
-          <p className="self-stretch justify-start text-zinc-300 text-base font-normal font-['Inter'] leading-6">Conceptual categories only. No amounts, account IDs, journals, tax records, subscriber data or credentials are shown.</p>
-          <div className="self-stretch flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-            {traceRows.map((row, index) => (
-              <div key={row} className="self-stretch p-4 bg-indigo-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-600 flex justify-start items-start gap-3.5 overflow-hidden">
-                <div className="justify-start text-orange-300 text-sm font-bold font-['Inter']">{traceMarks[index]}</div>
-                <div className="flex-1 justify-start text-white text-base font-medium font-['Inter'] leading-6">{row}</div>
-              </div>
-            ))}
+            <div className="self-stretch text-white text-2xl sm:text-3xl font-bold font-['Inter',sans-serif] leading-9">
+              A trace you can investigate.
+            </div>
+            <p className="self-stretch text-zinc-300 text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
+              Conceptual categories only. No amounts, account IDs, journals, tax records, subscriber data or credentials are shown.
+            </p>
+            <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+              {traceRows.map((row, index) => (
+                <div
+                  key={row}
+                  className="self-stretch p-4 bg-[#241D35] rounded-2xl border border-[#3E3259] flex justify-start items-start gap-3.5"
+                >
+                  <div className="text-[#FFA776] text-sm font-bold font-['Inter',sans-serif]">
+                    {traceMarks[index]}
+                  </div>
+                  <div className="flex-1 text-white text-sm sm:text-base font-medium font-['Inter',sans-serif] leading-6">
+                    {row}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="self-stretch pt-2 flex flex-col justify-start items-start gap-2">
+              {footnotes.map((footnote) => (
+                <div key={footnote} className="self-stretch text-zinc-300 text-xs font-normal font-['Inter',sans-serif] leading-5">
+                  {footnote}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="self-stretch pt-2 flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-            {footnotes.map((footnote) => (
-              <div key={footnote} className="self-stretch justify-start text-zinc-300 text-xs font-normal font-['Inter'] leading-5">{footnote}</div>
-            ))}
+        </div>
+
+        <div className="relative z-10 w-full max-w-[1280px] min-h-[125px] p-5 sm:p-6 bg-[rgba(255,240,231,1)] rounded-2xl border border-[rgba(235,200,181,1)] flex justify-start items-start gap-4 shadow-sm">
+          <InfoIcon className="size-5 shrink-0 text-[#D65A2C] mt-0.5" />
+          <div className="flex-1 flex flex-col justify-start items-start gap-1">
+            <div className="self-stretch text-[#18141B] text-sm sm:text-base font-bold font-['Inter',sans-serif]">
+              Traceability is not a certification
+            </div>
+            <p className="self-stretch text-[#665F69] text-xs sm:text-sm font-normal font-['Inter',sans-serif] leading-relaxed">
+              Historical evidence and correlation can support investigation and audit. They do not, by themselves, establish legal correctness, accounting correctness or compliance certification. Trust remains separately authoritative for assurances.
+            </p>
           </div>
         </div>
       </div>
-      <div className="self-stretch p-6 bg-orange-50 rounded-2xl outline outline-1 outline-offset-[-1px] outline-orange-200 flex justify-start items-start gap-4 overflow-hidden">
-        <InfoIcon className="size-6 shrink-0" />
-        <div className="flex-1 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
-          <div className="self-stretch justify-start text-zinc-900 text-base font-bold font-['Inter']">Traceability is not a certification</div>
-          <p className="self-stretch justify-start text-stone-500 text-base font-normal font-['Inter'] leading-6">Historical evidence and correlation can support investigation and audit. They do not, by themselves, establish legal correctness, accounting correctness or compliance certification. Trust remains separately authoritative for assurances.</p>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 }

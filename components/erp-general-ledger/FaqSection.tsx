@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const faqs = [
   {
     question: "Does ZoikoTax replace my ERP/GL?",
@@ -27,20 +29,47 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <div className="self-stretch px-20 py-24 flex flex-col justify-start items-start gap-10 overflow-hidden">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
-        <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] leading-5">14 · FREQUENTLY ASKED QUESTIONS</div>
-        <h2 className="w-full max-w-[1050px] justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">Direct answers. Controlled finance boundaries.</h2>
-        <p className="w-full max-w-[1060px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">The architecture stays useful without inventing the contracts it points to. All answers are shown for a clear, continuous reading path.</p>
+    <section className="relative w-full flex justify-center items-start bg-white py-20 lg:py-24 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <Image
+          src="/erp-general-ledger/tech-pattern.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
       </div>
-      <div className="self-stretch flex flex-col justify-start items-start overflow-hidden">
-        {faqs.map((faq) => (
-          <div key={faq.question} className="self-stretch py-7 border-t border-zinc-300 flex justify-start items-start gap-14 overflow-hidden">
-            <div className="w-96 shrink-0 justify-start text-zinc-900 text-2xl font-bold font-['Inter'] leading-8">{faq.question}</div>
-            <div className="flex-1 justify-start text-stone-500 text-base font-normal font-['Inter'] leading-6">{faq.answer}</div>
+
+      <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-12 lg:px-20 flex flex-col justify-start items-start gap-10">
+        <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-3.5">
+          <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+            14 · FREQUENTLY ASKED QUESTIONS
           </div>
-        ))}
+          <h2 className="w-full max-w-[1050px] text-[#18141B] text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+            Direct answers. Controlled finance boundaries.
+          </h2>
+          <p className="w-full max-w-[1060px] text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
+            The architecture stays useful without inventing the contracts it points to. All answers are shown for a clear, continuous reading path.
+          </p>
+        </div>
+
+        <div className="relative z-10 self-stretch flex flex-col justify-start items-start">
+          {faqs.map((faq) => (
+            <div
+              key={faq.question}
+              className="self-stretch py-7 border-t border-[#D8CEDD] flex flex-col lg:flex-row justify-start items-start gap-4 lg:gap-14"
+            >
+              <div className="w-full lg:w-96 shrink-0 text-[#18141B] text-xl sm:text-2xl font-bold font-['Inter',sans-serif] leading-8">
+                {faq.question}
+              </div>
+              <div className="flex-1 text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-relaxed">
+                {faq.answer}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

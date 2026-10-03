@@ -33,55 +33,93 @@ const cards = [
 
 export default function ReconciliationSection() {
   return (
-    <div className="self-stretch px-20 py-24 bg-slate-900/75 flex flex-col justify-start items-start gap-10 overflow-hidden">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
-        <div className="justify-start text-orange-300 text-xs font-bold font-['Inter'] leading-5">07 · RECONCILIATION INTERFACES</div>
-        <h2 className="w-full max-w-[1050px] justify-start text-white text-5xl font-bold font-['Inter'] leading-[48.40px]">Close the loop without inventing certainty.</h2>
-        <p className="w-full max-w-[1060px] justify-start text-zinc-300 text-xl font-normal font-['Inter'] leading-8">Reconciliation is a first-class finance-control workflow: connect defined relationships, investigate governed variances and retain historical evidence.</p>
-      </div>
-      <div className="self-stretch p-8 bg-indigo-950 rounded-3xl outline outline-1 outline-offset-[-1px] outline-zinc-600 flex flex-col justify-start items-start gap-7 overflow-hidden">
-        <div className="self-stretch flex justify-between items-center overflow-hidden">
-          <div className="justify-start text-orange-300 text-xs font-bold font-['Inter'] leading-5">CONCEPTUAL RELATIONSHIPS · NOT LIVE RECORDS</div>
-          <div className="justify-start text-zinc-300 text-xs font-normal font-['Inter']">Defined identities only • historical context retained</div>
+    <section className="relative w-full flex justify-center items-start bg-[#181424] py-20 lg:py-24 overflow-hidden">
+      <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-12 lg:px-20 flex flex-col justify-start items-start gap-10">
+        <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-3.5">
+          <div className="text-[#FFA776] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+            07 · RECONCILIATION INTERFACES
+          </div>
+          <h2 className="w-full max-w-[1050px] text-white text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+            Close the loop without inventing certainty.
+          </h2>
+          <p className="w-full max-w-[1060px] text-zinc-300 text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
+            Reconciliation is a first-class finance-control workflow: connect defined relationships, investigate governed variances and retain historical evidence.
+          </p>
         </div>
-        {relationships.map((relationship) => (
-          <div key={relationship.label} className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
-            <div className="justify-start text-orange-300 text-xs font-bold font-['Inter']">{relationship.label}</div>
-            <div className="self-stretch flex justify-start items-center gap-5 overflow-hidden">
-              {relationship.nodes.map((node, index) => (
-                <div key={node} className="flex-1 flex justify-start items-center gap-5 overflow-hidden">
-                  <div className={`flex-1 h-20 p-5 rounded-2xl outline outline-1 outline-offset-[-1px] inline-flex flex-col justify-center items-center overflow-hidden ${index === 1 ? "bg-violet-950 outline-zinc-400" : "bg-indigo-950 outline-zinc-600"}`}>
-                    <div className="self-stretch text-center justify-start text-white text-xl font-semibold font-['Inter']">{node}</div>
-                  </div>
-                  {index < relationship.nodes.length - 1 && <DefinedRelationshipIcon className="shrink-0" />}
-                </div>
-              ))}
+
+        <div className="self-stretch p-6 sm:p-8 bg-[#241D35] rounded-3xl border border-[#3E3259] flex flex-col justify-start items-start gap-7 shadow-sm">
+          <div className="self-stretch flex flex-wrap justify-between items-center gap-2">
+            <div className="text-[#FFA776] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+              CONCEPTUAL RELATIONSHIPS · NOT LIVE RECORDS
             </div>
-            <div className="self-stretch justify-start text-zinc-300 text-sm font-normal font-['Inter'] leading-5">{relationship.desc}</div>
+            <div className="text-zinc-300 text-xs font-normal font-['Inter',sans-serif]">
+              Defined identities only • historical context retained
+            </div>
           </div>
-        ))}
-        <div className="self-stretch p-5 bg-violet-950 rounded-2xl flex justify-start items-center gap-5 overflow-hidden">
-          <LinkIcon className="size-5 shrink-0" />
-          <div className="flex-1 justify-start text-white text-base font-semibold font-['Inter'] leading-6">Defined relationship → governed variance → investigation route → historical evidence → scoped reconciliation review</div>
-        </div>
-        <div className="self-stretch justify-start text-orange-300 text-sm font-medium font-['Inter'] leading-5">↶ Return to the defined relationships with retained evidence for scoped review. No automatic closure or correctness is implied.</div>
-      </div>
-      <div className="self-stretch grid grid-cols-1 lg:grid-cols-3 justify-start items-stretch gap-4 overflow-hidden">
-        {cards.map((card) => (
-          <div key={card.title} className="p-7 bg-indigo-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-600 inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden">
-            <div className="self-stretch justify-start text-white text-xl font-bold font-['Inter'] leading-7">{card.title}</div>
-            <div className="self-stretch justify-start text-zinc-300 text-base font-normal font-['Inter'] leading-6">{card.desc}</div>
-            <div className="self-stretch justify-start text-orange-300 text-xs font-semibold font-['Inter'] leading-5">{card.tag}</div>
+          {relationships.map((relationship) => (
+            <div key={relationship.label} className="self-stretch flex flex-col justify-start items-start gap-4">
+              <div className="text-[#FFA776] text-xs font-bold font-['Inter',sans-serif]">
+                {relationship.label}
+              </div>
+              <div className="self-stretch flex flex-col sm:flex-row justify-start items-stretch sm:items-center gap-3 sm:gap-5">
+                {relationship.nodes.map((node, index) => (
+                  <div key={node} className="flex-1 flex justify-start items-center gap-3 sm:gap-5">
+                    <div className={`flex-1 h-20 p-4 rounded-2xl border flex flex-col justify-center items-center ${index === 1 ? "bg-[#352750] border-[#5E4788]" : "bg-[#1C172A] border-[#3E3259]"}`}>
+                      <div className="text-center text-white text-lg sm:text-xl font-semibold font-['Inter',sans-serif]">
+                        {node}
+                      </div>
+                    </div>
+                    {index < relationship.nodes.length - 1 && <DefinedRelationshipIcon className="shrink-0 text-[#FFA776]" />}
+                  </div>
+                ))}
+              </div>
+              <div className="self-stretch text-zinc-300 text-sm font-normal font-['Inter',sans-serif] leading-5">
+                {relationship.desc}
+              </div>
+            </div>
+          ))}
+          <div className="self-stretch p-5 bg-[#352750] rounded-2xl border border-[#5E4788] flex justify-start items-center gap-4">
+            <LinkIcon className="size-5 shrink-0 text-[#FFA776]" />
+            <div className="flex-1 text-white text-sm sm:text-base font-semibold font-['Inter',sans-serif] leading-6">
+              Defined relationship → governed variance → investigation route → historical evidence → scoped reconciliation review
+            </div>
           </div>
-        ))}
-      </div>
-      <div className="self-stretch p-6 bg-indigo-950 rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-600 flex justify-start items-start gap-4 overflow-hidden">
-        <LinkIcon className="size-5 shrink-0" />
-        <div className="flex-1 inline-flex flex-col justify-start items-start gap-1.5 overflow-hidden">
-          <div className="self-stretch justify-start text-white text-base font-bold font-['Inter']">Status words are not universal finance states</div>
-          <p className="self-stretch justify-start text-zinc-300 text-base font-normal font-['Inter'] leading-6">“Accepted”, “posted” and “rejected” have contract-specific meanings where defined. They are not live states on this page and must not be interpreted as equivalent across fiscal, transfer and ledger workflows.</p>
+          <div className="self-stretch text-[#FFA776] text-sm font-medium font-['Inter',sans-serif] leading-5">
+            ↶ Return to the defined relationships with retained evidence for scoped review. No automatic closure or correctness is implied.
+          </div>
+        </div>
+
+        <div className="self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-start items-stretch gap-4">
+          {cards.map((card) => (
+            <div
+              key={card.title}
+              className="p-6 sm:p-7 bg-[#241D35] rounded-2xl border border-[#3E3259] flex flex-col justify-start items-start gap-3.5 shadow-sm"
+            >
+              <div className="self-stretch text-white text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
+                {card.title}
+              </div>
+              <div className="self-stretch text-zinc-300 text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
+                {card.desc}
+              </div>
+              <div className="self-stretch text-[#FFA776] text-xs font-semibold font-['Inter',sans-serif] leading-5">
+                {card.tag}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative z-10 w-full max-w-[1280px] p-5 sm:p-6 bg-[#241D35] rounded-2xl border border-[#3E3259] flex justify-start items-start gap-4 shadow-sm">
+          <LinkIcon className="size-5 shrink-0 text-[#FFA776] mt-0.5" />
+          <div className="flex-1 flex flex-col justify-start items-start gap-1">
+            <div className="self-stretch text-white text-sm sm:text-base font-bold font-['Inter',sans-serif]">
+              Status words are not universal finance states
+            </div>
+            <p className="self-stretch text-zinc-300 text-xs sm:text-sm font-normal font-['Inter',sans-serif] leading-relaxed">
+              “Accepted”, “posted” and “rejected” have contract-specific meanings where defined. They are not live states on this page and must not be interpreted as equivalent across fiscal, transfer and ledger workflows.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

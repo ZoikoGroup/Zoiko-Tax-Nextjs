@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function ErpGeneralLedgerPage() {
   return (
-    <div className="w-full bg-purple-50 flex flex-col justify-start items-start overflow-x-clip">
+    <div className="w-full bg-[#FAF3FF] flex flex-col justify-start items-center overflow-x-clip">
       {/* Hero + architecture notice */}
       <HeroSection />
 
