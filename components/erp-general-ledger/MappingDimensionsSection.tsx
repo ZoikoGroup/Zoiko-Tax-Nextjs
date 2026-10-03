@@ -43,28 +43,53 @@ const dimensions = [
 
 export default function MappingDimensionsSection() {
   return (
-    <div className="self-stretch px-20 py-24 flex flex-col justify-start items-start gap-10 overflow-hidden">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
-        <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] leading-5">04 · MAPPING &amp; DIMENSIONS</div>
-        <h2 className="w-full max-w-[1050px] justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">Finance dimensions are governed, not guessed.</h2>
-        <p className="w-full max-w-[1060px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">Conceptual mapping categories — configuration and support remain governed. These categories are not a production schema and contain no actual account or ledger values.</p>
-      </div>
-      <div className="self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-start items-stretch gap-4 overflow-hidden">
-        {dimensions.map((dimension) => (
-          <div key={dimension.title} className="p-7 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="self-stretch justify-start text-zinc-900 text-xl font-bold font-['Inter'] leading-7">{dimension.title}</div>
-            <div className="self-stretch justify-start text-stone-500 text-base font-normal font-['Inter'] leading-6">{dimension.desc}</div>
-            <div className="self-stretch justify-start text-orange-600 text-xs font-semibold font-['Inter'] leading-5">{dimension.tag}</div>
+    <section className="relative w-full flex justify-center items-start bg-[#FAF3FF] py-20 lg:py-24 overflow-hidden">
+      <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-12 lg:px-20 flex flex-col justify-start items-start gap-10">
+        <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-3.5">
+          <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+            04 · MAPPING &amp; DIMENSIONS
           </div>
-        ))}
-      </div>
-      <div className="self-stretch p-7 bg-purple-100 rounded-3xl grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)] justify-start items-start gap-10 overflow-hidden">
-        <div className="inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-          <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] leading-5">EXPLICIT OWNERSHIP</div>
-          <div className="self-stretch justify-start text-violet-950 text-2xl font-bold font-['Inter'] leading-8">Your accounting context. Approved mapping responsibility.</div>
+          <h2 className="w-full max-w-[1050px] text-[#18141B] text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+            Finance dimensions are governed, not guessed.
+          </h2>
+          <p className="w-full max-w-[1060px] text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
+            Conceptual mapping categories — configuration and support remain governed. These categories are not a production schema and contain no actual account or ledger values.
+          </p>
         </div>
-        <p className="flex-1 justify-start text-stone-500 text-base font-normal font-['Inter'] leading-6">The customer or designated governed configuration process owns actual finance mappings and their approval. ZoikoTax provides supported fiscal concepts and evidence within its scope. Interface documentation defines what can be transferred; the enterprise ERP/GL owns how accounting records are controlled. Resolve missing ownership before a consequential handoff.</p>
+
+        <div className="relative z-10 self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-start items-stretch gap-4">
+          {dimensions.map((dimension) => (
+            <div
+              key={dimension.title}
+              className="p-6 sm:p-7 bg-white rounded-2xl border border-[#E7D6F0] flex flex-col justify-start items-start gap-3.5 shadow-xs hover:shadow-md transition-shadow"
+            >
+              <div className="self-stretch text-[#18141B] text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
+                {dimension.title}
+              </div>
+              <div className="self-stretch text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
+                {dimension.desc}
+              </div>
+              <div className="self-stretch text-[#D65A2C] text-xs font-semibold font-['Inter',sans-serif] leading-5">
+                {dimension.tag}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative z-10 self-stretch p-6 sm:p-8 bg-[#F4EEF9] rounded-3xl border border-[#E7D6F0] grid grid-cols-1 lg:grid-cols-[340px_minmax(0,1fr)] justify-start items-start gap-8 lg:gap-10 shadow-sm">
+          <div className="flex flex-col justify-start items-start gap-2.5">
+            <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
+              EXPLICIT OWNERSHIP
+            </div>
+            <div className="text-[#3B125B] text-xl sm:text-2xl font-bold font-['Inter',sans-serif] leading-8">
+              Your accounting context. Approved mapping responsibility.
+            </div>
+          </div>
+          <p className="text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-relaxed">
+            The customer or designated governed configuration process owns actual finance mappings and their approval. ZoikoTax provides supported fiscal concepts and evidence within its scope. Interface documentation defines what can be transferred; the enterprise ERP/GL owns how accounting records are controlled. Resolve missing ownership before a consequential handoff.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

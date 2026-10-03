@@ -289,7 +289,7 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Billing & BSS", "Quote, invoice and transaction integration", CreditCard, "/billing-bss"),
           item("ERP & General Ledger", "Controlled journals and reconciliation", BookOpen),
-          item("Existing Tax Engines", "Federated, shadow and migration adapters", Calculator),
+          item("Existing Tax Engines", "Federated, shadow and migration adapters", Calculator, "/existing-tax-engines"),
           item("E-Invoicing Networks", "Authority and network adapter patterns", Share2),
         ],
       },
@@ -298,7 +298,7 @@ export const megaMenus: MegaMenu[] = [
         icon: Container,
         items: [
           item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database),
-          item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu),
+          item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu, "/oem-embedded"),
           item("Bulk & Batch", "High-volume asynchronous processing", List),
           item("Integration Guides", "Implementation patterns and architecture guidance", Book, "/integration-guides"),
         ],
