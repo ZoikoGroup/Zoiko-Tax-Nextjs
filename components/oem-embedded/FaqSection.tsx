@@ -1,4 +1,7 @@
-import { Container, SectionHeader } from "./shared";
+"use client";
+
+import { useState } from "react";
+import { Container } from "./shared";
 
 const faqs = [
   {
@@ -34,35 +37,62 @@ const faqs = [
 ];
 
 export default function FaqSection() {
+  const [openIndexes, setOpenIndexes] = useState<number[]>([0, 1, 2, 3, 4, 5]);
+
+  const toggleIndex = (idx: number) => {
+    setOpenIndexes((prev) =>
+      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+    );
+  };
+
   return (
-    <section className="relative w-full flex justify-center items-start py-20 lg:py-24 overflow-hidden">
+    <section className="relative w-full flex justify-center items-start py-20 lg:py-24 bg-[rgba(240,230,247,1)] overflow-hidden">
       <Container className="relative z-10 flex flex-col gap-10">
-        <SectionHeader
-          eyebrow="14 / FAQ"
-          title="Direct answers. No implied rights."
-          description="Public architecture guidance; exact technical, operational and commercial mechanics remain governed."
-        />
+        <div className="flex flex-col gap-4">
+          <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
+            14 / FAQ
+          </span>
+          <h2 className="text-[rgba(24,20,27,1)] text-3xl sm:text-4xl lg:text-[40px] font-bold leading-[1.1] tracking-tight font-['Inter',sans-serif]">
+            Direct answers. No implied rights.
+          </h2>
+          <p className="text-[rgba(102,95,105,1)] text-lg sm:text-xl font-normal leading-[1.6] font-['Inter',sans-serif]">
+            Public architecture guidance; exact technical, operational and commercial mechanics remain governed.
+          </p>
+        </div>
 
         <div className="self-stretch flex flex-col justify-start items-start">
-          {faqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="self-stretch py-7 border-t border-zinc-300 flex flex-col justify-start items-start gap-3.5"
-            >
-              <div className="self-stretch flex justify-start items-start gap-6">
-                <div className="flex-1 text-zinc-900 text-2xl font-normal font-['Inter',sans-serif]">
-                  {faq.question}
-                </div>
-                <span className="relative size-5 shrink-0" aria-hidden="true">
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block h-[1.6px] w-3 bg-orange-600" />
-                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block h-3 w-[1.6px] bg-orange-600" />
-                </span>
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndexes.includes(idx);
+            return (
+              <div
+                key={faq.question}
+                className="self-stretch py-6 sm:py-7 border-t border-[rgba(216,206,221,1)] flex flex-col justify-start items-start gap-3.5 transition-all"
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleIndex(idx)}
+                  className="w-full flex justify-between items-center gap-6 text-left cursor-pointer group"
+                >
+                  <div className="flex-1 text-[rgba(24,20,27,1)] text-xl sm:text-2xl font-normal font-['Inter',sans-serif] group-hover:text-[rgba(214,90,44,1)] transition-colors">
+                    {faq.question}
+                  </div>
+                  <span className="relative size-6 shrink-0 flex items-center justify-center" aria-hidden="true">
+                    <span className="block h-[2px] w-3.5 bg-[rgba(214,90,44,1)] rounded-full" />
+                    <span
+                      className={`absolute block h-3.5 w-[2px] bg-[rgba(214,90,44,1)] rounded-full transition-transform duration-200 ${
+                        isOpen ? "scale-y-0" : "scale-y-100"
+                      }`}
+                    />
+                  </span>
+                </button>
+                {isOpen && (
+                  <p className="self-stretch text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif] pt-1">
+                    {faq.answer}
+                  </p>
+                )}
               </div>
-              <p className="self-stretch text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>

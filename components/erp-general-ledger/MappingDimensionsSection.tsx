@@ -45,48 +45,71 @@ export default function MappingDimensionsSection() {
   return (
     <section className="relative w-full flex justify-center items-start bg-[#FAF3FF] py-20 lg:py-24 overflow-hidden">
       <div className="relative z-10 w-full max-w-[1440px] px-6 sm:px-12 lg:px-20 flex flex-col justify-start items-start gap-10">
+        {/* Header */}
         <div className="relative z-10 self-stretch flex flex-col justify-start items-start gap-3.5">
           <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
             04 · MAPPING &amp; DIMENSIONS
           </div>
-          <h2 className="w-full max-w-[1050px] text-[#18141B] text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+          <h2 className="text-[#18141B] text-3xl sm:text-4xl lg:text-[44px] font-bold font-['Inter',sans-serif] leading-tight tracking-tight lg:whitespace-nowrap">
             Finance dimensions are governed, not guessed.
           </h2>
-          <p className="w-full max-w-[1060px] text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
-            Conceptual mapping categories — configuration and support remain governed. These categories are not a production schema and contain no actual account or ledger values.
+          <p className="text-[#665F69] text-base sm:text-lg font-normal font-['Inter',sans-serif] leading-relaxed">
+            <span className="block lg:whitespace-nowrap">
+              Conceptual mapping categories — configuration and support remain governed. These categories are not a
+            </span>
+            <span className="block lg:whitespace-nowrap">
+              production schema and contain no actual account or ledger values.
+            </span>
           </p>
         </div>
 
-        <div className="relative z-10 self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-start items-stretch gap-4">
+        {/* 8 Cards Grid */}
+        <div className="relative z-10 self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-start items-stretch gap-5 sm:gap-6">
           {dimensions.map((dimension) => (
             <div
               key={dimension.title}
-              className="p-6 sm:p-7 bg-white rounded-2xl border border-[#E7D6F0] flex flex-col justify-start items-start gap-3.5 shadow-xs hover:shadow-md transition-shadow"
+              className="p-6 sm:p-7 bg-white rounded-2xl border border-[#D8CEDD] flex flex-col justify-between items-start gap-4 shadow-xs hover:shadow-md transition-shadow min-h-[220px]"
             >
-              <div className="self-stretch text-[#18141B] text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
-                {dimension.title}
+              <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
+                <div className="self-stretch text-[#18141B] text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
+                  {dimension.title}
+                </div>
+                <div className="self-stretch text-[#665F69] text-sm font-normal font-['Inter',sans-serif] leading-6">
+                  {dimension.desc}
+                </div>
               </div>
-              <div className="self-stretch text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
-                {dimension.desc}
-              </div>
-              <div className="self-stretch text-[#D65A2C] text-xs font-semibold font-['Inter',sans-serif] leading-5">
+              <div className="mt-auto self-stretch text-[#D65A2C] text-xs font-semibold font-['Inter',sans-serif] leading-5">
                 {dimension.tag}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="relative z-10 self-stretch p-6 sm:p-8 bg-[#F4EEF9] rounded-3xl border border-[#E7D6F0] grid grid-cols-1 lg:grid-cols-[340px_minmax(0,1fr)] justify-start items-start gap-8 lg:gap-10 shadow-sm">
+        {/* Explicit Ownership Callout */}
+        <div className="relative z-10 self-stretch p-6 sm:p-8 bg-[rgba(242,234,248,1)] rounded-3xl grid grid-cols-1 lg:grid-cols-[380px_minmax(0,1fr)] justify-start items-start gap-8 lg:gap-12">
           <div className="flex flex-col justify-start items-start gap-2.5">
             <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
               EXPLICIT OWNERSHIP
             </div>
-            <div className="text-[#3B125B] text-xl sm:text-2xl font-bold font-['Inter',sans-serif] leading-8">
-              Your accounting context. Approved mapping responsibility.
+            <div className="text-[rgba(48,17,83,1)] text-2xl sm:text-3xl font-bold font-['Inter',sans-serif] leading-tight">
+              <span className="block sm:whitespace-nowrap">Your accounting context.</span>
+              <span className="block sm:whitespace-nowrap">Approved mapping</span>
+              <span className="block sm:whitespace-nowrap">responsibility.</span>
             </div>
           </div>
-          <p className="text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-relaxed">
-            The customer or designated governed configuration process owns actual finance mappings and their approval. ZoikoTax provides supported fiscal concepts and evidence within its scope. Interface documentation defines what can be transferred; the enterprise ERP/GL owns how accounting records are controlled. Resolve missing ownership before a consequential handoff.
+          <p className="text-[#665F69] text-sm sm:text-base font-normal leading-relaxed font-['Inter',sans-serif]">
+            <span className="block lg:whitespace-nowrap">
+              The customer or designated governed configuration process owns actual finance mappings and their
+            </span>
+            <span className="block lg:whitespace-nowrap">
+              approval. ZoikoTax provides supported fiscal concepts and evidence within its scope. Interface
+            </span>
+            <span className="block lg:whitespace-nowrap">
+              documentation defines what can be transferred; the enterprise ERP/GL owns how accounting records are
+            </span>
+            <span className="block lg:whitespace-nowrap">
+              controlled. Resolve missing ownership before a consequential handoff.
+            </span>
           </p>
         </div>
       </div>

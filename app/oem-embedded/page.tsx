@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function OemEmbeddedPage() {
   return (
-    <div className="w-full bg-purple-50 flex flex-col justify-start items-start overflow-x-clip">
+    <div className="w-full bg-white flex flex-col justify-start items-start overflow-x-clip">
       {/* Hero + architecture notice */}
       <HeroSection />
 

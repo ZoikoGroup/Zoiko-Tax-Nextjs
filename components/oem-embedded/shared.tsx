@@ -97,8 +97,8 @@ export function Notice({
   dark = false,
   className,
 }: {
-  title: string;
-  body: string;
+  title: ReactNode;
+  body: ReactNode;
   dark?: boolean;
   className?: string;
 }) {
@@ -106,7 +106,7 @@ export function Notice({
     <div
       className={clsx(
         "w-full rounded-2xl p-6 flex flex-col sm:flex-row justify-start items-start gap-4",
-        dark ? "bg-violet-950" : "bg-orange-50",
+        dark ? "bg-violet-950" : "bg-[rgba(255,240,231,1)]",
         className
       )}
     >

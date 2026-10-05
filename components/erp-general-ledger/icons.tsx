@@ -28,6 +28,35 @@ export function LinkMarkerIcon({ className = "" }: IconProps) {
   return <Image src="/erp-general-ledger/Link marker.png" alt="" width={14} height={7} className={className} />;
 }
 
+export function Code2Icon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/code-2.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function LayersIcon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/layers.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function RadioIcon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/radio.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function FlaskConicalIcon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/flask-conical.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function GitCompareArrowsIcon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/git-compare-arrows.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function GlobeSvgIcon({ className = "size-5" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/globe.svg" alt="" width={20} height={20} className={className} />;
+}
+
+export function SquareIcon({ className = "size-4" }: IconProps) {
+  return <Image src="/erp-general-ledger/icons/square.svg" alt="" width={16} height={16} className={className} />;
+}
+
+
 /* ---------- Inline SVG icons (currentColor) ---------- */
 
 function Svg({ className = "size-6", children }: IconProps & { children: React.ReactNode }) {
@@ -159,3 +188,31 @@ export const LinkSvgIcon = ({ className }: IconProps) => (
     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
   </Svg>
 );
+
+export const GitForkIcon = ({ className }: IconProps) => (
+  <Svg className={className}>
+    <circle cx="12" cy="18" r="3" />
+    <circle cx="6" cy="6" r="3" />
+    <circle cx="18" cy="6" r="3" />
+    <path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9" />
+    <path d="M12 13v2" />
+  </Svg>
+);
+
+export const GitBranchIcon = ({ className }: IconProps) => (
+  <Svg className={className}>
+    <line x1="6" x2="6" y1="3" y2="15" />
+    <circle cx="18" cy="6" r="3" />
+    <circle cx="6" cy="18" r="3" />
+    <path d="M18 9a9 9 0 0 1-9 9" />
+  </Svg>
+);
+
+export const FileEditIcon = ({ className }: IconProps) => (
+  <Svg className={className}>
+    <path d="M4 13.5V4a2 2 0 0 1 2-2h8.5L20 7.5V20a2 2 0 0 1-2 2h-5.5" />
+    <polyline points="14 2 14 8 20 8" />
+    <path d="M10.42 12.61a2.1 2.1 0 1 1 2.97 2.97L7.95 21 4 22l1-3.95 5.42-5.44Z" />
+  </Svg>
+);
+

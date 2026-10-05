@@ -1,4 +1,5 @@
-import { ArrowLeftRightIcon, FileIcon, GlobeIcon, InfoIcon, WorkflowIcon } from "./icons";
+import Image from "next/image";
+import { ArrowLeftRightIcon, InfoIcon } from "./icons";
 
 const pillars = [
   {
@@ -6,21 +7,21 @@ const pillars = [
     title: "Billing / ERP / source",
     desc: "Owns the invoice and business context. ZoikoTax does not replace the enterprise ERP or BSS.",
     dark: false,
-    icon: <FileIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/database.svg" alt="" width={20} height={20} className="shrink-0" />,
   },
   {
     num: "02 · Integration boundary",
     title: "ZoikoTax adapter",
     desc: "Applies supported transformation, routing and integration logic under the exact approved adapter contract.",
     dark: true,
-    icon: <WorkflowIcon className="size-5 text-orange-300" />,
+    icon: <img src="/e-invoicing-networks/icons/link-2.svg" alt="" width={20} height={20} className="shrink-0" />,
   },
   {
     num: "03 · External outcome",
     title: "External network / authority",
     desc: "Owns regime-specific acceptance, validation, clearance, reporting or acknowledgement. These are not universal obligations.",
     dark: false,
-    icon: <GlobeIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/network.svg" alt="" width={20} height={20} className="shrink-0" />,
   },
 ];
 
@@ -39,8 +40,16 @@ const downstream = [
 
 export default function SystemBoundarySection() {
   return (
-    <div className="self-stretch px-20 py-20 flex flex-col justify-start items-start gap-10 overflow-hidden">
-      <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
+    <div className="relative w-full flex justify-center py-20 bg-white overflow-hidden">
+      <Image
+        src="/existing-tax-engines/0.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="relative w-full max-w-[1440px] px-4 sm:px-8 lg:px-20 flex flex-col justify-start items-start gap-10">
+      <div className="relative self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
         <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] uppercase">01 / System boundary &amp; responsibility</div>
         <h2 className="self-stretch justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">One workflow. Distinct responsibilities.</h2>
         <p className="w-full max-w-[1120px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">Keep business context, adapter behavior and external decisions separate—then connect approved states and evidence to the teams that need them.</p>
@@ -51,7 +60,7 @@ export default function SystemBoundarySection() {
             <div
               key={pillar.num}
               className={`flex-1 p-6 rounded-2xl inline-flex flex-col justify-start items-start gap-3.5 overflow-hidden ${
-                pillar.dark ? "bg-violet-950" : "bg-violet-100"
+                pillar.dark ? "bg-[#301153]" : "bg-violet-100"
               }`}
             >
               <div className="self-stretch inline-flex justify-between items-center overflow-hidden">
@@ -89,6 +98,7 @@ export default function SystemBoundarySection() {
           <div className="self-stretch justify-start text-zinc-900 text-base font-semibold font-['Inter']">Coverage and technical ownership are separate.</div>
           <p className="self-stretch justify-start text-stone-500 text-sm font-normal font-['Inter'] leading-5">Coverage owns exact country, network, capability and environment support. The technical adapter owner governs formats, endpoint/schema, credentials, certificates, signatures, transport, external behavior, mappings, timing and retries. Architecture creates no universal legal obligation.</p>
         </div>
+      </div>
       </div>
     </div>
   );
