@@ -1,0 +1,17 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as DirectAnswerSection } from "./DirectAnswerSection";
+export { default as ArchitectureSection } from "./ArchitectureSection";
+export { default as ControlDomainsSection } from "./ControlDomainsSection";
+export { default as IdentityAccessSection } from "./IdentityAccessSection";
+export { default as DataProtectionSection } from "./DataProtectionSection";
+export { default as PlatformInfraSection } from "./PlatformInfraSection";
+export { default as SecureDevSection } from "./SecureDevSection";
+export { default as VulnerabilitySection } from "./VulnerabilitySection";
+export { default as MonitoringSection } from "./MonitoringSection";
+export { default as ResilienceSection } from "./ResilienceSection";
+export { default as ThirdPartySection } from "./ThirdPartySection";
+export { default as EvidenceSection } from "./EvidenceSection";
+export { default as CurrentnessSection } from "./CurrentnessSection";
+export { default as SafeStatesSection } from "./SafeStatesSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as NextStepsSection } from "./NextStepsSection";
