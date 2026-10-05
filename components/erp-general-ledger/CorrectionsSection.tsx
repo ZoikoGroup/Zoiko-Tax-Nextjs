@@ -1,14 +1,14 @@
-import { CalendarIcon, CopyIcon, FileTextIcon, InfoIcon, RotateIcon } from "./icons";
+import { CalendarIcon, CopyIcon, FileEditIcon, FileTextIcon, GitForkIcon, InfoIcon, RotateIcon } from "./icons";
 
 const corrections = [
   {
-    icon: <FileTextIcon className="size-5 text-[#D65A2C]" />,
+    icon: <FileEditIcon className="size-5 text-[#D65A2C]" />,
     title: "Source transaction corrected",
     desc: "Preserve the link to the original record and its source history. Use the supported source-to-fiscal correction path; do not infer an accounting adjustment.",
     tag: "Route: source documentation + Integration Guides",
   },
   {
-    icon: <RotateIcon className="size-4 text-[#D65A2C]" />,
+    icon: <GitForkIcon className="size-5 text-[#D65A2C]" />,
     title: "Fiscal outcome changes",
     desc: "Retain relevant outcome versions and evidence references. Follow the authoritative fiscal and interface documentation for supported downstream behavior.",
     tag: "Route: approved fiscal / interface documentation",
@@ -20,7 +20,7 @@ const corrections = [
     tag: "Route: authoritative correction documentation",
   },
   {
-    icon: <RotateIcon className="size-4 text-[#D65A2C]" />,
+    icon: <RotateIcon className="size-5 text-[#D65A2C]" />,
     title: "Journal reprocessing",
     desc: "Reprocess only when the approved interface and customer control process allow it. No automatic adjustment, replay behavior or ledger write is implied.",
     tag: "Boundary: only if explicitly approved",
@@ -47,42 +47,46 @@ export default function CorrectionsSection() {
           <div className="text-[#D65A2C] text-xs font-bold font-['Inter',sans-serif] uppercase tracking-[0.08em] leading-5">
             06 · CORRECTIONS &amp; REPROCESSING
           </div>
-          <h2 className="w-full max-w-[1050px] text-[#18141B] text-3xl sm:text-4xl lg:text-[48px] font-bold font-['Inter',sans-serif] leading-[1.1] tracking-tight">
+          <h2 className="w-full text-[#18141B] text-3xl sm:text-4xl lg:text-[44px] font-bold font-['Inter',sans-serif] leading-tight tracking-tight lg:whitespace-nowrap">
             Preserve the history. Govern the next action.
           </h2>
-          <p className="w-full max-w-[1060px] text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
-            Changes must retain the originating record linkage and source version history. Correction guidance describes routing and control—not accounting or statutory treatment.
+          <p className="w-full text-[#665F69] text-base sm:text-lg lg:text-[18px] font-normal font-['Inter',sans-serif] leading-relaxed">
+            Changes must retain the originating record linkage and source version history. Correction guidance describes<br className="hidden lg:block" />
+            routing and control—not accounting or statutory treatment.
           </p>
         </div>
 
-        <div className="relative z-10 self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-start items-stretch gap-4">
+        <div className="relative z-10 self-stretch grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-start items-stretch gap-5 sm:gap-6">
           {corrections.map((correction) => (
             <div
               key={correction.title}
-              className="p-6 sm:p-7 bg-white rounded-2xl border border-[#E7D6F0] flex flex-col justify-start items-start gap-3.5 shadow-xs hover:shadow-md transition-shadow"
+              className="p-6 sm:p-7 bg-white rounded-2xl border border-[#D8CEDD] flex flex-col justify-between items-start gap-4 min-h-[240px]"
             >
-              {correction.icon}
-              <div className="self-stretch text-[#18141B] text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
-                {correction.title}
+              <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
+                {correction.icon}
+                <div className="self-stretch text-[#18141B] text-lg sm:text-xl font-bold font-['Inter',sans-serif] leading-7">
+                  {correction.title}
+                </div>
+                <div className="self-stretch text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
+                  {correction.desc}
+                </div>
               </div>
-              <div className="self-stretch text-[#665F69] text-sm sm:text-base font-normal font-['Inter',sans-serif] leading-6">
-                {correction.desc}
-              </div>
-              <div className="self-stretch text-[#D65A2C] text-xs font-semibold font-['Inter',sans-serif] leading-5">
+              <div className="mt-auto text-[#D65A2C] text-xs font-semibold font-['Inter',sans-serif] leading-5">
                 {correction.tag}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="relative z-10 w-full max-w-[1280px] min-h-[125px] p-5 sm:p-6 bg-[rgba(255,240,231,1)] rounded-2xl border border-[rgba(235,200,181,1)] flex justify-start items-start gap-4 shadow-sm">
+        <div className="relative z-10 self-stretch p-5 sm:p-6 bg-[rgba(255,240,231,1)] rounded-2xl border border-[rgba(235,200,181,1)] border-l-[3px] border-l-[#D65A2C] flex justify-start items-start gap-3.5">
           <InfoIcon className="size-5 shrink-0 text-[#D65A2C] mt-0.5" />
           <div className="flex-1 flex flex-col justify-start items-start gap-1">
             <div className="self-stretch text-[#18141B] text-sm sm:text-base font-bold font-['Inter',sans-serif]">
               Unresolved or unknown → governed review
             </div>
             <p className="self-stretch text-[#665F69] text-xs sm:text-sm font-normal font-['Inter',sans-serif] leading-relaxed">
-              When correction instructions, period context or supported reprocessing behavior are unknown, preserve lineage and route the question for governed review. Do not silently adjust, overwrite history, reopen a period or infer statutory treatment.
+              When correction instructions, period context or supported reprocessing behavior are unknown, preserve lineage and route the question for governed review. Do not silently adjust,<br className="hidden lg:block" />
+              overwrite history, reopen a period or infer statutory treatment.
             </p>
           </div>
         </div>
@@ -90,3 +94,4 @@ export default function CorrectionsSection() {
     </section>
   );
 }
+

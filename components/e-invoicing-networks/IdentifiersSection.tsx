@@ -11,11 +11,14 @@ const fields = [
 
 export default function IdentifiersSection() {
   return (
-    <div className="self-stretch px-20 py-20 flex flex-col justify-start items-start gap-10 overflow-hidden">
+    <div className="w-full flex justify-center py-20 bg-[#FAF3FF] overflow-hidden">
+      <div className="w-full max-w-[1440px] px-4 sm:px-8 lg:px-20 flex flex-col justify-start items-start gap-10">
       <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
         <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] uppercase">05 / Identifiers &amp; correlation</div>
         <h2 className="self-stretch justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">Link the context. Keep the payload private.</h2>
-        <p className="w-full max-w-[1120px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">Correlate enterprise source, request, fiscal document, external response and evidence without exposing invoice content or private identifiers.</p>
+        <p className="w-full max-w-[1120px] justify-start text-stone-500 text-xl font-normal font-['Inter'] leading-8">
+          Correlate enterprise source, request, fiscal document, external response and evidence without exposing invoice<br />content or private identifiers.
+        </p>
       </div>
       <div className="self-stretch p-8 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4 overflow-hidden">
         <div className="self-stretch inline-flex justify-between items-center overflow-hidden">
@@ -35,6 +38,7 @@ export default function IdentifiersSection() {
           </div>
         ))}
         <p className="self-stretch justify-start text-stone-500 text-sm font-normal font-['Inter'] leading-5">Neutral placeholders do not assert an identifier format, required field, actual value or API schema. Exact mappings and display rights are controlled by the adapter documentation.</p>
+      </div>
       </div>
     </div>
   );

@@ -2,17 +2,17 @@ import { ArrowRightIcon, FileCheckIcon, GitBranchIcon, InboxIcon, InfoIcon, Send
 
 const rowOne = [
   {
-    icon: <FileCheckIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/file-check-2.svg" alt="" width={20} height={20} className="shrink-0" />,
     title: "Clearance-oriented",
     desc: "An external clearance decision may be part of the governed lifecycle. Do not infer universal pre-clearance, legal timing or an approval guarantee.",
   },
   {
-    icon: <SendIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/send.svg" alt="" width={20} height={20} className="shrink-0" />,
     title: "Reporting-oriented",
     desc: "A reporting step conveys required information under the applicable contract. Reporting is not automatically clearance or acceptance.",
   },
   {
-    icon: <ShieldCheckIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/scan-line.svg" alt="" width={20} height={20} className="shrink-0" />,
     title: "Validation-oriented",
     desc: "Defined checks can produce a validation result. Passing technical validation does not independently establish legal correctness.",
   },
@@ -20,12 +20,12 @@ const rowOne = [
 
 const rowTwo = [
   {
-    icon: <InboxIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/message-square.svg" alt="" width={20} height={20} className="shrink-0" />,
     title: "Acknowledgement-oriented",
     desc: "An acknowledgement may confirm receipt or processing progress. It is not a final outcome unless the approved adapter explicitly defines it that way.",
   },
   {
-    icon: <GitBranchIcon className="size-5 text-orange-600" />,
+    icon: <img src="/e-invoicing-networks/icons/git-branch.svg" alt="" width={20} height={20} className="shrink-0" />,
     title: "Hybrid / multi-step",
     desc: "Several external steps may coexist, with distinct acknowledgements and final states. Do not collapse them into one universal lifecycle or infer a country or regime.",
   },
@@ -35,7 +35,8 @@ const patternStates = ["Prepared context", "Submission context", "Awaiting sourc
 
 export default function DocumentLifecycleSection() {
   return (
-    <div className="self-stretch px-20 py-20 flex flex-col justify-start items-start gap-10 overflow-hidden">
+    <div className="w-full flex justify-center py-20 bg-[#FAF3FF] overflow-hidden">
+      <div className="w-full max-w-[1440px] px-4 sm:px-8 lg:px-20 flex flex-col justify-start items-start gap-10">
       <div className="self-stretch flex flex-col justify-start items-start gap-4 overflow-hidden">
         <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] uppercase">03 / Document lifecycle &amp; pattern variants</div>
         <h2 className="self-stretch justify-start text-zinc-900 text-5xl font-bold font-['Inter'] leading-[48.40px]">Different patterns. Different meanings.</h2>
@@ -59,7 +60,7 @@ export default function DocumentLifecycleSection() {
           </div>
         ))}
       </div>
-      <div className="self-stretch p-7 bg-violet-100 rounded-3xl flex flex-col justify-start items-start gap-5 overflow-hidden">
+      <div className="self-stretch p-7 bg-[#F0E6F7] rounded-3xl flex flex-col justify-start items-start gap-5 overflow-hidden">
         <div className="justify-start text-orange-600 text-xs font-bold font-['Inter'] uppercase">Illustrative pattern — actual states adapter-defined</div>
         <div className="self-stretch inline-flex justify-start items-center gap-2.5 overflow-hidden">
           {patternStates.map((state, index) => (
@@ -79,6 +80,7 @@ export default function DocumentLifecycleSection() {
           <div className="self-stretch justify-start text-zinc-900 text-base font-semibold font-['Inter']">No regime is implied by a pattern.</div>
           <p className="self-stretch justify-start text-stone-500 text-sm font-normal font-['Inter'] leading-5">These families do not assert any country’s legal obligations, universal pre-clearance requirements or current production coverage. Validation must never be presented as proof of legal correctness.</p>
         </div>
+      </div>
       </div>
     </div>
   );

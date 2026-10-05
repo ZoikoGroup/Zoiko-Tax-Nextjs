@@ -95,11 +95,11 @@ const safeStates = [
 
 export default function JourneySection() {
   return (
-    <section className="relative w-full flex justify-center items-start py-20 lg:py-24 overflow-hidden">
+    <section className="relative w-full flex justify-center items-start py-20 lg:py-24 bg-white overflow-hidden">
       {/* Section background image */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none mix-blend-multiply opacity-50">
         <Image
-          src="/oem-embedded/Docs first conversion.png"
+          src="/existing-tax-engines/0.png"
           alt=""
           fill
           sizes="100vw"
@@ -108,28 +108,34 @@ export default function JourneySection() {
       </div>
 
       <Container className="relative z-10 flex flex-col gap-10">
-        <SectionHeader
-          eyebrow="13 / IMPLEMENTATION JOURNEY"
-          title="Move forward only when the next boundary is clear."
-          description="A docs-first journey with safe handling for missing sources, unknown entitlement and unavailable routes."
-        />
+        <div className="flex flex-col gap-4">
+          <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
+            13 / IMPLEMENTATION JOURNEY
+          </span>
+          <h2 className="text-[rgba(24,20,27,1)] text-3xl sm:text-4xl lg:text-[40px] font-bold leading-[1.1] tracking-tight font-['Inter',sans-serif]">
+            Move forward only when the next boundary is clear.
+          </h2>
+          <p className="text-[rgba(102,95,105,1)] text-lg sm:text-xl font-normal leading-[1.6] font-['Inter',sans-serif]">
+            A docs-first journey with safe handling for missing sources, unknown entitlement and unavailable routes.
+          </p>
+        </div>
 
         {/* Journey steps */}
-        <div className="self-stretch bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start overflow-hidden">
+        <div className="self-stretch bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] flex flex-col justify-start items-start overflow-hidden">
           {journey.map((row) => (
             <div
               key={row.num}
               className={`self-stretch p-5 flex flex-col sm:flex-row justify-start items-start gap-2 sm:gap-6 ${
-                row.num !== "01" ? "border-t border-zinc-300" : ""
+                row.num !== "01" ? "border-t border-[rgba(216,206,221,1)]" : ""
               }`}
             >
-              <div className="w-12 shrink-0 text-orange-600 text-base font-bold font-['Inter',sans-serif]">
+              <div className="w-12 shrink-0 text-[rgba(214,90,44,1)] text-base font-bold font-['Inter',sans-serif]">
                 {row.num}
               </div>
-              <div className="w-full sm:w-96 shrink-0 text-zinc-900 text-lg font-normal leading-6 font-['Inter',sans-serif]">
+              <div className="w-full sm:w-96 shrink-0 text-[rgba(24,20,27,1)] text-lg font-normal leading-6 font-['Inter',sans-serif]">
                 {row.title}
               </div>
-              <div className="flex-1 text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <div className="flex-1 text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 {row.desc}
               </div>
             </div>
@@ -138,39 +144,51 @@ export default function JourneySection() {
 
         {/* Specimens */}
         <div className="self-stretch flex flex-col justify-start items-start gap-5">
-          <span className="text-orange-600 text-xs font-bold leading-5 font-['Inter',sans-serif]">
+          <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
             CONCEPTUAL SPECIMENS · NOT LIVE CAPABILITY CONTROLS
           </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="self-stretch p-6 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4">
-              <span className="text-orange-600 text-xs font-bold leading-5 font-['Inter',sans-serif]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="self-stretch p-6 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] flex flex-col justify-start items-start gap-4">
+              <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
                 DEFAULT
               </span>
-              <div className="self-stretch text-zinc-900 text-xl font-normal font-['Inter',sans-serif]">
+              <div className="self-stretch text-[rgba(24,20,27,1)] text-xl font-normal font-['Inter',sans-serif]">
                 Documentation first
               </div>
-              <p className="self-stretch text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <p className="self-stretch text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 Use an approved public guide to understand the model.
               </p>
-              <SecondaryButton href="/integration-guides">
-                Integration Guides
-              </SecondaryButton>
+              <Link
+                href="/integration-guides"
+                className="h-[47px] px-5 bg-white hover:bg-neutral-50 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] inline-flex justify-center items-center gap-3 overflow-hidden transition-all cursor-pointer mt-auto"
+              >
+                <span className="text-[rgba(24,20,27,1)] text-sm font-semibold font-['Inter',sans-serif]">
+                  Integration Guides
+                </span>
+                <Image
+                  src="/oem-embedded/arrow-right.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="size-4"
+                />
+              </Link>
             </div>
-            <div className="self-stretch p-6 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4">
-              <span className="text-orange-600 text-xs font-bold leading-5 font-['Inter',sans-serif]">
+            <div className="self-stretch p-6 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] flex flex-col justify-start items-start gap-4">
+              <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
                 VISIBLE FOCUS
               </span>
-              <div className="self-stretch text-zinc-900 text-xl font-normal font-['Inter',sans-serif]">
+              <div className="self-stretch text-[rgba(24,20,27,1)] text-xl font-normal font-['Inter',sans-serif]">
                 A clear next route
               </div>
-              <p className="self-stretch text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <p className="self-stretch text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 Focus is visible without relying on motion or hover.
               </p>
               <Link
                 href="/integration-guides"
-                className="px-5 py-3.5 bg-white rounded-[999px] outline outline-[3px] outline-offset-[-3px] outline-orange-600 inline-flex justify-start items-center gap-3 hover:bg-neutral-50 transition-all cursor-pointer"
+                className="h-[47px] px-5 bg-white hover:bg-neutral-50 rounded-[999px] outline outline-2 outline-offset-[-2px] outline-[rgba(214,90,44,1)] inline-flex justify-center items-center gap-3 overflow-hidden transition-all cursor-pointer mt-auto"
               >
-                <span className="text-zinc-900 text-sm font-semibold font-['Inter',sans-serif]">
+                <span className="text-[rgba(24,20,27,1)] text-sm font-semibold font-['Inter',sans-serif]">
                   Open API Reference
                 </span>
                 <Image
@@ -182,47 +200,48 @@ export default function JourneySection() {
                 />
               </Link>
             </div>
-            <div className="self-stretch p-6 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start gap-4">
-              <span className="text-orange-600 text-xs font-bold leading-5 font-['Inter',sans-serif]">
+            <div className="self-stretch p-6 bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] flex flex-col justify-start items-start gap-4">
+              <span className="text-[rgba(214,90,44,1)] text-xs font-bold leading-5 tracking-[0.08em] uppercase font-['Inter',sans-serif]">
                 EXPANDED
               </span>
-              <div className="self-stretch text-zinc-900 text-xl font-normal font-['Inter',sans-serif]">
+              <div className="self-stretch text-[rgba(24,20,27,1)] text-xl font-normal font-['Inter',sans-serif]">
                 Capability boundary −
               </div>
-              <p className="self-stretch text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
-                Organization context, entitlement, Coverage, environment and
-                activation approval are distinct. No grant is implied by this
-                explanatory disclosure.
+              <p className="self-stretch text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
+                <span className="block xl:whitespace-nowrap">Organization context, entitlement, Coverage,</span>
+                <span className="block xl:whitespace-nowrap">environment and activation approval are distinct.</span>
+                <span className="block xl:whitespace-nowrap">No grant is implied by this explanatory</span>
+                <span className="block xl:whitespace-nowrap">disclosure.</span>
               </p>
             </div>
           </div>
         </div>
 
         {/* Safe-state table */}
-        <div className="self-stretch bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-zinc-300 flex flex-col justify-start items-start overflow-hidden">
-          <div className="self-stretch p-5 bg-violet-100 hidden lg:flex justify-start items-start gap-6">
-            <div className="w-64 shrink-0 text-violet-950 text-xs font-bold font-['Inter',sans-serif]">
+        <div className="self-stretch bg-white rounded-3xl outline outline-1 outline-offset-[-1px] outline-[rgba(216,206,221,1)] flex flex-col justify-start items-start overflow-hidden">
+          <div className="self-stretch p-5 bg-[rgba(238,229,245,1)] hidden lg:flex justify-start items-start gap-6">
+            <div className="w-[280px] shrink-0 text-[rgba(48,17,83,1)] text-xs font-bold font-['Inter',sans-serif]">
               Illustrative safe state
             </div>
-            <div className="w-96 shrink-0 text-violet-950 text-xs font-bold font-['Inter',sans-serif]">
+            <div className="w-[420px] shrink-0 text-[rgba(48,17,83,1)] text-xs font-bold font-['Inter',sans-serif]">
               Public explanation
             </div>
-            <div className="flex-1 text-violet-950 text-xs font-bold font-['Inter',sans-serif]">
+            <div className="flex-1 text-[rgba(48,17,83,1)] text-xs font-bold font-['Inter',sans-serif]">
               Documentation-first next step
             </div>
           </div>
           {safeStates.map((row) => (
             <div
               key={row.state}
-              className="self-stretch p-5 border-t border-zinc-300 flex flex-col lg:flex-row justify-start items-start gap-3 lg:gap-6"
+              className="self-stretch p-5 border-t border-[rgba(216,206,221,1)] flex flex-col lg:flex-row justify-start items-start gap-3 lg:gap-6"
             >
-              <div className="w-full lg:w-64 shrink-0 text-zinc-900 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <div className="w-full lg:w-[280px] shrink-0 text-[rgba(24,20,27,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 {row.state}
               </div>
-              <div className="w-full lg:w-96 shrink-0 text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <div className="w-full lg:w-[420px] shrink-0 text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 {row.explanation}
               </div>
-              <div className="flex-1 text-stone-500 text-base font-normal leading-6 font-['Inter',sans-serif]">
+              <div className="flex-1 text-[rgba(102,95,105,1)] text-[15px] font-normal leading-6 font-['Inter',sans-serif]">
                 {row.step}
               </div>
             </div>
@@ -230,8 +249,13 @@ export default function JourneySection() {
         </div>
 
         <Notice
-          title="Safe states do not reveal private organization status"
-          body="These are conceptual public explanations, not actual tenant states or operating controls. Meaning is written in text rather than color alone; diagrams include text equivalents and no essential information depends on hover or motion."
+          title={<span className="text-[rgba(24,20,27,1)]">Safe states do not reveal private organization status</span>}
+          body={
+            <span className="text-[rgba(102,95,105,1)]">
+              <span className="block xl:whitespace-nowrap">These are conceptual public explanations, not actual tenant states or operating controls. Meaning is written in text rather than color alone; diagrams include</span>
+              <span className="block xl:whitespace-nowrap">text equivalents and no essential information depends on hover or motion.</span>
+            </span>
+          }
         />
       </Container>
     </section>
