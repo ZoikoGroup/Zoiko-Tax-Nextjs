@@ -276,8 +276,8 @@ export const megaMenus: MegaMenu[] = [
         title: "Start Building",
         icon: Code,
         items: [
-          item("Developer Overview", "Architecture, environments and getting started", Compass),
-          item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText),
+          item("Developer Overview", "Architecture, environments and getting started", Compass, "/developer-overview"),
+          item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText, "/api-reference"),
           item("SDKs", "Supported client libraries and versions", Code, "/sdks"),
           item("Webhooks & Events", "Event contracts and delivery semantics", Activity, "/webhooks-events"),
           item("API Changelog", "Version and compatibility change history", History, "/api-changelog"),
@@ -297,7 +297,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Enterprise Systems",
         icon: Container,
         items: [
-          item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database),
+          item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database, "/data-enterprise-systems"),
           item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu, "/oem-embedded"),
           item("Bulk & Batch", "High-volume asynchronous processing", List),
           item("Integration Guides", "Implementation patterns and architecture guidance", Book, "/integration-guides"),
