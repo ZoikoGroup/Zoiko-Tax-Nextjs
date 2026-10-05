@@ -1,11 +1,11 @@
 export const ROUTES = {
-  apiReference: "/developers/api/",
+  apiReference: "/api-reference",
   integrationGuides: "/integration-guides",
   changelog: "/api-changelog",
   sandbox: "/sandbox",
   webhooks: "/webhooks-events",
   bulkBatch: "/bulk-batch",
-  developers: "/developers/",
+  developers: "/developer-overview",
   coverage: "/coverage-overview",
   trust: "/trust/",
   demo: "/demo/",

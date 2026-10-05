@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Inter, JetBrains_Mono, Manrope, Roboto_Mono, Sora } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,9 +45,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable} ${dmSans.variable} ${robotoMono.variable} ${manrope.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-[color:var(--foreground)]">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome header={<Header />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );
