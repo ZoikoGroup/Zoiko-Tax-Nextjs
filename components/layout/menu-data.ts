@@ -321,7 +321,7 @@ export const megaMenus: MegaMenu[] = [
         icon: Shield,
         items: [
           item("Security", "Threat model, controls and incident response", Shield),
-          item("Privacy & Data Protection", "GDPR, CCPA and global compliance", Cog),
+          item("Privacy & Data Protection", "GDPR, CCPA and global compliance", Cog, "/privacy-data-protection"),
           item("Data Processing & Residency", "Regional data requirements and control", Globe),
           item("Business Continuity", "Availability, disaster recovery and SLAs", ChartColumn),
         ],
@@ -337,7 +337,7 @@ export const megaMenus: MegaMenu[] = [
             ClipboardCheck,
             "/evidence-auditability"
           ),
-          item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility),
+          item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility, "/accessibility"),
           item("Responsible Disclosure", "Security vulnerability reporting program", Bug),
         ],
       },

@@ -52,6 +52,8 @@ const PAGE_HREFS: Record<string, string> = {
   "Integration Guides": "/integration-guides",
   "Tax Engines": "/existing-tax-engines",
   "OEM & Partners": "/oem-embedded",
+  "Privacy & Data Protection": "/privacy-data-protection",
+  Accessibility: "/accessibility",
 };
 
 const links = (...labels: string[]): NavLink[] =>
