@@ -26,7 +26,7 @@ const CARDS = [
       "Publish only if a verified runtime or container domain exists in scope. No packaging, orchestration or isolation model is assumed.",
   },
   {
-    icon: "waypoints",
+    icon: "waypoints-apricot",
     title: "Edge & DDoS",
     description:
       "Publication requires approved ingress and edge-protection scope. No mitigation capability, provider or guarantee is supplied.",
@@ -41,7 +41,7 @@ const CARDS = [
 
 export default function PlatformInfraSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[rgba(250,243,255,1)]">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="05 / PLATFORM & INFRASTRUCTURE"
@@ -63,7 +63,11 @@ export default function PlatformInfraSection() {
 
         <NoticeCard
           title="A public summary is not an attack-surface map"
-          description="Internal hosts, network rules, attack paths, provider-specific layouts and administrative interfaces remain out of public scope. Approved boundary descriptions should be sufficient without sensitive operational detail."
+          description={
+            <div className="max-w-[1100px]">
+              Internal hosts, network rules, attack paths, provider-specific layouts and administrative interfaces remain out of public scope. Approved boundary descriptions should be sufficient without sensitive operational detail.
+            </div>
+          }
         />
       </div>
     </SectionShell>

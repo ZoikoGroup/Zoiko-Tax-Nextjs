@@ -12,7 +12,7 @@ const TOPICS = [
 
 export default function DataProtectionSection() {
   return (
-    <SectionShell className="bg-slate-900">
+    <SectionShell className="bg-[rgba(18,3,39,1)]">
       <div className="flex flex-col gap-9">
         <SectionHeading
           dark
@@ -49,12 +49,20 @@ export default function DataProtectionSection() {
 
         <div className="inline-flex w-full flex-col items-start gap-6 lg:flex-row lg:gap-10">
           <div className="inline-flex flex-1 flex-col items-start gap-1.5 py-3.5">
-            <span className="self-stretch text-base font-semibold leading-6 text-orange-300">Privacy →</span>
+            <span className="self-stretch flex items-center gap-2 text-base font-semibold leading-6 text-[rgba(244,162,97,1)]">
+              Privacy
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+                <path d="M5 12.0008H19.0016M12.0008 19.0016L19.0016 12.0008L12.0008 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
             <span className="self-stretch text-xs leading-5 text-zinc-300">/trust/privacy/</span>
           </div>
           <div className="inline-flex flex-1 flex-col items-start gap-1.5 py-3.5">
-            <span className="self-stretch text-base font-semibold leading-6 text-orange-300">
-              Data Processing & Residency →
+            <span className="self-stretch flex items-center gap-2 text-base font-semibold leading-6 text-[rgba(244,162,97,1)]">
+              Data Processing & Residency
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+                <path d="M5 12.0008H19.0016M12.0008 19.0016L19.0016 12.0008L12.0008 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
             <span className="self-stretch text-xs leading-5 text-zinc-300">
               Named governed destination · Exact route not supplied

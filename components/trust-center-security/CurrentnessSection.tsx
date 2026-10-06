@@ -30,7 +30,7 @@ const APPROVERS = [
 
 export default function CurrentnessSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-slate-900/80">
+    <section className="relative w-full overflow-hidden bg-[rgba(18,3,39,0.5)]">
       <div className="absolute inset-0" aria-hidden="true">
         <Image
           src="/trust-center-security/currentness-governance.png"
@@ -39,7 +39,7 @@ export default function CurrentnessSection() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-slate-900/80" />
+        <div className="absolute inset-0 bg-[rgba(18,3,39,0.5)]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 lg:px-20 lg:py-20">
@@ -48,7 +48,7 @@ export default function CurrentnessSection() {
             dark
             eyebrow="12 / CURRENTNESS & SCOPE"
             title="A claim is only as current as its source."
-            description="Review dates, owners and approval states must come from governed records. No person, version, review date or expiry date has been supplied."
+            description={<>Review dates, owners and approval states must come from governed records. No person, version, review date<br className="hidden lg:block" />or expiry date has been supplied.</>}
           />
 
           <NoticeCard
@@ -70,10 +70,8 @@ export default function CurrentnessSection() {
                 </div>
               ))}
             </div>
-            <p className="text-base leading-6 text-stone-500">
-              This anatomy explains what a source-bound public review summary needs. Internal claim
-              identities, statements, sources, approvals and audit records are controlled—not exposed as a
-              public administration console.
+            <p className="max-w-[1100px] text-base leading-6 text-stone-500">
+              This anatomy explains what a source-bound public review summary needs. Internal claim identities, statements, sources, approvals and audit records are controlled—not exposed as a public administration console.
             </p>
           </div>
 

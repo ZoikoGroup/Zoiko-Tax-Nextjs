@@ -1,4 +1,4 @@
-import { SectionHeading, SectionShell } from "./shared";
+import { ArrowIcon, LinkColumn, SectionHeading, SectionShell } from "./shared";
 
 const STATES = [
   {
@@ -45,12 +45,12 @@ const STATES = [
 
 export default function SafeStatesSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="13 / SAFE STATES"
           title="When evidence stops, assurance stops."
-          description="Illustrative public states below keep the boundary explicit. They are not live portal conditions, request decisions or substitutes for missing evidence."
+          description={<>Illustrative public states below keep the boundary explicit. They are not live portal conditions, request decisions<br className="hidden lg:block" />or substitutes for missing evidence.</>}
         />
 
         <div className="grid grid-cols-1 gap-4 self-stretch md:grid-cols-2 xl:grid-cols-4">
@@ -68,21 +68,25 @@ export default function SafeStatesSection() {
           ))}
         </div>
 
-        <div className="inline-flex w-full flex-col items-start gap-8 rounded-2xl bg-purple-100 p-6 sm:p-7 lg:flex-row">
+        <div className="inline-flex w-full flex-col items-start gap-8 rounded-2xl bg-[rgba(242,234,248,1)] p-6 sm:p-7 lg:flex-row">
           <div className="inline-flex w-full flex-col items-start gap-3 lg:w-[460px] lg:shrink-0">
             <h3 className="self-stretch text-xl text-zinc-900">Core routes stay in the public text.</h3>
             <p className="self-stretch text-base leading-6 text-stone-500">
-              Assurance and disclosure do not depend on a hidden menu, hover or an automatically approved
-              request. All FAQ answers below are expanded.
+              Assurance and disclosure do not depend on a hidden menu, hover or an automatically approved request. All FAQ answers<br className="hidden lg:block" />below are expanded.
             </p>
           </div>
-          <div className="inline-flex w-full flex-1 flex-col items-start gap-1.5 rounded-xl outline outline-2 outline-offset-[-2px] outline-violet-950 p-3">
-            <p className="text-xs font-semibold text-violet-950">ILLUSTRATIVE KEYBOARD FOCUS</p>
-            <div className="flex flex-col items-start gap-1.5 self-stretch py-3.5">
-              <span className="self-stretch text-base font-semibold leading-6 text-orange-600">
-                Trust Center →
-              </span>
-              <span className="self-stretch text-xs leading-5 text-stone-500">/trust/</span>
+          <div className="inline-flex w-full flex-1 flex-col items-start gap-1.5 rounded-xl outline outline-2 outline-offset-[-2px] outline-[rgba(48,17,83,1)] p-3">
+            <p className="text-xs font-semibold text-[rgba(48,17,83,1)]">ILLUSTRATIVE KEYBOARD FOCUS</p>
+            <div className="w-full">
+              <LinkColumn 
+                label={
+                  <span className="inline-flex items-center gap-1.5">
+                    Trust Center
+                    <ArrowIcon white={false} />
+                  </span>
+                } 
+                route="/trust/" 
+              />
             </div>
           </div>
         </div>
