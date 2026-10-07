@@ -24,7 +24,7 @@ export default function RemittanceCoverageContent() {
   );
 
   const filteredRecords = useMemo(() => {
-    let result = REMITTANCE_SPECIMEN_RECORDS.filter((rec) => {
+    const result = REMITTANCE_SPECIMEN_RECORDS.filter((rec) => {
       // Search text filter
       if (searchTerm) {
         const query = searchTerm.toLowerCase();

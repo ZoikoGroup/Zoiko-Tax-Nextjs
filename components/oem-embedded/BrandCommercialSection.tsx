@@ -95,8 +95,8 @@ export default function BrandCommercialSection() {
             <div className="flex flex-col gap-4">
               <p className="self-stretch text-[rgba(217,208,223,1)] text-[15px] font-normal leading-[1.6] font-['Inter',sans-serif]">
                 <span className="block xl:whitespace-nowrap">ZoikoTax marks and attribution follow approved brand and contract</span>
-                <span className="block xl:whitespace-nowrap">sources. White-label rights are conditional, never implied; no "Powered</span>
-                <span className="block xl:whitespace-nowrap">by" rule is established here.</span>
+                <span className="block xl:whitespace-nowrap">sources. White-label rights are conditional, never implied; no &quot;Powered</span>
+                <span className="block xl:whitespace-nowrap">by&quot; rule is established here.</span>
               </p>
               <p className="self-stretch text-[rgba(217,208,223,1)] text-[15px] font-normal leading-[1.6] font-['Inter',sans-serif]">
                 <span className="block xl:whitespace-nowrap">Resale, distribution, pricing, revenue share and partner tiers require</span>

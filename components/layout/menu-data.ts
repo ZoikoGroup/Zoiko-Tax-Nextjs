@@ -368,11 +368,11 @@ export const megaMenus: MegaMenu[] = [
         title: "Learn & Research",
         icon: BookOpen,
         items: [
-          item("Telecom Tax Insights", "Deep dives into telecommunication taxation", Book),
-          item("Regulatory Change", "Global tax and telecom regulatory updates", TriangleAlert),
-          item("Guides & Reports", "Comprehensive how-to and analysis documents", FileText),
-          item("Glossary", "Telecom tax terminology reference", List),
-          item("FAQ", "Common questions and quick answers", CircleHelp),
+          item("Telecom Tax Insights", "Deep dives into telecommunication taxation", Book, "/telecom-tax-insights"),
+          item("Regulatory Change", "Global tax and telecom regulatory updates", TriangleAlert, "/regulatory-change"),
+          item("Guides & Reports", "Comprehensive how-to and analysis documents", FileText, "/guides-reports"),
+          item("Glossary", "Telecom tax terminology reference", List, "/glossary"),
+          item("FAQ", "Common questions and quick answers", CircleHelp, "/resources-faq"),
         ],
       },
       {
