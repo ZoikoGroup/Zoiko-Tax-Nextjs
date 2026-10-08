@@ -42,6 +42,12 @@ const PAGE_HREFS: Record<string, string> = {
   "UCaaS & CPaaS": "/ucaas-ccaas-cpaas",
   "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
   "IoT & Satellite": "/iot-m2m-satellite",
+  "Managed Compliance Coverage": "/managed-compliance-coverage",
+  "Remittance Coverage": "/remittance-coverage",
+  "OEM & Partners": "/resources-partners",
+  Partnerships: "/resources-partners",
+  Partners: "/resources-partners",
+  "About ZoikoTax": "/resources-about",
 };
 
 const links = (...labels: string[]): NavLink[] =>
