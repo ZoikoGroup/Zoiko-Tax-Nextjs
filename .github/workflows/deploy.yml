@@ -18,6 +18,9 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
+          # Default command_timeout is 10m, which `git pull` + `npm install`
+          # + `npm run build` can exceed on a small/shared-core deploy VM.
+          command_timeout: 30m
           script: |
             set -e
             cd /var/www/zoiko-tax/app

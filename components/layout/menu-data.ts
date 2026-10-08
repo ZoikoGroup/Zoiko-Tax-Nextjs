@@ -31,6 +31,7 @@ import {
   Flag,
   GitBranch,
   Globe,
+  History,
   Info,
   Layers,
   Link as LinkIcon,
@@ -157,10 +158,30 @@ export const megaMenus: MegaMenu[] = [
         title: "Operator Models",
         icon: Building,
         items: [
-          item("Mobile Network Operators", "Large-scale portfolios and multi-jurisdiction operations.", Wifi),
-          item("MVNOs", "Clear separation of commercial models and tax treatment", Share2, "/mvno"),
-          item("MVNEs & MVNAs", "Multi-tenant enablement platforms with attribution", Layers, "/mvne-mvna"),
-          item("Wholesale Carriers", "Support for complex wholesale relationships", Globe),
+          item(
+            "Mobile Network Operators",
+            "Large-scale portfolios and multi-jurisdiction operations.",
+            Wifi,
+            "/mobile-network-operators"
+          ),
+          item(
+            "MVNOs",
+            "Clear separation of commercial models and tax treatment",
+            Share2,
+            "/mvno"
+          ),
+          item(
+            "MVNEs & MVNAs",
+            "Multi-tenant enablement platforms with attribution",
+            Layers,
+            "/mvne-mvna"
+          ),
+          item(
+            "Wholesale Carriers",
+            "Support for complex wholesale relationships",
+            Globe,
+            "/wholesale-carriers-and-aggregators"
+          ),
         ],
       },
       {
@@ -177,10 +198,11 @@ export const megaMenus: MegaMenu[] = [
         title: "By Buyer Role",
         icon: Users,
         items: [
-          item("Tax & Regulatory", "Determine what applies and manage obligations", Shield),
+          item("Tax & Regulatory", "Determine what applies and manage obligations", Shield, "/tax-regulatory-compliance"),
           item("CFO & Finance", "Control liability, recovery and accrual", DollarSign),
           item("Billing & BSS Engineering", "Integrate fiscal decisions into transaction flows", Cog),
           item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn),
+          item("Technology Leaders", "Governed architecture, integration and residency", Cpu, "/technology-leaders"),
         ],
       },
     ],
@@ -254,19 +276,20 @@ export const megaMenus: MegaMenu[] = [
         title: "Start Building",
         icon: Code,
         items: [
-          item("Developer Overview", "Architecture, environments and getting started", Compass),
-          item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText),
-          item("SDKs", "Supported client libraries and versions", Code),
-          item("Webhooks & Events", "Event contracts and delivery semantics", Activity),
+          item("Developer Overview", "Architecture, environments and getting started", Compass, "/developer-overview"),
+          item("API Reference", "Versioned endpoints, schemas and errors", ReceiptText, "/api-reference"),
+          item("SDKs", "Supported client libraries and versions", Code, "/sdks"),
+          item("Webhooks & Events", "Event contracts and delivery semantics", Activity, "/webhooks-events"),
+          item("API Changelog", "Version and compatibility change history", History, "/api-changelog"),
         ],
       },
       {
         title: "Integration Paths",
         icon: GitBranch,
         items: [
-          item("Billing & BSS", "Quote, invoice and transaction integration", CreditCard),
+          item("Billing & BSS", "Quote, invoice and transaction integration", CreditCard, "/billing-bss"),
           item("ERP & General Ledger", "Controlled journals and reconciliation", BookOpen),
-          item("Existing Tax Engines", "Federated, shadow and migration adapters", Calculator),
+          item("Existing Tax Engines", "Federated, shadow and migration adapters", Calculator, "/existing-tax-engines"),
           item("E-Invoicing Networks", "Authority and network adapter patterns", Share2),
         ],
       },
@@ -274,10 +297,10 @@ export const megaMenus: MegaMenu[] = [
         title: "Enterprise Systems",
         icon: Container,
         items: [
-          item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database),
-          item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu),
+          item("Data & Enterprise Systems", "CPQ, CRM and product catalogue patterns", Database, "/data-enterprise-systems"),
+          item("OEM / Embedded", "Partner provisioning and embedded capability", Cpu, "/oem-embedded"),
           item("Bulk & Batch", "High-volume asynchronous processing", List),
-          item("Integration Guides", "Implementation patterns and architecture guidance", Book),
+          item("Integration Guides", "Implementation patterns and architecture guidance", Book, "/integration-guides"),
         ],
       },
     ],
@@ -298,7 +321,7 @@ export const megaMenus: MegaMenu[] = [
         icon: Shield,
         items: [
           item("Security", "Threat model, controls and incident response", Shield),
-          item("Privacy & Data Protection", "GDPR, CCPA and global compliance", Cog),
+          item("Privacy & Data Protection", "GDPR, CCPA and global compliance", Cog, "/privacy-data-protection"),
           item("Data Processing & Residency", "Regional data requirements and control", Globe),
           item("Business Continuity", "Availability, disaster recovery and SLAs", ChartColumn),
         ],
@@ -307,14 +330,14 @@ export const megaMenus: MegaMenu[] = [
         title: "Governance & Assurance",
         icon: ShieldCheck,
         items: [
-          item("AI Governance", "Bounded intelligence with human authority", Shield),
+          item("AI Governance", "Bounded intelligence with human authority", Shield, "/ai-governance"),
           item(
             "Evidence & Auditability",
             "Decision lineage and historical replay",
             ClipboardCheck,
             "/evidence-auditability"
           ),
-          item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility),
+          item("Accessibility", "WCAG 2.2 AA compliance and inclusive design", Accessibility, "/accessibility"),
           item("Responsible Disclosure", "Security vulnerability reporting program", Bug),
         ],
       },
@@ -345,11 +368,11 @@ export const megaMenus: MegaMenu[] = [
         title: "Learn & Research",
         icon: BookOpen,
         items: [
-          item("Telecom Tax Insights", "Deep dives into telecommunication taxation", Book),
-          item("Regulatory Change", "Global tax and telecom regulatory updates", TriangleAlert),
-          item("Guides & Reports", "Comprehensive how-to and analysis documents", FileText),
-          item("Glossary", "Telecom tax terminology reference", List),
-          item("FAQ", "Common questions and quick answers", CircleHelp),
+          item("Telecom Tax Insights", "Deep dives into telecommunication taxation", Book, "/telecom-tax-insights"),
+          item("Regulatory Change", "Global tax and telecom regulatory updates", TriangleAlert, "/regulatory-change"),
+          item("Guides & Reports", "Comprehensive how-to and analysis documents", FileText, "/guides-reports"),
+          item("Glossary", "Telecom tax terminology reference", List, "/glossary"),
+          item("FAQ", "Common questions and quick answers", CircleHelp, "/resources-faq"),
         ],
       },
       {

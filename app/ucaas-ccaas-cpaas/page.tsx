@@ -2,20 +2,17 @@ import type { Metadata } from "next";
 import {
   HeroSection,
   DirectAnswerSection,
-  ChallengesSection,
-  LifecycleSection,
+  ComplexitySection,
   ContextModelSection,
-  ClassificationSection,
-  JurisdictionSection,
-  ResponsibilitySection,
+  LifecycleSection,
   DeterminationSection,
   ObligationsSection,
-  ReconciliationSection,
+  ContinuationSection,
   EvidenceSection,
-  WorkspaceSection,
+  ModernizationSection,
   IntegrationsSection,
   CoverageSection,
-  TeamsSection,
+  TrustSection,
   FAQSection,
   ConversionSection,
 } from "@/components/ucaas-ccaas-cpaas";
@@ -23,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "UCaaS, CCaaS & CPaaS | Cloud Communications Tax Compliance | ZoikoTax",
   description:
-    "ZoikoTax connects governed service classification, jurisdiction, fiscal responsibility, obligations, reconciliation, and evidence across cloud communications platforms that combine voice, messaging, APIs, software, and bundled services.",
+    "ZoikoTax connects governed service and bundle classification, jurisdiction, fiscal responsibility, obligations, compliance, reconciliation, and replayable evidence across UCaaS, CCaaS & CPaaS service models.",
 };
 
 export default function UcaasCcaasCpaasPage() {
@@ -31,20 +28,17 @@ export default function UcaasCcaasCpaasPage() {
     <div className="bg-white">
       <HeroSection />
       <DirectAnswerSection />
-      <ChallengesSection />
-      <LifecycleSection />
+      <ComplexitySection />
       <ContextModelSection />
-      <ClassificationSection />
-      <JurisdictionSection />
-      <ResponsibilitySection />
+      <LifecycleSection />
       <DeterminationSection />
       <ObligationsSection />
-      <ReconciliationSection />
+      <ContinuationSection />
       <EvidenceSection />
-      <WorkspaceSection />
+      <ModernizationSection />
       <IntegrationsSection />
       <CoverageSection />
-      <TeamsSection />
+      <TrustSection />
       <FAQSection />
       <ConversionSection />
     </div>

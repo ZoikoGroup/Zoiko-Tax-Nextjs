@@ -1,0 +1,16 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as DirectAnswerSection } from "./DirectAnswerSection";
+export { default as LatestReleaseSection } from "./LatestReleaseSection";
+export { default as ChangesSection } from "./ChangesSection";
+export { default as ExpandedRecordSection } from "./ExpandedRecordSection";
+export { default as CompatibilityActionSection } from "./CompatibilityActionSection";
+export { default as DeprecationsSection } from "./DeprecationsSection";
+export { default as SurfaceMatrixSection } from "./SurfaceMatrixSection";
+export { default as MigrationReferencesSection } from "./MigrationReferencesSection";
+export { default as ArchiveSection } from "./ArchiveSection";
+export { default as RecoverySection } from "./RecoverySection";
+export { default as FAQSection } from "./FAQSection";
+export { default as RelatedResourcesSection } from "./RelatedResourcesSection";
+export { default as NextStepsSection } from "./NextStepsSection";
+export * from "./shared";
+export * from "./api-changelog-data";

@@ -1,0 +1,176 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
+
+const ICON_BASE = "/trust-center-security/icons";
+
+export function ArrowIcon({
+  variant = "orange",
+  white = false,
+}: {
+  variant?: "orange" | "white" | "black";
+  white?: boolean;
+}) {
+  const stroke = white || variant === "white" ? "#FFFFFF" : variant === "black" ? "#18141B" : "#D65A2C";
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 shrink-0">
+      <path d="M3.33594 7.99923H12.6703M8.00314 12.6664L12.6703 7.99923L8.00314 3.33203" stroke={stroke} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function CardIcon({ name, size = 24 }: { name: string; size?: 24 | 28 }) {
+  return (
+    <Image
+      src={`${ICON_BASE}/${name}.svg`}
+      alt=""
+      width={size}
+      height={size}
+      className={size === 28 ? "size-7 shrink-0" : "size-6 shrink-0"}
+    />
+  );
+}
+
+export function SectionShell({
+  children,
+  className = "",
+  id,
+}: {
+  children: ReactNode;
+  className?: string;
+  id?: string;
+}) {
+  return (
+    <section id={id} className={`w-full ${className}`}>
+      <div className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 lg:px-20 lg:py-20">{children}</div>
+    </section>
+  );
+}
+
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  dark = false,
+  titleClassName = "",
+  descClassName = "",
+}: {
+  eyebrow: string;
+  title: string;
+  description: ReactNode;
+  dark?: boolean;
+  titleClassName?: string;
+  descClassName?: string;
+}) {
+  return (
+    <div className="flex flex-col gap-4">
+      <span className={`text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]`}>{eyebrow}</span>
+      <h2 className={`text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-[47.52px] ${dark ? "text-white" : "text-zinc-900"} ${titleClassName}`}>
+        {title}
+      </h2>
+      <p className={`w-full max-w-[1060px] text-base sm:text-lg lg:text-xl lg:leading-8 ${dark ? "text-zinc-300" : "text-stone-500"} ${descClassName}`}>
+        {description}
+      </p>
+    </div>
+  );
+}
+
+export function NoticeCard({
+  title,
+  description,
+  dark = false,
+  className = "",
+}: {
+  title: string;
+  description: ReactNode;
+  dark?: boolean;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`flex flex-col gap-2 rounded-lg border border-[#d8cedd] p-6 ${
+        dark ? "bg-violet-950" : "bg-[rgba(255,255,255,0.72)]"
+      } ${className}`}
+    >
+      <p className={`text-base font-bold ${dark ? "text-white" : "text-zinc-900"}`}>{title}</p>
+      <p className={`text-base leading-6 ${dark ? "text-zinc-300" : "text-stone-500"}`}>{description}</p>
+    </div>
+  );
+}
+
+export function ControlCard({
+  title,
+  description,
+  footer,
+  icon,
+}: {
+  title: string;
+  description: string;
+  footer: string;
+  icon?: string;
+}) {
+  return (
+    <div className="flex flex-col gap-3.5 self-stretch rounded-2xl bg-white p-6 outline outline-1 outline-offset-[-1px] outline-zinc-300">
+      {icon ? <CardIcon name={icon} /> : null}
+      <h3 className="text-xl font-semibold leading-6 text-zinc-900">{title}</h3>
+      <p className="text-base leading-6 text-stone-500">{description}</p>
+      <div className="inline-flex items-start border-t border-zinc-300 pt-3">
+        <p className="flex-1 text-xs font-semibold leading-5 text-violet-950">{footer}</p>
+      </div>
+    </div>
+  );
+}
+
+export function StateCard({ title, description, icon }: { title: string; description: string; icon: string }) {
+  return (
+    <div className="flex flex-col gap-3.5 self-stretch rounded-2xl bg-white p-6 outline outline-1 outline-offset-[-1px] outline-zinc-300">
+      <CardIcon name={icon} />
+      <h3 className="text-lg text-zinc-900">{title}</h3>
+      <p className="text-base leading-6 text-stone-500">{description}</p>
+    </div>
+  );
+}
+
+export function PillButton({
+  label,
+  variant = "primary",
+  href = "#",
+}: {
+  label: string;
+  variant?: "primary" | "secondary" | "ghost";
+  href?: string;
+}) {
+  const base =
+    "inline-flex h-12 items-center justify-start gap-3 overflow-hidden rounded-[999px] px-6 text-base font-semibold";
+  const variants: Record<string, string> = {
+    primary: "bg-[#bf6735] text-white border border-[#dd7235]",
+    secondary: "bg-white text-zinc-900 outline outline-1 outline-offset-[-1px] outline-zinc-300",
+    ghost: "bg-white/5 text-white outline outline-1 outline-offset-[-1px] outline-zinc-400",
+  };
+  return (
+    <a href={href} className={`${base} ${variants[variant]}`}>
+      {label}
+      <ArrowIcon white={variant !== "secondary"} />
+    </a>
+  );
+}
+
+export function LinkColumn({
+  label,
+  route,
+  dark = false,
+}: {
+  label: string;
+  route: string;
+  dark?: boolean;
+}) {
+  return (
+    <div className="flex flex-col items-start gap-1.5 py-3.5">
+      <span
+        className={`text-base font-semibold leading-6 ${dark ? "text-orange-300" : "text-orange-600"}`}
+      >
+        {label}
+      </span>
+      <span className={`text-xs leading-5 ${dark ? "text-zinc-300" : "text-stone-500"}`}>{route}</span>
+    </div>
+  );
+}

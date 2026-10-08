@@ -1,0 +1,12 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as AuthoritySection } from "./AuthoritySection";
+export { default as DataCategoriesSection } from "./DataCategoriesSection";
+export { default as RoleModelSection } from "./RoleModelSection";
+export { default as LifecycleSection } from "./LifecycleSection";
+export { default as RequestRoutingSection } from "./RequestRoutingSection";
+export { default as SubprocessorsSection } from "./SubprocessorsSection";
+export { default as ResidencySecuritySection } from "./ResidencySecuritySection";
+export { default as DocumentsSection } from "./DocumentsSection";
+export { default as CurrentnessSection } from "./CurrentnessSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as NextStepsSection } from "./NextStepsSection";
