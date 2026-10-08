@@ -9,5 +9,6 @@ export { default as EvidenceAuditabilitySection } from "./EvidenceAuditabilitySe
 export { default as AccessibilitySection } from "./AccessibilitySection";
 export { default as ConditionalRequestSection } from "./ConditionalRequestSection";
 export { default as CurrentnessSection } from "./CurrentnessSection";
+export { default as ProcurementJourneysSection } from "./ProcurementJourneysSection";
 export { default as FAQSection } from "./FAQSection";
 export { default as NextStepsSection } from "./NextStepsSection";

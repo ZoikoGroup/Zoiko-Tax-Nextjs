@@ -1,105 +1,155 @@
-import { SectionHeading, SectionShell, NoticeCard } from "./shared";
 import Link from "next/link";
-import { AlertCircle, FileCheck2, User, Briefcase, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SectionShell } from "./shared";
 
 export default function ConditionalRequestSection() {
   return (
-    <SectionShell className="bg-[#fef9f9]">
+    <SectionShell className="bg-[rgba(250,243,255,1)]">
       <div className="flex flex-col gap-10">
-        <SectionHeading
-          eyebrow="CONDITIONAL EVIDENCE REQUEST"
-          title="A request is not an access grant."
-          description="An approved request process has not been supplied. This page does not collect information, submit requests or promise documents."
-        />
+        <div className="flex flex-col gap-4">
+          <div className="text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]">
+            CONDITIONAL EVIDENCE REQUEST
+          </div>
+          <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-zinc-900 lg:leading-[47.52px]">
+            A request is not an access grant.
+          </h2>
+          <p className="w-full max-w-[1060px] text-base sm:text-lg lg:text-xl font-normal leading-8 text-[rgba(102,95,105,1)]">
+            An approved request process has not been supplied. This page does not collect information, submit requests or<br className="hidden md:block" />
+            promise documents.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-          {/* Policy requirements */}
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-2xl font-bold text-slate-900">Source required before any request can be enabled.</h3>
-              <p className="text-base text-slate-600">Eligibility, identity checks, sharing conditions and any NDA requirement must follow the actual approved policy. Controlled access is not a universal entitlement.</p>
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+          {/* Policy requirements column */}
+          <div className="flex flex-col gap-8 w-full lg:max-w-[380px]">
+            <div className="flex flex-col gap-3">
+              <h3 className="text-2xl font-bold text-[rgba(24,20,27,1)] leading-tight">
+                Source required before any<br className="hidden lg:block" />
+                request can be enabled.
+              </h3>
+              <p className="text-base font-normal leading-7 text-[rgba(102,95,105,1)]">
+                Eligibility, identity checks, sharing conditions and<br className="hidden lg:block" />
+                any NDA requirement must follow the actual<br className="hidden lg:block" />
+                approved policy. Controlled access is not a<br className="hidden lg:block" />
+                universal entitlement.
+              </p>
             </div>
-            
-            <div className="flex flex-col gap-4 border-l-2 border-orange-500 pl-4 py-2">
+
+            <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-slate-900">Approved request process</span>
-                <span className="text-sm font-medium text-orange-600">Not supplied</span>
+                <span className="text-xs font-normal text-[rgba(102,95,105,1)]">Approved request process</span>
+                <span className="text-sm font-bold text-[rgba(24,20,27,1)]">Not supplied</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-slate-900">Eligibility / evidence inventory</span>
-                <span className="text-sm font-medium text-orange-600">Not supplied</span>
+                <span className="text-xs font-normal text-[rgba(102,95,105,1)]">Eligibility / evidence inventory</span>
+                <span className="text-sm font-bold text-[rgba(24,20,27,1)]">Not supplied</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-slate-900">Legal-approved confidentiality terms</span>
-                <span className="text-sm font-medium text-orange-600">Not supplied</span>
+                <span className="text-xs font-normal text-[rgba(102,95,105,1)]">Legal-approved confidentiality terms</span>
+                <span className="text-sm font-bold text-[rgba(24,20,27,1)]">Not supplied</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="font-semibold text-slate-900">Request owner / response expectations</span>
-                <span className="text-sm font-medium text-orange-600">Not supplied</span>
+                <span className="text-xs font-normal text-[rgba(102,95,105,1)]">Request owner / response expectations</span>
+                <span className="text-sm font-bold text-[rgba(24,20,27,1)]">Not supplied</span>
               </div>
             </div>
-            
-            <div className="flex flex-col gap-4 pt-2">
-              <Link href="/trust-center/evidence-auditability" className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700">
-                Review evidence source pathways <span>↗</span>
+
+            <div className="flex flex-col gap-2 pt-2">
+              <Link
+                href="/trust-center/evidence-auditability"
+                className="flex items-center justify-between w-full group"
+              >
+                <span className="text-base font-normal text-[rgba(164,70,34,1)] group-hover:opacity-80">
+                  Review evidence source pathways
+                </span>
+                <ArrowUpRight
+                  className="w-[18px] h-[18px] text-[rgba(214,90,44,1)] group-hover:opacity-80 transition-opacity shrink-0"
+                  strokeWidth={2}
+                />
               </Link>
-              <p className="text-sm text-slate-500">No request, download or portal URL is supplied. No response SLA or automatic access grant is implied.</p>
+              <div className="text-xs text-[rgba(102,95,105,1)]">/trust/evidence-auditability/</div>
             </div>
+
+            <p className="text-xs leading-5 text-[rgba(102,95,105,1)]">
+              No request, download or portal URL is supplied. No<br className="hidden lg:block" />
+              response SLA or automatic access grant is implied.
+            </p>
           </div>
 
-          {/* Illustrative request anatomy */}
-          <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 shadow-sm border border-orange-100 pointer-events-none opacity-80">
-            <div className="flex flex-col gap-2 border-b border-slate-100 pb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-orange-600">ILLUSTRATIVE · INACTIVE</span>
-              <h4 className="text-lg font-bold text-slate-900">Illustrative request anatomy — not an active evidence portal</h4>
-              <p className="text-sm text-slate-600">Potential fields only. Nothing is entered or collected; requirements and choices need policy approval.</p>
+          {/* Illustrative request anatomy card */}
+          <div className="w-full lg:w-[840px] lg:h-[836px] flex flex-col justify-between rounded-3xl bg-white p-6 sm:p-8 border border-[rgba(216,206,221,1)] shadow-sm">
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]">
+                ILLUSTRATIVE · INACTIVE
+              </span>
+              <h4 className="text-2xl font-bold text-zinc-900 leading-snug">
+                Illustrative request anatomy — not an active evidence portal
+              </h4>
+              <p className="text-sm text-[rgba(102,95,105,1)] leading-relaxed">
+                Potential fields only. Nothing is entered or collected; requirements and choices need policy approval.
+              </p>
             </div>
 
-            <div className="flex flex-col gap-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-400">
-                  <User className="h-4 w-4" /> <span className="text-sm">Name</span>
-                </div>
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-400">
-                  <Mail className="h-4 w-4" /> <span className="text-sm">Work email</span>
-                </div>
-                <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-slate-400">
-                  <Briefcase className="h-4 w-4" /> <span className="text-sm">Organization</span>
+            <div className="flex flex-col gap-1">
+              <div className="text-sm font-bold text-zinc-900">Name · work email · organization</div>
+              <p className="text-xs text-[rgba(102,95,105,1)] leading-relaxed">
+                Minimum identity fields only if the approved policy requires them. No personal data is populated here.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-bold text-zinc-900">Requester role</span>
+                <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] px-4 py-3 text-xs text-[rgba(102,95,105,1)]">
+                  Source required — choices not supplied
                 </div>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm font-medium text-slate-700">Requester role</span>
-                  <div className="rounded-xl border border-slate-200 bg-slate-100 p-3 text-sm text-slate-500">Source required — choices not supplied</div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm font-medium text-slate-700">Review scope</span>
-                  <div className="rounded-xl border border-slate-200 bg-slate-100 p-3 text-sm text-slate-500">Source required — choices not supplied</div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm font-medium text-slate-700">Evidence category</span>
-                  <div className="rounded-xl border border-slate-200 bg-slate-100 p-3 text-sm text-slate-500">No approved categories supplied</div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <span className="text-sm font-medium text-slate-700">Purpose</span>
-                  <div className="rounded-xl border border-slate-200 bg-slate-100 p-3 text-sm text-slate-500">Policy-controlled choice — not free text</div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-bold text-zinc-900">Review scope</span>
+                <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] px-4 py-3 text-xs text-[rgba(102,95,105,1)]">
+                  Source required — choices not supplied
                 </div>
               </div>
-
-              <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <div className="flex items-start gap-3">
-                  <AlertCircle className="h-5 w-5 text-slate-400 shrink-0 mt-0.5" />
-                  <div className="flex flex-col gap-1">
-                    <span className="text-sm font-bold text-slate-700">No assumed confidentiality agreement</span>
-                    <span className="text-sm text-slate-500">Any confidentiality acknowledgment needs Legal-approved terms. No blanket NDA checkbox, private security questions, vulnerability details or file upload is shown.</span>
-                  </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-bold text-zinc-900">Evidence category</span>
+                <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] px-4 py-3 text-xs text-[rgba(102,95,105,1)]">
+                  No approved categories or inventory supplied
                 </div>
               </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-xs font-bold text-zinc-900">Purpose</span>
+                <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] px-4 py-3 text-xs text-[rgba(102,95,105,1)]">
+                  Policy-controlled choice — not free text
+                </div>
+              </div>
+            </div>
 
-              <div className="mt-4 flex w-full items-center justify-center rounded-full bg-slate-200 p-4 text-slate-500 font-semibold cursor-not-allowed">
+            <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] p-4 flex flex-col gap-1.5">
+              <span className="text-sm font-bold text-zinc-900">No assumed confidentiality agreement</span>
+              <p className="text-xs text-[rgba(102,95,105,1)] leading-relaxed">
+                Any confidentiality acknowledgment needs Legal-approved terms. No blanket NDA checkbox, private security<br className="hidden sm:block" />
+                questions, vulnerability details or file upload is shown.
+              </p>
+            </div>
+
+            <div>
+              <div className="inline-flex items-center justify-center rounded-full bg-[rgba(235,227,239,1)] px-5 py-3 text-xs font-semibold text-[rgba(102,95,105,1)]">
                 Submit unavailable · Source required
               </div>
+            </div>
+
+            <div className="rounded-xl border border-[rgba(255,224,204,1)] bg-[rgba(255,244,237,1)] p-4 flex flex-col gap-1">
+              <span className="text-xs font-bold text-zinc-900">ILLUSTRATIVE ERROR · No request sent</span>
+              <p className="text-xs text-[rgba(102,95,105,1)] leading-relaxed">
+                Approved process or required source is missing. Submission remains unavailable.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-[rgba(216,206,221,1)] bg-[rgba(245,238,249,1)] p-4 flex flex-col gap-1">
+              <span className="text-xs font-bold text-zinc-900">ILLUSTRATIVE RECEIPT · Not an actual confirmation</span>
+              <p className="text-xs text-[rgba(102,95,105,1)] leading-relaxed">
+                A receipt would confirm submission only—not eligibility, fulfillment, access or delivery timing.
+              </p>
             </div>
           </div>
         </div>

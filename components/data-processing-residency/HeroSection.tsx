@@ -1,39 +1,51 @@
-import Image from "next/image";
-import { PillButton } from "../trust-center/shared";
+import Link from "next/link";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import { SectionShell } from "@/components/ai-governance/shared";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src="/images/data-processing-residency/hero.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-right"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fef9f9]/95 via-white/90 to-white/10" />
-      </div>
+    <SectionShell 
+      id="hero" 
+      className="bg-[rgba(250,243,255,1)] min-h-[770px] flex items-center pt-24"
+      imageSrc="/about-us/Residency hero (1).png"
+      imageClassName="object-cover"
+    >
+      <div className="max-w-[760px] flex flex-col gap-6">
+        <span className="text-[13px] font-bold text-[rgba(214,90,44,1)] tracking-wider uppercase">
+          TRUST · DATA PROCESSING & RESIDENCY
+        </span>
+        <h1 className="text-[58px] font-bold leading-[1.1] text-[rgba(24,20,27,1)] tracking-tight">
+          Residency claims scoped to the data domain you can actually verify.
+        </h1>
+        <p className="text-xl font-medium leading-relaxed text-[rgba(102,95,105,1)] max-w-[720px]">
+          Review approved ZoikoTax deployment, processing-location and residency controls without assuming every service, capability or customer has the same regional options.
+        </p>
 
-      <div className="relative mx-auto flex min-h-[500px] w-full max-w-[1440px] flex-col items-start gap-7 px-5 pb-16 pt-14 sm:px-8 lg:min-h-[700px] lg:px-20 lg:pb-32 lg:pt-20">
-        <div className="inline-flex w-full items-start gap-14">
-          <div className="inline-flex w-full max-w-[800px] flex-col items-start gap-6">
-            <span className="text-sm font-bold text-orange-600 uppercase tracking-wider">TRUST · DATA PROCESSING & RESIDENCY</span>
-            <h1 className="self-stretch text-4xl font-bold leading-tight text-zinc-900 sm:text-5xl lg:text-6xl lg:leading-[61.20px]">
-              Residency claims scoped to the data domain you can actually verify.
-            </h1>
-            <p className="self-stretch text-lg leading-7 text-stone-600 sm:text-xl lg:leading-8">
-              Review ZoikoTax’s approved deployment, processing-location and residency controls without assuming every service, capability or customer has the same regional options.
-            </p>
-            <div className="inline-flex flex-wrap items-center gap-3">
-              <PillButton label="View supported processing/residency scope" variant="primary" href="#processing-locations" />
-              <PillButton label="Privacy & Data Protection" variant="secondary" href="/trust/privacy/" />
-              <span className="ml-2 text-base font-semibold text-orange-600">Trust Center →</span>
-            </div>
+        <div className="flex flex-col gap-3.5 mt-2">
+          <Link
+            href="#deployment-domains"
+            className="inline-flex w-fit items-center gap-3 rounded-full bg-[rgba(191,103,53,1)] px-5.5 py-3.5 text-sm font-semibold text-white transition hover:bg-[rgba(214,90,44,1)]"
+          >
+            <span>View supported processing/residency scope</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/trust/privacy/"
+              className="inline-flex w-fit items-center gap-3 rounded-full bg-white border border-[rgba(216,206,221,1)] px-5.5 py-3.5 text-sm font-semibold text-[rgba(24,20,27,1)] transition hover:border-[rgba(214,90,44,1)]"
+            >
+              <span>Privacy & Data Protection</span>
+              <ArrowRight className="h-4 w-4 text-[rgba(24,20,27,1)]" />
+            </Link>
+            <Link
+              href="/trust/"
+              className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-[rgba(214,90,44,1)] hover:underline"
+            >
+              Trust Center <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }
