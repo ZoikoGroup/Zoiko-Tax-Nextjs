@@ -11,6 +11,7 @@ import {
   AccessibilitySection,
   ConditionalRequestSection,
   CurrentnessSection,
+  ProcurementJourneysSection,
   FAQSection,
   NextStepsSection,
 } from "@/components/trust-center";
@@ -34,6 +35,7 @@ export default function TrustCenterPage() {
       <AccessibilitySection />
       <ConditionalRequestSection />
       <CurrentnessSection />
+      <ProcurementJourneysSection />
       <FAQSection />
       <NextStepsSection />
     </div>

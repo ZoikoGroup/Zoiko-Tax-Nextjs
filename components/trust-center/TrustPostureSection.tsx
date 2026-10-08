@@ -71,16 +71,18 @@ const DOMAINS = [
 
 export default function TrustPostureSection() {
   return (
-    <SectionShell className="bg-[#fcfaff]">
+    <SectionShell className="bg-[rgba(250,243,255,1)]">
       <div className="flex flex-col gap-10">
         <SectionHeading
           eyebrow="TRUST POSTURE SNAPSHOT"
           title="Choose a domain. Verify the scope. Follow the evidence."
           description="An index of assurance topics, not a scorecard. Each destination needs its own approved scope, owner and current source."
+          titleClassName="xl:whitespace-nowrap"
+          descClassName="!text-[#665f69]"
         />
 
         <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 md:p-8 border border-slate-100 shadow-sm">
-          <p className="text-sm font-semibold text-orange-600">Static domain snapshot · No assurance rating or operational-health signal</p>
+          <p className="text-sm font-semibold text-[#18141b]">Static domain snapshot · No assurance rating or operational-health signal</p>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col gap-1">
               <span className="text-xs font-bold uppercase text-slate-500">Approved posture source</span>
@@ -105,14 +107,14 @@ export default function TrustPostureSection() {
           {DOMAINS.map((domain, index) => (
             <div key={index} className="flex flex-col justify-between gap-6 rounded-3xl bg-white p-6 shadow-sm border border-slate-100 transition-shadow hover:shadow-md">
               <div className="flex flex-col gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
+                <div className="flex items-center text-orange-600">
                   <domain.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{domain.title}</h3>
                 <p className="text-sm text-slate-600">{domain.description}</p>
-                <div className="rounded-xl bg-slate-50 p-3 text-xs text-slate-500 border border-slate-100">
+                <p className="text-xs text-slate-500">
                   {domain.qualification}
-                </div>
+                </p>
               </div>
               <Link href={domain.href} className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700">
                 {domain.linkText} <span>↗</span>
@@ -121,9 +123,9 @@ export default function TrustPostureSection() {
           ))}
         </div>
         
-        <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
-          <h4 className="font-semibold text-orange-800">Read the label before relying on the statement</h4>
-          <p className="mt-2 text-sm text-orange-900/80">Domain routes are shown for navigation. No controls, certification, artifact availability, accessibility conformance or current health is established by this snapshot.</p>
+        <div className="rounded-2xl border border-[#d8cedd] bg-[#f5eef9] p-6">
+          <h4 className="font-semibold text-[#18141b]">Read the label before relying on the statement</h4>
+          <p className="mt-2 text-sm text-[#665f69]">Domain routes are shown for navigation. No controls, certification, artifact availability, accessibility conformance or current health is established by this snapshot.</p>
         </div>
       </div>
     </SectionShell>

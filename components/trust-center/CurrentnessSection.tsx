@@ -1,72 +1,120 @@
-import { SectionHeading, SectionShell, NoticeCard } from "./shared";
 import Image from "next/image";
+import { SectionShell } from "./shared";
 
 export default function CurrentnessSection() {
   return (
-    <SectionShell className="bg-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <Image src="/images/trust-center/currentness_and_updates.png" alt="" fill className="object-cover" />
+    <SectionShell className="relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image src="/existing-tax-engines/0.png" alt="Background" fill className="object-cover" />
       </div>
+
       <div className="flex flex-col gap-10 relative z-10">
-        <SectionHeading
-          dark
-          eyebrow="CURRENTNESS & UPDATES"
-          title="Current means source-approved—not merely visible."
-          description="A statement needs its own approved scope, owner and time context. Missing current-source metadata must not silently become a current claim."
-        />
+        {/* Section Heading */}
+        <div className="flex flex-col gap-4">
+          <div className="text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]">
+            CURRENTNESS & UPDATES
+          </div>
+          <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-[rgba(24,20,27,1)] lg:leading-[47.52px]">
+            Current means source-approved—not merely visible.
+          </h2>
+          <p className="w-full max-w-[1060px] text-base sm:text-lg lg:text-xl font-normal leading-8 text-[rgba(102,95,105,1)]">
+            A statement needs its own approved scope, owner and time context. Missing current-source metadata must not<br className="hidden md:block" />
+            silently become a current claim.
+          </p>
+        </div>
 
-        <div className="flex flex-col rounded-3xl bg-slate-800 p-6 md:p-10 border border-slate-700">
-          <div className="flex flex-col gap-2 border-b border-slate-700 pb-6 mb-6 md:flex-row md:items-center md:justify-between">
-            <h3 className="text-xl font-bold text-white">Source record · Required metadata</h3>
-            <div className="rounded-full bg-orange-500/20 px-4 py-2 text-sm font-semibold text-orange-400">
+        {/* Source record · Required metadata Card */}
+        <div className="w-full rounded-3xl bg-[rgba(245,238,249,1)] p-6 sm:p-8 border border-[rgba(216,206,221,1)] flex flex-col gap-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <h3 className="text-2xl font-normal text-[rgba(24,20,27,1)]">
+              Source record · Required metadata
+            </h3>
+            <span className="text-sm font-normal text-[rgba(102,95,105,1)]">
               Currentness: Not established
-            </div>
+            </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            <div className="flex flex-col gap-1 border-b border-slate-700 pb-4">
-              <span className="text-xs font-bold uppercase text-slate-400">Reviewed / effective date</span>
-              <span className="text-sm font-medium text-white">Not supplied</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8">
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Approved source / exact scope
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
             </div>
-            <div className="flex flex-col gap-1 border-b border-slate-700 pb-4">
-              <span className="text-xs font-bold uppercase text-slate-400">Source / version / evidence reference</span>
-              <span className="text-sm font-medium text-white">Not supplied</span>
+
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Domain owner
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
             </div>
-            <div className="flex flex-col gap-1 border-b border-slate-700 pb-4">
-              <span className="text-xs font-bold uppercase text-slate-400">Accountable source owner</span>
-              <span className="text-sm font-medium text-white">Not supplied</span>
+
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Reviewed / effective date
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
             </div>
-            <div className="flex flex-col gap-1 border-b border-slate-700 pb-4">
-              <span className="text-xs font-bold uppercase text-slate-400">Scope / conditions / approval</span>
-              <span className="text-sm font-medium text-white">Not supplied</span>
+
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Version, if applicable
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
             </div>
-            <div className="flex flex-col gap-1 border-b border-slate-700 pb-4 md:col-span-2">
-              <span className="text-xs font-bold uppercase text-slate-400">Visibility / disclosure state</span>
-              <span className="text-sm font-medium text-white">Exact evidence visibility not supplied</span>
+
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Approved currentness state
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <span className="text-xs font-normal text-[rgba(102,95,105,1)]">
+                Change summary
+              </span>
+              <span className="text-sm font-bold text-[rgba(24,20,27,1)]">
+                Not supplied
+              </span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="flex flex-col gap-2">
-            <h4 className="font-bold text-orange-400">Stale or conflicted</h4>
-            <p className="text-sm text-slate-300">Without a positive claim when evidence is supplied elsewhere, conflicting sources require accountable owner review, not a geographic guess or a silently current label.</p>
+        {/* Bottom row */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-8">
+          <div className="flex flex-col gap-3 w-full lg:w-[628px]">
+            <h3 className="text-2xl font-normal text-[rgba(24,20,27,1)]">
+              Use only the state the source supports.
+            </h3>
+            <p className="text-base font-normal leading-7 text-[rgba(102,95,105,1)]">
+              Current, under review, superseded and withdrawn are distinct editorial<br className="hidden lg:block" />
+              states. A review in progress is not an approval. A replacement must identify<br className="hidden lg:block" />
+              the new approved source and preserve historical context.
+            </p>
           </div>
-          <div className="flex flex-col gap-2">
-            <h4 className="font-bold text-orange-400">New or changing scope</h4>
-            <p className="text-sm text-slate-300">New regions remain validation scope until approved. A region or data-domain change requires technical, Privacy / Legal and Trust approval with synchronized public content.</p>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h4 className="font-bold text-orange-400">Retired scope</h4>
-            <p className="text-sm text-slate-300">Retired claims are historical only under governed disclosure. They must not appear as current availability or a selectable customer option.</p>
+
+          <div className="w-full lg:w-[628px] p-6 sm:p-8 rounded-2xl bg-[rgba(245,238,249,1)] border border-[rgba(216,206,221,1)] flex flex-col gap-2">
+            <h4 className="text-sm font-bold text-[rgba(24,20,27,1)]">
+              Missing source → no current assurance
+            </h4>
+            <p className="text-sm font-normal leading-relaxed text-[rgba(102,95,105,1)]">
+              No reviewed date, effective date, owner, version or change history is supplied.<br className="hidden lg:block" />
+              Historical or withdrawn material must not be presented as current. Technical and<br className="hidden lg:block" />
+              domain owners approve factual claims; publishing alone cannot create trust.
+            </p>
           </div>
         </div>
-
-        <NoticeCard
-          dark
-          title="Publication must follow approved facts, not originate them."
-          description="Platform source owners establish actual location and access facts; Privacy / Legal governs transfers and contracts; Security / Trust governs boundaries; Data Governance governs metadata; Product / Commercial confirms actual customer choice. Accountable identities are not supplied here. Core disclosures and source route labels must remain useful without Javascript or analytics. Location is not inferred from IP or geography, and disclosures are not removed by personalization or experiments. This static page illustrates the content contract; it does not claim runtime implementation."
-        />
       </div>
     </SectionShell>
   );

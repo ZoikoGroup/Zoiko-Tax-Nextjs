@@ -3,15 +3,18 @@ import type { ReactNode } from "react";
 
 const ICON_BASE = "/trust-center-security/icons";
 
-export function ArrowIcon({ white = false }: { white?: boolean }) {
+export function ArrowIcon({
+  variant = "orange",
+  white = false,
+}: {
+  variant?: "orange" | "white" | "black";
+  white?: boolean;
+}) {
+  const stroke = white || variant === "white" ? "#FFFFFF" : variant === "black" ? "#18141B" : "#D65A2C";
   return (
-    <Image
-      src={white ? `${ICON_BASE}/arrow-right-white.svg` : `${ICON_BASE}/arrow-right.svg`}
-      alt=""
-      width={16}
-      height={16}
-      className="size-4 shrink-0"
-    />
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-4 shrink-0">
+      <path d="M3.33594 7.99923H12.6703M8.00314 12.6664L12.6703 7.99923L8.00314 3.33203" stroke={stroke} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
@@ -48,19 +51,23 @@ export function SectionHeading({
   title,
   description,
   dark = false,
+  titleClassName = "",
+  descClassName = "",
 }: {
   eyebrow: string;
   title: string;
-  description: string;
+  description: ReactNode;
   dark?: boolean;
+  titleClassName?: string;
+  descClassName?: string;
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <span className={`text-xs font-bold ${dark ? "text-orange-300" : "text-orange-600"}`}>{eyebrow}</span>
-      <h2 className={`text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-[47.52px] ${dark ? "text-white" : "text-zinc-900"}`}>
+      <span className={`text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]`}>{eyebrow}</span>
+      <h2 className={`text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-[47.52px] ${dark ? "text-white" : "text-zinc-900"} ${titleClassName}`}>
         {title}
       </h2>
-      <p className={`w-full max-w-[1060px] text-base sm:text-lg lg:text-xl lg:leading-8 ${dark ? "text-zinc-300" : "text-stone-500"}`}>
+      <p className={`w-full max-w-[1060px] text-base sm:text-lg lg:text-xl lg:leading-8 ${dark ? "text-zinc-300" : "text-stone-500"} ${descClassName}`}>
         {description}
       </p>
     </div>
@@ -74,14 +81,14 @@ export function NoticeCard({
   className = "",
 }: {
   title: string;
-  description: string;
+  description: ReactNode;
   dark?: boolean;
   className?: string;
 }) {
   return (
     <div
-      className={`flex flex-col gap-2 rounded-lg border-l-[3px] border-orange-600 p-6 ${
-        dark ? "bg-violet-950" : "bg-purple-100"
+      className={`flex flex-col gap-2 rounded-lg border border-[#d8cedd] p-6 ${
+        dark ? "bg-violet-950" : "bg-[rgba(255,255,255,0.72)]"
       } ${className}`}
     >
       <p className={`text-base font-bold ${dark ? "text-white" : "text-zinc-900"}`}>{title}</p>
@@ -135,8 +142,7 @@ export function PillButton({
   const base =
     "inline-flex h-12 items-center justify-start gap-3 overflow-hidden rounded-[999px] px-6 text-base font-semibold";
   const variants: Record<string, string> = {
-    primary:
-      "bg-amber-700 text-white shadow-[inset_0px_3px_4px_0px_rgba(255,223,211,1.00)] shadow-[inset_0px_-2px_4px_0px_rgba(253,207,190,1.00)] outline outline-1 outline-offset-[-1px] outline-orange-500",
+    primary: "bg-[#bf6735] text-white border border-[#dd7235]",
     secondary: "bg-white text-zinc-900 outline outline-1 outline-offset-[-1px] outline-zinc-300",
     ghost: "bg-white/5 text-white outline outline-1 outline-offset-[-1px] outline-zinc-400",
   };

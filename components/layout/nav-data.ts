@@ -53,6 +53,7 @@ const PAGE_HREFS: Record<string, string> = {
   "Tax Engines": "/existing-tax-engines",
   "OEM & Partners": "/oem-embedded",
   "Privacy & Data Protection": "/privacy-data-protection",
+  "AI Governance": "/ai-governance",
   Accessibility: "/accessibility",
 };
 

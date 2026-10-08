@@ -330,7 +330,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Governance & Assurance",
         icon: ShieldCheck,
         items: [
-          item("AI Governance", "Bounded intelligence with human authority", Shield),
+          item("AI Governance", "Bounded intelligence with human authority", Shield, "/ai-governance"),
           item(
             "Evidence & Auditability",
             "Decision lineage and historical replay",

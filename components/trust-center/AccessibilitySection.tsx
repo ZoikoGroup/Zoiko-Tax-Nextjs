@@ -1,84 +1,104 @@
-import { Accessibility, Bug } from "lucide-react";
+import { Accessibility, Bug, ArrowUpRight } from "lucide-react";
 import { SectionHeading, SectionShell, NoticeCard } from "./shared";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function AccessibilitySection() {
   return (
-    <SectionShell className="bg-[#fef9f9] relative overflow-hidden">
-      <div className="absolute top-0 right-0 h-full w-full max-w-2xl opacity-5 pointer-events-none">
-        <Image src="/images/trust-center/accessibility_and_responsible_disclosure.png" alt="" fill className="object-cover object-right" />
+    <SectionShell className="relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image src="/existing-tax-engines/0.png" alt="Background" fill className="object-cover" />
       </div>
       <div className="flex flex-col gap-10 relative z-10">
-        <SectionHeading
-          eyebrow="DISTINCT REPORTING ROUTES"
-          title="Accessibility feedback is not security disclosure."
-          description="Each domain needs its own approved statement, scope and reporting policy. Neither is a procurement or sales pathway."
-        />
+        <div className="flex flex-col gap-4">
+          <div className="text-xs font-bold uppercase tracking-wider text-[rgba(214,90,44,1)]">DISTINCT REPORTING ROUTES</div>
+          <h2 className="text-5xl font-bold text-slate-900 leading-[47.52px]">Accessibility feedback is not security disclosure.</h2>
+          <p className="w-full max-w-[1060px] text-xl font-normal leading-8 text-[rgba(102,95,105,1)]">
+            Each domain needs its own approved statement, scope and reporting policy. Neither is a procurement or sales<br className="hidden md:block" />
+            pathway.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Accessibility Card */}
-          <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 shadow-sm border border-orange-100 md:p-8">
+          <div className="flex flex-col gap-6 rounded-3xl bg-[rgba(255,255,255,1)] p-6 md:p-8 border border-[rgba(216,206,221,1)] w-full lg:w-[628px] lg:h-[381px]">
             <div className="flex flex-col gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
-                <Accessibility className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(255,242,233,1)] text-[rgba(214,90,44,1)]">
+                <Accessibility className="h-6 w-6" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Accessibility</h3>
-              <p className="text-sm text-slate-600">Use the approved accessibility statement to understand assessed scope, limitations and the appropriate feedback route. No conformance level is inferred from this page.</p>
+              <p className="text-sm text-slate-600">
+                Use the approved accessibility statement to understand assessed scope, limitations<br className="hidden md:block" />
+                and the appropriate feedback route. No conformance level is inferred from this page.
+              </p>
             </div>
             
-            <div className="flex flex-col gap-4 border-t border-slate-100 pt-6">
+            <div className="grid grid-cols-2 gap-4 pt-2">
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-bold uppercase text-slate-500">Statement / assessed scope</span>
-                <span className="text-sm font-medium text-slate-900">Not supplied</span>
+                <span className="text-sm font-semibold text-slate-900">Not supplied</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-bold uppercase text-slate-500">Reporting route / owner</span>
-                <span className="text-sm font-medium text-slate-900">Not supplied</span>
+                <span className="text-sm font-semibold text-slate-900">Not supplied</span>
               </div>
             </div>
             
-            <div className="mt-auto pt-6">
-              <Link href="/trust-center/accessibility" className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700">
-                Review Accessibility <span>↗</span>
+            <div className="mt-auto pt-2 flex flex-col gap-1.5">
+              <Link href="/trust-center/accessibility" className="flex justify-between items-center w-full group">
+                <span className="text-base font-normal text-[rgba(164,70,34,1)] group-hover:opacity-80">
+                  Review Accessibility
+                </span>
+                <ArrowUpRight className="w-[18px] h-[18px] text-[rgba(214,90,44,1)] shrink-0 group-hover:opacity-80 transition-opacity" strokeWidth={2} />
               </Link>
+              <div className="text-xs text-[rgba(102,95,105,1)]">/trust/accessibility/</div>
             </div>
           </div>
 
           {/* Responsible Disclosure Card */}
-          <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 shadow-sm border border-orange-100 md:p-8">
+          <div className="flex flex-col gap-6 rounded-3xl bg-[rgba(255,255,255,1)] p-6 md:p-8 border border-[rgba(216,206,221,1)] w-full lg:w-[628px] lg:h-[381px]">
             <div className="flex flex-col gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
-                <Bug className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[rgba(255,242,233,1)] text-[rgba(214,90,44,1)]">
+                <Bug className="h-6 w-6" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Responsible Disclosure</h3>
-              <p className="text-sm text-slate-600">Use the approved security reporting policy for suspected vulnerabilities. Policy scope, submission channel and handling terms must come from that source—not a generic form.</p>
+              <p className="text-sm text-slate-600">
+                Use the approved security reporting policy for suspected<br className="hidden md:block" />
+                vulnerabilities. Policy scope, submission channel and handling terms<br className="hidden md:block" />
+                must come from that source—not a generic form.
+              </p>
             </div>
             
-            <div className="flex flex-col gap-4 border-t border-slate-100 pt-6">
+            <div className="grid grid-cols-2 gap-4 pt-2">
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-bold uppercase text-slate-500">Approved reporting policy</span>
-                <span className="text-sm font-medium text-slate-900">Not supplied</span>
+                <span className="text-sm font-semibold text-slate-900">Not supplied</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-bold uppercase text-slate-500">Submission channel / owner</span>
-                <span className="text-sm font-medium text-slate-900">Not supplied</span>
+                <span className="text-sm font-semibold text-slate-900">Not supplied</span>
               </div>
             </div>
             
-            <div className="mt-auto pt-6">
-              <Link href="/trust-center/responsible-disclosure" className="inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:text-orange-700">
-                Review Responsible Disclosure <span>↗</span>
+            <div className="mt-auto pt-2 flex flex-col gap-1.5">
+              <Link href="/trust-center/responsible-disclosure" className="flex justify-between items-center w-full group">
+                <span className="text-base font-normal text-[rgba(164,70,34,1)] group-hover:opacity-80">
+                  Review Responsible Disclosure
+                </span>
+                <ArrowUpRight className="w-[18px] h-[18px] text-[rgba(214,90,44,1)] shrink-0 group-hover:opacity-80 transition-opacity" strokeWidth={2} />
               </Link>
+              <div className="text-xs text-[rgba(102,95,105,1)]">/trust/responsible-disclosure/</div>
             </div>
           </div>
         </div>
 
-        <NoticeCard
-          className="bg-white border border-slate-200"
-          title="Keep sensitive submissions out of general channels"
-          description="Do not include secrets, credentials, unnecessary personal data or vulnerability details in a demo, support or procurement form. A security submission belongs only in the channel named by the approved Responsible Disclosure policy."
-        />
+        <div className="flex flex-col gap-2 rounded-2xl p-6 bg-[rgba(245,238,249,1)] border border-[rgba(216,206,221,1)]">
+          <h4 className="text-sm font-bold text-slate-900">Keep sensitive submissions out of general channels</h4>
+          <p className="text-sm text-slate-600 leading-5">
+            Do not include secrets, credentials, unnecessary personal data or vulnerability details in a demo, support or procurement form. A security submission belongs<br className="hidden md:block" />
+            only in the channel named by the approved Responsible Disclosure policy.
+          </p>
+        </div>
       </div>
     </SectionShell>
   );
