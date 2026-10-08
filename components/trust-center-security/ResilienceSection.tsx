@@ -1,4 +1,4 @@
-import { ControlCard, LinkColumn, NoticeCard, SectionHeading, SectionShell } from "./shared";
+import { ArrowIcon, ControlCard, LinkColumn, NoticeCard, SectionHeading, SectionShell } from "./shared";
 
 const CARDS = [
   {
@@ -23,12 +23,12 @@ const CARDS = [
 
 export default function ResilienceSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[rgba(250,243,255,1)]">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="09 / RESILIENCE"
           title="Security is not a continuity guarantee."
-          description="Detailed posture belongs in Business Continuity. This security summary must not overstate recovery capability, availability or dependency independence."
+          description={<>Detailed posture belongs in Business Continuity. This security summary must not overstate recovery capability,<br className="hidden lg:block" />availability or dependency independence.</>}
         />
 
         <div className="grid grid-cols-1 gap-4 self-stretch md:grid-cols-3">
@@ -44,12 +44,24 @@ export default function ResilienceSection() {
         </div>
 
         <div className="inline-flex items-start self-stretch">
-          <LinkColumn label="Business Continuity →" route="/trust/business-continuity/" />
+          <LinkColumn 
+            label={
+              <span className="inline-flex items-center gap-1.5">
+                Business Continuity
+                <ArrowIcon white={false} />
+              </span>
+            } 
+            route="/trust/business-continuity/" 
+          />
         </div>
 
         <NoticeCard
           title="Recovery objectives and live service state are separate evidence"
-          description="No RTO, RPO, uptime, recovery cadence or operational badge is supplied. An approved live service-state system, if present, is separate from this governed security summary."
+          description={
+            <div className="max-w-[1200px]">
+              No RTO, RPO, uptime, recovery cadence or operational badge is supplied. An approved live service-state system, if present, is separate from this governed security summary.
+            </div>
+          }
         />
       </div>
     </SectionShell>

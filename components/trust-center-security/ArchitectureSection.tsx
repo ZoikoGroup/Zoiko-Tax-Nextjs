@@ -19,8 +19,12 @@ const BOUNDARIES = [
   },
   {
     topic: "Data layer",
-    detail:
-      "What information crosses each boundary? Publication needs approved data classes and handling scope, without storage or key details.",
+    detail: (
+      <>
+        What information crosses each boundary? Publication needs approved data classes and handling scope, without storage or <br className="hidden lg:block" />
+        key details.
+      </>
+    ),
   },
   {
     topic: "Administrative plane",
@@ -36,15 +40,21 @@ const BOUNDARIES = [
 
 export default function ArchitectureSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="01 / SECURITY ARCHITECTURE"
           title="Understand the boundaries. Not the attack surface."
-          description="A public architecture summary should describe responsibility and scope without disclosing sensitive topology. The anatomy below is conceptual only."
+          description={
+            <>
+              A public architecture summary should describe responsibility and scope without disclosing sensitive topology.
+              <br className="hidden lg:block" />
+              The anatomy below is conceptual only.
+            </>
+          }
         />
 
-        <div className="flex flex-col gap-7 self-stretch rounded-3xl bg-slate-900 p-6 sm:p-8">
+        <div className="flex flex-col gap-7 self-stretch rounded-3xl bg-[rgba(18,3,39,1)] p-6 sm:p-8">
           <p className="text-lg leading-6 text-orange-300">
             Conceptual trust-zone anatomy — not a verified deployment topology
           </p>
@@ -52,7 +62,7 @@ export default function ArchitectureSection() {
             {ZONES.map((zone) => (
               <div
                 key={zone.title}
-                className="inline-flex flex-col items-start gap-4 self-stretch rounded-2xl bg-violet-950 p-6 outline outline-1 outline-offset-[-1px] outline-gray-500 sm:p-7"
+                className="inline-flex flex-col items-start gap-4 self-stretch rounded-2xl bg-[rgba(48,17,83,1)] p-6 outline outline-1 outline-offset-[-1px] outline-gray-500 sm:p-7"
               >
                 <CardIcon name={zone.icon} size={28} />
                 <h3 className="self-stretch text-xl font-semibold text-white">{zone.title}</h3>
@@ -93,7 +103,13 @@ export default function ArchitectureSection() {
 
         <NoticeCard
           title="Actual architecture: not publicly verified in supplied sources"
-          description="Host and provider names, internal services, IPs, rules, storage details, secrets, key material, customer controls and privileged endpoints are not public content. Approved source boundaries are required before describing a deployment."
+          description={
+            <>
+              Host and provider names, internal services, IPs, rules, storage details, secrets, key material, customer controls and privileged endpoints are not public content.
+              <br /><br />
+              Approved source boundaries are required before describing a deployment.
+            </>
+          }
         />
       </div>
     </SectionShell>

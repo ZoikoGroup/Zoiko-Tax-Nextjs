@@ -1,4 +1,4 @@
-import { LinkColumn, NoticeCard, SectionHeading, SectionShell, StateCard } from "./shared";
+import { ArrowIcon, LinkColumn, NoticeCard, SectionHeading, SectionShell, StateCard } from "./shared";
 
 const STATES = [
   { icon: "file-text", title: "Public", description: "Approved, scoped summary may be published." },
@@ -64,7 +64,7 @@ export default function EvidenceSection() {
           ))}
         </div>
 
-        <div className="inline-flex w-full flex-col items-start gap-12 rounded-3xl bg-violet-950 p-6 sm:p-9 lg:flex-row">
+        <div className="inline-flex w-full flex-col items-start gap-12 rounded-3xl bg-[rgba(48,17,83,1)] p-6 sm:p-9 lg:flex-row">
           <div className="inline-flex w-full flex-col items-start gap-4 lg:w-96 lg:shrink-0">
             <h3 className="self-stretch text-3xl font-bold leading-9 text-white">
               A request is not an access approval.
@@ -84,11 +84,23 @@ export default function EvidenceSection() {
           </div>
         </div>
 
-        <LinkColumn label="Evidence & Auditability →" route="/trust/evidence-auditability/" />
+        <LinkColumn 
+          label={
+            <span className="inline-flex items-center gap-1.5">
+              Evidence & Auditability
+              <ArrowIcon white={false} />
+            </span>
+          } 
+          route="/trust/evidence-auditability/" 
+        />
 
         <NoticeCard
           title="No public sensitive-report downloads"
-          description="A summary cannot stand in for a controlled report. Absent or ambiguous artifact evidence must remain unavailable rather than being replaced with a badge, certificate or implied assurance."
+          description={
+            <div className="max-w-[1100px]">
+              A summary cannot stand in for a controlled report. Absent or ambiguous artifact evidence must remain unavailable rather than being replaced with a badge, certificate or implied assurance.
+            </div>
+          }
         />
       </div>
     </SectionShell>

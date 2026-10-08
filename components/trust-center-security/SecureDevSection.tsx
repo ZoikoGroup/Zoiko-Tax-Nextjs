@@ -27,7 +27,7 @@ const CARDS = [
 
 export default function SecureDevSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="06 / SECURE DEVELOPMENT"
@@ -35,7 +35,7 @@ export default function SecureDevSection() {
           description="Development and change-control topics are evidence-gated. The publication workflow below is conceptual—not confirmation that every test or control is implemented."
         />
 
-        <div className="flex flex-col gap-4 self-stretch rounded-3xl bg-purple-100 p-6 sm:p-7">
+        <div className="flex flex-col gap-4 self-stretch rounded-3xl bg-[rgba(242,234,248,1)] p-6 sm:p-7">
           <p className="self-stretch text-xs font-bold text-violet-950">
             CONCEPTUAL REVIEWED PUBLICATION WORKFLOW
           </p>
@@ -43,7 +43,7 @@ export default function SecureDevSection() {
             {WORKFLOW.map((step) => (
               <div key={step} className="inline-flex flex-1 flex-col items-start gap-2.5 rounded-xl bg-white p-4">
                 <p className="self-stretch text-base text-zinc-900">{step}</p>
-                <p className="self-stretch text-xs text-stone-500">Source not provided</p>
+                <p className="self-stretch text-xs text-[rgba(102,95,105,1)]">Source not provided</p>
               </div>
             ))}
           </div>
@@ -66,7 +66,11 @@ export default function SecureDevSection() {
 
         <NoticeCard
           title="Cadence and results are separate claims"
-          description="A testing topic does not establish a testing program. Published cadence, assessment results and remediation statements each require an approved, current and scoped source."
+          description={
+            <div className="max-w-[1100px]">
+              A testing topic does not establish a testing program. Published cadence, assessment results and remediation statements each require an approved, current and scoped source.
+            </div>
+          }
         />
       </div>
     </SectionShell>

@@ -1,0 +1,12 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as DirectAnswerSection } from "./DirectAnswerSection";
+export { default as DataDomainModelSection } from "./DataDomainModelSection";
+export { default as ResidencyAvailabilitySection } from "./ResidencyAvailabilitySection";
+export { default as CustomerConfigurationSection } from "./CustomerConfigurationSection";
+export { default as ProcessingLocationsSection } from "./ProcessingLocationsSection";
+export { default as StorageDimensionsSection } from "./StorageDimensionsSection";
+export { default as OperationalAccessSection } from "./OperationalAccessSection";
+export { default as ThirdPartyInterfacesSection } from "./ThirdPartyInterfacesSection";
+export { default as CrossBorderTransfersSection } from "./CrossBorderTransfersSection";
+export { default as SecurityInterfaceSection } from "./SecurityInterfaceSection";
+export { default as EvidenceProcurementSection } from "./EvidenceProcurementSection";

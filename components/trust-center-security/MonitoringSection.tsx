@@ -40,12 +40,12 @@ const ROWS = [
 
 export default function MonitoringSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="08 / MONITORING & INCIDENT RESPONSE"
           title="Explain the scope. Protect the operational detail."
-          description="A verified public summary needs approved coverage, responsibility and disclosure boundaries. None of the monitoring or response capabilities below is verified in the supplied sources."
+          description={<>A verified public summary needs approved coverage, responsibility and disclosure boundaries. None of the<br className="hidden lg:block" />monitoring or response capabilities below is verified in the supplied sources.</>}
         />
 
         <div className="flex flex-col items-start self-stretch">
@@ -71,7 +71,7 @@ export default function MonitoringSection() {
 
         <NoticeCard
           title="No inferred operational assurance"
-          description="No 24/7 coverage, SOC, response time, incident statistic or zero-breach statement is supplied. Incident disclosures must use a governed approved source. Live service state belongs to a separate approved system, if present; no live-status source or route is supplied here."
+          description={<>No 24/7 coverage, SOC, response time, incident statistic or zero-breach statement is supplied. Incident disclosures must use a governed approved source. Live<br className="hidden lg:block" />service state belongs to a separate approved system, if present; no live-status source or route is supplied here.</>}
         />
       </div>
     </SectionShell>

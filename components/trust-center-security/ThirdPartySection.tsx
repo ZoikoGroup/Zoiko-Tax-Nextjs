@@ -1,4 +1,4 @@
-import { ControlCard, LinkColumn, NoticeCard, SectionHeading, SectionShell } from "./shared";
+import { ArrowIcon, ControlCard, LinkColumn, NoticeCard, SectionHeading, SectionShell } from "./shared";
 
 const CARDS = [
   {
@@ -35,7 +35,7 @@ const CARDS = [
 
 export default function ThirdPartySection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="10 / THIRD-PARTY RISK"
@@ -54,11 +54,23 @@ export default function ThirdPartySection() {
           ))}
         </div>
 
-        <LinkColumn label="Subprocessor disclosure →" route="Named governed destination · Exact route not supplied" />
+        <LinkColumn 
+          label={
+            <span className="inline-flex items-center gap-1.5">
+              Subprocessor disclosure
+              <ArrowIcon white={false} />
+            </span>
+          } 
+          route="Named governed destination · Exact route not supplied" 
+        />
 
         <NoticeCard
           title="Publication slot, not supplier assurance"
-          description="Supplier evidence and dependency boundaries remain not publicly verified in supplied sources. Approval must cover the specific service, dependency and statement before public publication."
+          description={
+            <div className="max-w-[1100px]">
+              Supplier evidence and dependency boundaries remain not publicly verified in supplied sources. Approval must cover the specific service, dependency and statement before public publication.
+            </div>
+          }
         />
       </div>
     </SectionShell>

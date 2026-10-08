@@ -35,12 +35,12 @@ const CARDS = [
 
 export default function IdentityAccessSection() {
   return (
-    <SectionShell className="bg-purple-50">
+    <SectionShell className="bg-[url('/existing-tax-engines/0.png')] bg-cover bg-center py-2">
       <div className="flex flex-col gap-9">
         <SectionHeading
           eyebrow="03 / IDENTITY & ACCESS"
           title="Access claims need more than a feature name."
-          description="Authentication, authorization and administrative authority are separate evidence questions. None of the mechanisms below is confirmed by the supplied sources."
+          description={<>Authentication, authorization and administrative authority are separate evidence questions. None of the<br className="hidden lg:block" />mechanisms below is confirmed by the supplied sources.</>}
         />
 
         <div className="grid grid-cols-1 gap-4 self-stretch md:grid-cols-2 xl:grid-cols-3">
@@ -56,7 +56,11 @@ export default function IdentityAccessSection() {
 
         <NoticeCard
           title="Customer responsibility is scoped—not a settings screen"
-          description="Customer and integrator credential responsibilities must follow an approved agreement and integration scope. Control detail is not supplied: no MFA, SSO, role model, privileged-access product, rotation policy or session duration is asserted here."
+          description={
+            <div className="max-w-[1100px]">
+              Customer and integrator credential responsibilities must follow an approved agreement and integration scope. Control detail is not supplied: no MFA, SSO, role model, privileged-access product, rotation policy or session duration is asserted here.
+            </div>
+          }
         />
       </div>
     </SectionShell>

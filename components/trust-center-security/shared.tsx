@@ -50,8 +50,8 @@ export function SectionHeading({
   dark = false,
 }: {
   eyebrow: string;
-  title: string;
-  description: string;
+  title: ReactNode;
+  description: ReactNode;
   dark?: boolean;
 }) {
   return (
@@ -71,19 +71,21 @@ export function NoticeCard({
   title,
   description,
   dark = false,
+  className = "",
 }: {
   title: string;
-  description: string;
+  description: ReactNode;
   dark?: boolean;
+  className?: string;
 }) {
   return (
     <div
-      className={`flex flex-col gap-2 rounded-lg border-l-[3px] border-orange-600 p-6 ${
-        dark ? "bg-violet-950" : "bg-purple-100"
-      }`}
+      className={`flex flex-col gap-2 rounded-lg border-l-[3px] border-[rgba(214,90,44,1)] p-6 ${
+        dark ? "bg-[rgba(48,17,83,1)]" : "bg-[rgba(242,234,248,1)]"
+      } ${className}`}
     >
       <p className={`text-base font-bold ${dark ? "text-white" : "text-zinc-900"}`}>{title}</p>
-      <p className={`text-base leading-6 ${dark ? "text-zinc-300" : "text-stone-500"}`}>{description}</p>
+      <div className={`text-sm sm:text-base leading-6 ${dark ? "text-zinc-300" : "text-[rgba(102,95,105,1)]"}`}>{description}</div>
     </div>
   );
 }
@@ -95,7 +97,7 @@ export function ControlCard({
   icon,
 }: {
   title: string;
-  description: string;
+  description: ReactNode;
   footer: string;
   icon?: string;
 }) {
@@ -134,7 +136,7 @@ export function PillButton({
     "inline-flex h-12 items-center justify-start gap-3 overflow-hidden rounded-[999px] px-6 text-base font-semibold";
   const variants: Record<string, string> = {
     primary:
-      "bg-amber-700 text-white shadow-[inset_0px_3px_4px_0px_rgba(255,223,211,1.00)] shadow-[inset_0px_-2px_4px_0px_rgba(253,207,190,1.00)] outline outline-1 outline-offset-[-1px] outline-orange-500",
+      "bg-[rgba(191,103,53,1)] text-white shadow-[inset_0px_3px_4px_0px_rgba(255,223,211,1.00)] shadow-[inset_0px_-2px_4px_0px_rgba(253,207,190,1.00)] border border-[rgba(221,114,53,1)]",
     secondary: "bg-white text-zinc-900 outline outline-1 outline-offset-[-1px] outline-zinc-300",
     ghost: "bg-white/5 text-white outline outline-1 outline-offset-[-1px] outline-zinc-400",
   };
@@ -151,15 +153,13 @@ export function LinkColumn({
   route,
   dark = false,
 }: {
-  label: string;
+  label: ReactNode;
   route: string;
   dark?: boolean;
 }) {
   return (
     <div className="flex flex-col items-start gap-1.5 py-3.5">
-      <span
-        className={`text-base font-semibold leading-6 ${dark ? "text-orange-300" : "text-orange-600"}`}
-      >
+      <span className="text-base font-semibold leading-6 text-[rgba(214,90,44,1)]">
         {label}
       </span>
       <span className={`text-xs leading-5 ${dark ? "text-zinc-300" : "text-stone-500"}`}>{route}</span>
