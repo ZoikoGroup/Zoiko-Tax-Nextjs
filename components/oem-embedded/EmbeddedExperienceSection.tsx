@@ -50,7 +50,7 @@ export default function EmbeddedExperienceSection() {
             Connect the experience. Preserve the boundary.
           </h2>
           <p className="text-[rgba(102,95,105,1)] text-lg sm:text-xl font-normal leading-8 font-['Inter',sans-serif]">
-            API-led embedding can place an approved integration within a partner's own UI. It does not imply a white-labeled ZoikoTax application.
+            API-led embedding can place an approved integration within a partner&apos;s own UI. It does not imply a white-labeled ZoikoTax application.
           </p>
         </div>
 

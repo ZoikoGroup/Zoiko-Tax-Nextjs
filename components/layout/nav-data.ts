@@ -54,6 +54,12 @@ const PAGE_HREFS: Record<string, string> = {
   "OEM & Partners": "/oem-embedded",
   "Privacy & Data Protection": "/privacy-data-protection",
   Accessibility: "/accessibility",
+  FAQ: "/resources-faq",
+  Glossary: "/glossary",
+  "Guides & Reports": "/guides-reports",
+  "Regulatory Change": "/regulatory-change",
+  "Telecom Tax Insights": "/telecom-tax-insights",
+  "Insights & Blog": "/telecom-tax-insights",
 };
 
 const links = (...labels: string[]): NavLink[] =>
