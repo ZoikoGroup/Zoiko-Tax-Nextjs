@@ -379,9 +379,9 @@ export const megaMenus: MegaMenu[] = [
         title: "Company & Community",
         icon: Users,
         items: [
-          item("About ZoikoTax", "Our mission, vision and founding story", Info, "/about-us"),
+          item("About ZoikoTax", "Our mission, vision and founding story", Info, "/resources-about"),
           item("Blog", "Latest news, updates and thought leadership", PenLine),
-          item("Partners", "Integrations and technology partnerships", LinkIcon),
+          item("Partners", "Integrations and technology partnerships", LinkIcon, "/resources-partners"),
           item("Careers", "Join the ZoikoTax team", Briefcase),
           item("Contact", "Get in touch with our team", Mail, "/contact"),
         ],
