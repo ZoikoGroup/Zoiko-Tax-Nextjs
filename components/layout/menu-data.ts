@@ -393,8 +393,9 @@ export const megaMenus: MegaMenu[] = [
           item("Newsroom", "Press releases and company announcements", Radio, "/newsroom"),
           item("Media Kit", "Logos, photos and brand guidelines", Camera),
           item("Events", "Webinars, conferences and workshops", Calendar),
-          item("Newsletter", "Subscribe to our updates", Mail),
+          item("Newsletter", "Subscribe to our updates", Mail, "/newsletter"),
           item("Social Media", "Follow us on social platforms", Share2),
+
         ],
       },
     ],
