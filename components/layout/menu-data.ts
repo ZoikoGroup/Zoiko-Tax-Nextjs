@@ -382,7 +382,7 @@ export const megaMenus: MegaMenu[] = [
           item("About ZoikoTax", "Our mission, vision and founding story", Info, "/about-us"),
           item("Blog", "Latest news, updates and thought leadership", PenLine),
           item("Partners", "Integrations and technology partnerships", LinkIcon),
-          item("Careers", "Join the ZoikoTax team", Briefcase),
+          item("Careers", "Join the ZoikoTax team", Briefcase, "/careers"),
           item("Contact", "Get in touch with our team", Mail, "/contact"),
         ],
       },
@@ -392,10 +392,9 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Newsroom", "Press releases and company announcements", Radio, "/newsroom"),
           item("Media Kit", "Logos, photos and brand guidelines", Camera),
-          item("Events", "Webinars, conferences and workshops", Calendar),
+          item("Events", "Webinars, conferences and workshops", Calendar, "/events"),
           item("Newsletter", "Subscribe to our updates", Mail, "/newsletter"),
-          item("Social Media", "Follow us on social platforms", Share2),
-
+          item("Social Media", "Follow us on social platforms", Share2, "/social-media"),
         ],
       },
     ],
