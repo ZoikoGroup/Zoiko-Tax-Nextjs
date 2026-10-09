@@ -64,7 +64,11 @@ const PAGE_HREFS: Record<string, string> = {
   "Social Media": "/social-media",
   Careers: "/careers",
   Events: "/events",
+  "General Contact": "/contact",
+  Newsroom: "/newsroom",
+  Newsletter: "/newsletter",
 };
+
 
 const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
