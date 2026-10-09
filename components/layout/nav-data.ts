@@ -61,6 +61,8 @@ const PAGE_HREFS: Record<string, string> = {
   "Regulatory Change": "/regulatory-change",
   "Telecom Tax Insights": "/telecom-tax-insights",
   "Insights & Blog": "/telecom-tax-insights",
+  "General Contact": "/contact",
+  Newsroom: "/newsroom",
 };
 
 const links = (...labels: string[]): NavLink[] =>
