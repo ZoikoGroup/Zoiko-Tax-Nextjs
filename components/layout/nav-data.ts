@@ -61,7 +61,11 @@ const PAGE_HREFS: Record<string, string> = {
   "Regulatory Change": "/regulatory-change",
   "Telecom Tax Insights": "/telecom-tax-insights",
   "Insights & Blog": "/telecom-tax-insights",
+  "General Contact": "/contact",
+  Newsroom: "/newsroom",
+  Newsletter: "/newsletter",
 };
+
 
 const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
