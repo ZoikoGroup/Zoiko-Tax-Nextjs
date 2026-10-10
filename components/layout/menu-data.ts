@@ -345,10 +345,10 @@ export const megaMenus: MegaMenu[] = [
         title: "Compliance & Certifications",
         icon: Crown,
         items: [
-          item("Certifications", "SOC 2, ISO 27001 and others", Crown),
-          item("Regulatory Compliance", "Meeting requirements in each market", ReceiptText),
+          item("Certifications", "SOC 2, ISO 27001 and others", Crown, "/certifications"),
+          item("Regulatory Compliance", "Meeting requirements in each market", ReceiptText, "/regulatory-compliance"),
           item("Audit Reports", "Third-party assurance documentation", ReceiptText),
-          item("Industry Standards", "Alignment with telecom and tax standards", ChartNoAxesColumnIncreasing),
+          item("Industry Standards", "Alignment with telecom and tax standards", ChartNoAxesColumnIncreasing, "/industry-standards"),
         ],
       },
     ],

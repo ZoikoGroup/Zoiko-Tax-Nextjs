@@ -62,7 +62,7 @@ export default function InputOutputSafetySection() {
               An output never supplies its own authority
             </h4>
             <p className="text-[15px] font-normal leading-relaxed text-[rgba(102,95,105,1)]">
-              Confidence, fluency and an explanation are not permission to set fiscal outcomes. Approved review and authority boundaries still apply; exact handling requires authorized documentation."
+              Confidence, fluency and an explanation are not permission to set fiscal outcomes. Approved review and authority boundaries still apply; exact handling requires authorized documentation.&quot;
             </p>
           </div>
         </div>
