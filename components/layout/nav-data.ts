@@ -51,11 +51,6 @@ const PAGE_HREFS: Record<string, string> = {
   "UCaaS & CPaaS": "/ucaas-ccaas-cpaas",
   "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
   "IoT & Satellite": "/iot-m2m-satellite",
-  "Managed Compliance Coverage": "/managed-compliance-coverage",
-  "Remittance Coverage": "/remittance-coverage",
-  Partnerships: "/resources-partners",
-  Partners: "/resources-partners",
-  "About ZoikoTax": "/resources-about",
   "Technology Leaders": "/technology-leaders",
   "Integration Guides": "/integration-guides",
   "Tax Engines": "/existing-tax-engines",
@@ -69,7 +64,14 @@ const PAGE_HREFS: Record<string, string> = {
   "Regulatory Change": "/regulatory-change",
   "Telecom Tax Insights": "/telecom-tax-insights",
   "Insights & Blog": "/telecom-tax-insights",
+  "Social Media": "/social-media",
+  Careers: "/careers",
+  Events: "/events",
+  "General Contact": "/contact",
+  Newsroom: "/newsroom",
+  Newsletter: "/newsletter",
 };
+
 
 const links = (...labels: string[]): NavLink[] =>
   labels.map((label) => ({ label, href: PAGE_HREFS[label] ?? "#" }));
