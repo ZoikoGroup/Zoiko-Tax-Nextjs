@@ -221,7 +221,7 @@ export const megaMenus: MegaMenu[] = [
         icon: MapPin,
         items: [
           item("Coverage Overview", "Current public capability availability by market", Globe, "/coverage-overview"),
-          item("Country & Regulatory Packs", "Governed jurisdiction packs and activation", Flag),
+          item("Country & Regulatory Packs", "Governed jurisdiction packs and activation", Flag, "/country-regulatorypacks"),
           item("Status & Releases", "Current status from authoritative coverage data", Activity, "/status-and-releases"),
         ],
 
@@ -252,7 +252,7 @@ export const megaMenus: MegaMenu[] = [
         title: "Coverage Doctrine",
         icon: BookOpen,
         items: [
-          item("Production", "Approved capability for stated scope", CircleCheck),
+          item("Production", "Approved capability for stated scope", CircleCheck, "/coverage-production"),
           item("Managed", "Production plus approved managed service", UserCog),
           item("Pilot", "Controlled, limited deployment", Clock),
           item("Validation", "Under formal validation", ClipboardCheck),
@@ -391,7 +391,7 @@ export const megaMenus: MegaMenu[] = [
         icon: Bell,
         items: [
           item("Newsroom", "Press releases and company announcements", Radio, "/newsroom"),
-          item("Media Kit", "Logos, photos and brand guidelines", Camera),
+          item("Media Kit", "Logos, photos and brand guidelines", Camera, "/media-kit"),
           item("Events", "Webinars, conferences and workshops", Calendar, "/events"),
           item("Newsletter", "Subscribe to our updates", Mail, "/newsletter"),
           item("Social Media", "Follow us on social platforms", Share2, "/social-media"),
