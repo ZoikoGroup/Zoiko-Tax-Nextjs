@@ -58,7 +58,7 @@ export default function DisclosureStatesRecovery() {
                 Receipt would not mean validation.
               </div>
               <div className="self-stretch justify-start text-[#665F69] text-sm font-normal font-['Inter'] leading-6">
-                A future approved receipt confirms receipt only, not validity, severity or remediation. No report ID or delivery is<br />established here.
+                A future approved receipt confirms receipt only, not validity, severity or remediation.<br />No report ID or delivery is established here.
               </div>
             </div>
           </div>
