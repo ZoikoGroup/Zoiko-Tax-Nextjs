@@ -199,9 +199,9 @@ export const megaMenus: MegaMenu[] = [
         icon: Users,
         items: [
           item("Tax & Regulatory", "Determine what applies and manage obligations", Shield, "/tax-regulatory-compliance"),
-          item("CFO & Finance", "Control liability, recovery and accrual", DollarSign),
+          item("CFO & Finance", "Control liability, recovery and accrual", DollarSign, "/cfo-finance"),
           item("Billing & BSS Engineering", "Integrate fiscal decisions into transaction flows", Cog),
-          item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn),
+          item("Revenue Assurance", "Identify discrepancies and reconciliation gaps", ChartColumn, "/revenue-assurance"),
           item("Technology Leaders", "Governed architecture, integration and residency", Cpu, "/technology-leaders"),
         ],
       },
