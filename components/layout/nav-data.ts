@@ -52,6 +52,8 @@ const PAGE_HREFS: Record<string, string> = {
   "Broadband & Fixed Wireless": "/broadband-fixed-wireless",
   "IoT & Satellite": "/iot-m2m-satellite",
   "Technology Leaders": "/technology-leaders",
+  "Revenue Assurance": "/revenue-assurance",
+  "CFO & Finance": "/cfo-finance",
   "Integration Guides": "/integration-guides",
   "Tax Engines": "/existing-tax-engines",
   "OEM & Partners": "/oem-embedded",
