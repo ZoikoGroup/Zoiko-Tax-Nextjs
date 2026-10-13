@@ -73,6 +73,8 @@ const PAGE_HREFS: Record<string, string> = {
   Certifications: "/certifications",
   "Industry Standards": "/industry-standards",
   "Customer Support": "/customer-support",
+  "Dashboard & Analytics": "/assurance&intelligence-dashboard&analytics",
+  "United States": "/coverage-united-states",
   Documentation: "/documentation",
   "System Status": "/system-status",
   "Community Forum": "/community-forum",
