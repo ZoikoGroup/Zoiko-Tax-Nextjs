@@ -41,7 +41,7 @@ const FAQS = [
 
 export default function FAQSection() {
   return (
-    <SectionShell className="bg-white">
+    <SectionShell className="bg-white" bgImage="coverage-bg.webp">
       <SectionHeading
         eyebrow="Frequently asked questions"
         title="Direct answers. No inflated claims."

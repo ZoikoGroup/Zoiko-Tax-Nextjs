@@ -34,8 +34,13 @@ export function SectionShell({
           alt=""
           aria-hidden="true"
           fill
+          // Served as-is: re-compression washes out the faint pattern backgrounds.
+          unoptimized
           sizes="100vw"
-          className="object-cover object-center"
+          // On white sections the image is a near-white pattern: double its line strength (white stays white).
+          className={`object-cover object-center ${
+            className.includes("bg-white") ? "[filter:invert(1)_brightness(2)_invert(1)]" : ""
+          }`}
         />
       ) : null}
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-5 py-16 sm:gap-10 sm:px-8 lg:px-20 lg:py-24">

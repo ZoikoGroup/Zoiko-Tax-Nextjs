@@ -75,6 +75,7 @@ const PAGE_HREFS: Record<string, string> = {
   "Customer Support": "/customer-support",
   Documentation: "/documentation",
   "System Status": "/system-status",
+  "Community Forum": "/community-forum",
   "General Contact": "/contact",
   Newsroom: "/newsroom",
   Newsletter: "/newsletter",
