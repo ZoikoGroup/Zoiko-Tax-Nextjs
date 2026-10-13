@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/pricing_plan",
+        destination: "/pricing-plan",
+        permanent: false,
+      },
+      {
         source: "/e-invoicing",
         destination: "/e-invoicing-ctc",
         permanent: false,
