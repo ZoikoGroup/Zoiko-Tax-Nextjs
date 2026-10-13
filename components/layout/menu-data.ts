@@ -254,9 +254,9 @@ export const megaMenus: MegaMenu[] = [
         items: [
           item("Production", "Approved capability for stated scope", CircleCheck, "/coverage-production"),
           item("Managed", "Production plus approved managed service", UserCog),
-          item("Pilot", "Controlled, limited deployment", Clock),
-          item("Validation", "Under formal validation", ClipboardCheck),
-          item("Research", "Research stage, not marketed as production", Search),
+          item("Pilot", "Controlled, limited deployment", Clock, "/pilot"),
+          item("Validation", "Under formal validation", ClipboardCheck, "/validation"),
+          item("Research", "Research stage, not marketed as production", Search, "/research"),
         ],
       },
     ],
