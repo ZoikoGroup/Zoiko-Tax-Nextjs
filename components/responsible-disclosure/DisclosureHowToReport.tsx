@@ -203,7 +203,7 @@ export default function DisclosureHowToReport() {
                   More sensitive data is not stronger evidence.
                 </div>
                 <div className="self-stretch justify-start text-[#665F69] text-base font-normal font-['Inter'] leading-6">
-                  Redact secrets and customer, taxpayer and payment identifiers. Trim logs to necessary evidence.<br />Do not bulk-extract data. Share exploit evidence only through an approved protected process,<br />never a public post.
+                  Redact secrets and customer, taxpayer and payment identifiers. Trim logs to necessary evidence. Do<br />not bulk-extract data. Share exploit evidence only through an approved protected process, never a<br />public post.
                 </div>
               </div>
             </div>
