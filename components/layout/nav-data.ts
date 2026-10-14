@@ -82,6 +82,7 @@ const PAGE_HREFS: Record<string, string> = {
   "System Status": "/system-status",
   "Community Forum": "/community-forum",
   "General Contact": "/contact",
+  "Sales Inquiry": "/sales-inquiry",
   Newsroom: "/newsroom",
   Newsletter: "/newsletter",
 };
