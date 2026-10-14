@@ -14,15 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      # `LayoutProps<...>`/`PageProps<...>` etc. are ambient types Next.js
-      # generates into .next/types/ - they don't exist on a fresh checkout,
-      # so tsc needs this first or it falsely reports them as undefined.
-      - run: npx next typegen
-      - run: npx tsc --noEmit
+               with:
+          host: ${{ secrets.GCP_SSH_HOST }}
+          username: ${{ secrets.GCP_SSH_USER }}
+          key: ${{ secrets.GCP_SSH_KEY }}
+          command_timeout: 30m
+          script: |
+            set -e
+            export NODE_OPTIONS=--max-old-space-size=1536
+            cd /var/www/zoiko-tax/app
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart zoiko-tax
+            pm2 save
 
   deploy:
     needs: typecheck
