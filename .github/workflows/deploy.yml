@@ -14,20 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-               with:
-          host: ${{ secrets.GCP_SSH_HOST }}
-          username: ${{ secrets.GCP_SSH_USER }}
-          key: ${{ secrets.GCP_SSH_KEY }}
-          command_timeout: 30m
-          script: |
-            set -e
-            export NODE_OPTIONS=--max-old-space-size=1536
-            cd /var/www/zoiko-tax/app
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart zoiko-tax
-            pm2 save
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
 
   deploy:
     needs: typecheck
@@ -39,11 +30,10 @@ jobs:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
-          # Default command_timeout is 10m, which `git pull` + `npm install`
-          # + `npm run build` can exceed on a small/shared-core deploy VM.
           command_timeout: 30m
           script: |
             set -e
+            export NODE_OPTIONS=--max-old-space-size=1536
             cd /var/www/zoiko-tax/app
             git pull origin main
             npm install
