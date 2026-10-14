@@ -38,6 +38,7 @@ const PAGE_HREFS: Record<string, string> = {
   "API Changelog": "/api-changelog",
   "API Reference": "/api-reference",
   "Developer Overview": "/developer-overview",
+  "Developer Portal": "/developers-portal",
   "Data & Enterprise": "/data-enterprise-systems",
   "SDKs & Libraries": "/sdks",
   "Coverage Overview": "/coverage-overview",
