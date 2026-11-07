@@ -73,6 +73,12 @@
   --color-table-head: #f6f3fb;
   --color-success: #10b981;
   --color-danger: #ef4444;
+
+  /* Taxxon public chatbot: product-side brand (ZTAX-CHAT-UX-001) */
+  --color-taxxon-aubergine: #29173f;
+  --color-taxxon-copper: #b8733f;
+  --color-taxxon-graphite: #29272c;
+  --color-taxxon-porcelain: #faf8f4;
 }
 
 @theme inline {
@@ -122,6 +128,10 @@
   --color-table-head: var(--color-table-head);
   --color-success: var(--color-success);
   --color-danger: var(--color-danger);
+  --color-taxxon-aubergine: var(--color-taxxon-aubergine);
+  --color-taxxon-copper: var(--color-taxxon-copper);
+  --color-taxxon-graphite: var(--color-taxxon-graphite);
+  --color-taxxon-porcelain: var(--color-taxxon-porcelain);
   --font-sans: var(--font-sans);
   --font-sora: var(--font-sora-next);
   --font-manrope: var(--font-manrope-next);
@@ -162,4 +172,65 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+/* Taxxon launcher: gradient tile with a soft glow behind it. Hover lifts and
+   scales it slightly; reduced-motion visitors get the glow change only. */
+.taxxon-launcher {
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--color-taxxon-aubergine) 0%, #5a2d5c 55%, var(--color-taxxon-copper) 100%);
+  box-shadow: 0 8px 20px rgb(41 23 63 / 0.28), inset 0 1px 0 rgb(255 255 255 / 0.18);
+}
+
+.taxxon-launcher::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--color-taxxon-aubergine), var(--color-taxxon-copper));
+  filter: blur(14px);
+  opacity: 0.45;
+  transition: opacity 200ms ease;
+}
+
+.taxxon-launcher:hover::before,
+.taxxon-launcher:focus-visible::before {
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .taxxon-launcher {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .taxxon-launcher:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 26px rgb(41 23 63 / 0.34), inset 0 1px 0 rgb(255 255 255 / 0.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .taxxon-launcher::before {
+    transition: none;
+  }
+}
+
+/* Taxxon messages ease in; reduced-motion visitors see them appear at once. */
+@media (prefers-reduced-motion: no-preference) {
+  .taxxon-enter {
+    animation: taxxon-enter 280ms ease-out both;
+  }
+}
+
+@keyframes taxxon-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ZoikoTax Intelligence fills the viewport while a conversation is open. */
+html[data-zti-chat] footer {
+  display: none;
 }
